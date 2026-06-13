@@ -11,9 +11,10 @@
     "challenge": "Cuéntanos tu reto",
     "challengeHint": "Qué intentas resolver, dónde se estancó y qué cambiaría si funcionara.",
     "submit": "Enviar aplicación",
-    "confirmation": "Tu aplicación quedó lista en tu correo: revísala y envíala desde tu cliente de email.",
-    "note": "No usamos formularios automáticos ni filtros de palabras clave: tu aplicación la lee una persona, no un bot.",
-    "emailSubject": "Aplicación {{name}}"
+    "sending": "Enviando…",
+    "confirmation": "¡Recibimos tu aplicación! La leemos personalmente y te respondemos en un máximo de 3 días hábiles.",
+    "error": "No pudimos enviar tu aplicación. Inténtalo de nuevo en un momento o escríbenos a contact@axenorcorporations.com.",
+    "note": "No usamos formularios automáticos ni filtros de palabras clave: tu aplicación la lee una persona, no un bot."
   },
   "steps": {
     "title": "Qué sigue después",

@@ -4,40 +4,53 @@ import { useTranslation } from 'react-i18next';
 import PageHeader from '../components/ui/PageHeader';
 import SectionHeading from '../components/ui/SectionHeading';
 import { CONTACT } from '../data/company';
+import { supabase } from '../lib/supabase';
 import { useReveal } from '../hooks/useReveal';
 import { usePageTitle } from '../hooks/usePageTitle';
 
 const STEP_KEYS = ['review', 'conversation', 'proposal'] as const;
+
+type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 const inputClass =
   'w-full rounded-md border border-carbon/20 bg-white px-4 py-3 text-carbon placeholder:text-carbon-soft/40 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30';
 
 export default function Apply() {
   usePageTitle('apply');
-  const { t } = useTranslation('apply');
+  const { t, i18n } = useTranslation('apply');
   const steps = useReveal<HTMLDivElement>(0.1);
 
   const [form, setForm] = useState({ name: '', email: '', company: '', challenge: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>('idle');
 
   const update = (field: keyof typeof form) => (value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
 
-  // Sin backend: la aplicación se arma como borrador en el cliente de correo
-  // del usuario (mismo flujo del sitio anterior).
-  const handleSubmit = (event: FormEvent) => {
+  // INSERT ciego en Supabase: .insert() SIN .select() => no requiere privilegio
+  // SELECT y respeta la política RLS (anon solo puede insertar, no leer).
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const subject = t('form.emailSubject', { name: form.name });
-    const lines = [
-      `${t('form.name')}: ${form.name}`,
-      `${t('form.email')}: ${form.email}`,
-      form.company ? `${t('form.company')}: ${form.company}` : null,
-      '',
-      form.challenge,
-    ].filter((line): line is string => line !== null);
+    if (status === 'sending') return;
+    if (!form.name.trim() || !form.email.trim() || !form.challenge.trim()) return;
 
-    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
-    setSent(true);
+    setStatus('sending');
+    const { error } = await supabase.from('applications').insert({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      company: form.company.trim() || null,
+      challenge: form.challenge.trim(),
+      locale: i18n.resolvedLanguage === 'en' ? 'en' : 'es',
+    });
+
+    if (error) {
+      // El detalle real va a consola; al usuario un mensaje genérico.
+      console.error('Error al guardar la aplicación:', error.message);
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sent');
+    setForm({ name: '', email: '', company: '', challenge: '' });
   };
 
   return (
@@ -59,6 +72,7 @@ export default function Apply() {
                   id="apply-name"
                   type="text"
                   required
+                  maxLength={120}
                   autoComplete="name"
                   className={inputClass}
                   value={form.name}
@@ -73,6 +87,7 @@ export default function Apply() {
                   id="apply-email"
                   type="email"
                   required
+                  maxLength={160}
                   autoComplete="email"
                   className={inputClass}
                   value={form.email}
@@ -86,6 +101,7 @@ export default function Apply() {
                 <input
                   id="apply-company"
                   type="text"
+                  maxLength={160}
                   autoComplete="organization"
                   className={inputClass}
                   value={form.company}
@@ -100,6 +116,7 @@ export default function Apply() {
                   id="apply-challenge"
                   required
                   rows={6}
+                  maxLength={5000}
                   className={inputClass}
                   placeholder={t('form.challengeHint')}
                   value={form.challenge}
@@ -108,13 +125,19 @@ export default function Apply() {
               </div>
               <button
                 type="submit"
-                className="rounded-md bg-accent px-8 py-3.5 font-semibold text-white shadow-lg shadow-accent/25 transition hover:bg-accent/90"
+                disabled={status === 'sending'}
+                className="rounded-md bg-accent px-8 py-3.5 font-semibold text-white shadow-lg shadow-accent/25 transition hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {t('form.submit')}
+                {status === 'sending' ? t('form.sending') : t('form.submit')}
               </button>
-              {sent && (
-                <p role="status" className="rounded-md border border-accent/30 bg-accent/10 px-4 py-3 text-sm font-medium text-carbon">
+              {status === 'sent' && (
+                <p role="status" className="rounded-md border border-green-600/30 bg-green-600/10 px-4 py-3 text-sm font-medium text-carbon">
                   {t('form.confirmation')}
+                </p>
+              )}
+              {status === 'error' && (
+                <p role="alert" className="rounded-md border border-red-600/30 bg-red-600/10 px-4 py-3 text-sm font-medium text-carbon">
+                  {t('form.error')}
                 </p>
               )}
               <p className="text-sm leading-relaxed text-carbon-soft/60">{t('form.note')}</p>

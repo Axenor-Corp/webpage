@@ -11,9 +11,10 @@
     "challenge": "Tell us your challenge",
     "challengeHint": "What you're trying to solve, where it stalled, and what would change if it worked.",
     "submit": "Submit application",
-    "confirmation": "Your application is ready in your email: review it and send it from your email client.",
-    "note": "We don't use automated forms or keyword filters: your application is read by a person, not a bot.",
-    "emailSubject": "Application {{name}}"
+    "sending": "Sending…",
+    "confirmation": "We received your application! We read it personally and respond within 3 business days.",
+    "error": "We couldn't submit your application. Please try again in a moment or email us at contact@axenorcorporations.com.",
+    "note": "We don't use automated forms or keyword filters: your application is read by a person, not a bot."
   },
   "steps": {
     "title": "What happens next",
