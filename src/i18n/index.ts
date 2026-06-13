@@ -18,7 +18,7 @@ i18n
     fallbackLng: 'es',
     supportedLngs: ['es', 'en'],
     nonExplicitSupportedLngs: true,
-    ns: ['common'],
+    ns: ['common', 'services', 'how', 'contact', 'apply', 'about'],
     defaultNS: 'common',
     detection: {
       order: ['localStorage', 'navigator'],
