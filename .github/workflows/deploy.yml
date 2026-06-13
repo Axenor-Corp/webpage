@@ -6,9 +6,9 @@ name: CI/CD seguro · Axenor
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 # Menor privilegio para el GITHUB_TOKEN: solo lectura del repositorio.
 permissions:
@@ -72,7 +72,7 @@ jobs:
   deploy:
     name: Deploy to Vercel
     needs: security-gates
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment: production # exige reviewers/protección configurados en GitHub
     # IDs del proyecto Vercel: en CI no existe .vercel/ (está en .gitignore),
