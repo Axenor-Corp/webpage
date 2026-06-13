@@ -1,0 +1,96 @@
+{
+  "meta": { "title": "Services" },
+  "header": {
+    "title": "Services",
+    "subtitle": "Six capabilities. One single standard: results in production.",
+    "intro": "We organize by capability, not by industry. Specificity comes from the work the real problem, its constraints and its data not from a sector template."
+  },
+  "labels": {
+    "capabilities": "Capabilities",
+    "stack": "Stack & practices"
+  },
+  "items": {
+    "ai": {
+      "name": "Artificial Intelligence",
+      "tagline": "We take AI from pilot to production, with ROI metrics, not a demo.",
+      "desc": "AI doesn't fail because of technology; it fails in implementation. We design, integrate and operate AI solutions embedded in the real workflow, measured against a business objective defined upfront.",
+      "bullets": [
+        "Copilots and assistants embedded in the workflow, not in a separate tab",
+        "RAG over your own sources, with citation and hallucination control",
+        "Agents that execute scoped tasks with guardrails and traceability",
+        "Reproducible data-to-model pipelines, versioned and deployed",
+        "Evaluation and observability: quality, cost and latency metrics live"
+      ],
+      "stack": ["Python", "LLMs", "RAG", "MLOps", "Agents"]
+    },
+    "cybersecurity": {
+      "name": "Cybersecurity",
+      "tagline": "Comprehensive protection of digital assets through vulnerability management, continuous monitoring and incident response.",
+      "desc": "Security is not a product you install: it is a practice you operate. We design and operate your organization's security posture to reduce risk in a measurable, sustained way.",
+      "bullets": [
+        "Vulnerability assessment and management across infrastructure, applications and cloud",
+        "Continuous monitoring and incident response with defined processes",
+        "Penetration testing and controlled exercises on real systems",
+        "Platform hardening and least-privilege access control",
+        "Guidance on compliance and information security"
+      ],
+      "stack": ["SOC", "SIEM", "Pentesting", "Hardening", "Zero Trust"]
+    },
+    "infrastructure": {
+      "name": "Infrastructure",
+      "tagline": "Design, implementation and management of high-availability technology infrastructure, on-premise and hybrid.",
+      "desc": "Business operations rest on infrastructure. We design it for real constraints scale, budget and team and manage it so availability is the norm, not the exception.",
+      "bullets": [
+        "Design and implementation of enterprise networking, compute and storage",
+        "Virtualization and consolidation of on-premise and hybrid platforms",
+        "High availability, backup and disaster recovery",
+        "Administration, maintenance and support of the technology platform",
+        "Documentation and monitoring as a permanent practice"
+      ],
+      "stack": ["Networking", "Virtualization", "High availability", "Backup", "DRP"]
+    },
+    "cloud": {
+      "name": "Cloud",
+      "tagline": "Architecture, migration and optimization of workloads across public, private and hybrid cloud environments.",
+      "desc": "The cloud is not a destination: it is an operating model. We support adoption with architecture, planned migrations and continuous optimization of performance and cost.",
+      "bullets": [
+        "Solution architecture across public, private and hybrid cloud",
+        "Planned workload migration without disrupting operations",
+        "Deployment automation and infrastructure as code",
+        "Cost (FinOps) and workload performance optimization",
+        "Security and governance of cloud environments by design"
+      ],
+      "stack": ["AWS", "Azure", "IaC", "CI/CD", "FinOps"]
+    },
+    "critical": {
+      "name": "Critical services",
+      "tagline": "Operation and support of mission-critical systems with business continuity and service level agreement (SLA) compliance.",
+      "desc": "Some systems cannot stop. We operate them with permanent monitoring, continuity processes and service level agreements that are measured and met.",
+      "bullets": [
+        "Operation and support of mission-critical systems",
+        "Proactive monitoring and incidents with agreed response times",
+        "Business continuity and disaster recovery plans",
+        "Change management and maintenance windows without surprises",
+        "Periodic SLA compliance and platform health reports"
+      ],
+      "stack": ["SLA", "Monitoring", "Continuity", "Support", "ITSM"]
+    },
+    "software": {
+      "name": "Software solutions",
+      "tagline": "Custom software development under quality, scalability and maintainability standards.",
+      "desc": "Generic tools force the business to bend to their shape. We build custom software that fits your operation exactly: maintainable, scalable and ready to grow.",
+      "bullets": [
+        "Discovery that scopes the work to the problem that truly matters",
+        "Architecture designed for real constraints: scale, budget and team",
+        "Web and mobile applications focused on performance and usability",
+        "APIs and services designed to integrate, not to lock you in",
+        "End-to-end ownership: from first sketch to production and operations"
+      ],
+      "stack": ["Web", "Mobile", "APIs", "Integrations", "QA"]
+    }
+  },
+  "pricing": {
+    "title": "How we start",
+    "text": "We don't publish prices. Every engagement is sized against your problem, your context and the outcome that needs to move not against a catalog rate."
+  }
+}

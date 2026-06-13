@@ -1,0 +1,14 @@
+node_modules
+dist
+*.local
+.DS_Store
+.claude
+.devcontainer
+
+# Variables de entorno: nunca commitear valores reales; la plantilla sí.
+.env
+.env.*
+!.env.example
+
+# Artefactos de Vercel CLI (incluye env traído con `vercel pull`)
+.vercel

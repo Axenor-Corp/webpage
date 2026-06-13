@@ -1,0 +1,96 @@
+{
+  "meta": { "title": "Servicios" },
+  "header": {
+    "title": "Servicios",
+    "subtitle": "Seis capacidades. Una sola exigencia: resultados en producción.",
+    "intro": "Nos organizamos por capacidad, no por industria. La especificidad la da el trabajo el problema real, sus restricciones y sus datos no una plantilla por sector."
+  },
+  "labels": {
+    "capabilities": "Capacidades",
+    "stack": "Stack y prácticas"
+  },
+  "items": {
+    "ai": {
+      "name": "Inteligencia Artificial",
+      "tagline": "Llevamos la IA de piloto a producción, con métricas de ROI y no una demostración.",
+      "desc": "La IA no fracasa por la tecnología, sino en la implementación. Diseñamos, integramos y operamos soluciones de IA embebidas en el flujo de trabajo real, medidas contra un objetivo de negocio definido de antemano.",
+      "bullets": [
+        "Copilotos y asistentes embebidos en el flujo de trabajo, no en una pestaña aparte",
+        "RAG sobre tus propias fuentes, con citación y control de alucinaciones",
+        "Agentes que ejecutan tareas acotadas con barandas y trazabilidad",
+        "Pipelines de datos a modelo reproducibles, versionados y desplegados",
+        "Evaluación y observabilidad: métricas de calidad, costo y latencia en vivo"
+      ],
+      "stack": ["Python", "LLMs", "RAG", "MLOps", "Agentes"]
+    },
+    "cybersecurity": {
+      "name": "Ciberseguridad",
+      "tagline": "Protección integral de activos digitales mediante gestión de vulnerabilidades, monitoreo continuo y respuesta ante incidentes.",
+      "desc": "La seguridad no es un producto que se instala: es una práctica que se opera. Diseñamos y operamos la postura de seguridad de tu organización para reducir el riesgo de forma medible y sostenida.",
+      "bullets": [
+        "Diagnóstico y gestión de vulnerabilidades sobre infraestructura, aplicaciones y nube",
+        "Monitoreo continuo y respuesta ante incidentes con procesos definidos",
+        "Pruebas de penetración y ejercicios controlados sobre sistemas reales",
+        "Endurecimiento de plataformas y control de accesos bajo mínimo privilegio",
+        "Acompañamiento en cumplimiento y seguridad de la información"
+      ],
+      "stack": ["SOC", "SIEM", "Pentesting", "Hardening", "Zero Trust"]
+    },
+    "infrastructure": {
+      "name": "Infraestructura",
+      "tagline": "Diseño, implementación y administración de infraestructura tecnológica de alta disponibilidad, on-premise e híbrida.",
+      "desc": "La operación del negocio descansa sobre la infraestructura. La diseñamos para las restricciones reales escala, presupuesto y equipo y la administramos para que la disponibilidad sea la norma, no la excepción.",
+      "bullets": [
+        "Diseño e implementación de redes, cómputo y almacenamiento empresarial",
+        "Virtualización y consolidación de plataformas on-premise e híbridas",
+        "Alta disponibilidad, respaldo y recuperación ante desastres",
+        "Administración, mantenimiento y soporte de la plataforma tecnológica",
+        "Documentación y monitoreo como práctica permanente"
+      ],
+      "stack": ["Redes", "Virtualización", "Alta disponibilidad", "Backup", "DRP"]
+    },
+    "cloud": {
+      "name": "Cloud",
+      "tagline": "Arquitectura, migración y optimización de cargas de trabajo en entornos de nube pública, privada e híbrida.",
+      "desc": "La nube no es un destino: es un modelo operativo. Acompañamos la adopción con arquitectura, migraciones planificadas y optimización continua de rendimiento y costo.",
+      "bullets": [
+        "Arquitectura de soluciones en nube pública, privada e híbrida",
+        "Migración planificada de cargas sin interrumpir la operación",
+        "Automatización de despliegues e infraestructura como código",
+        "Optimización de costos (FinOps) y de rendimiento de las cargas",
+        "Seguridad y gobierno de los entornos de nube desde el diseño"
+      ],
+      "stack": ["AWS", "Azure", "IaC", "CI/CD", "FinOps"]
+    },
+    "critical": {
+      "name": "Servicios críticos",
+      "tagline": "Operación y soporte de sistemas de misión crítica con continuidad de negocio y cumplimiento de acuerdos de nivel de servicio (SLA).",
+      "desc": "Hay sistemas que no pueden detenerse. Los operamos con monitoreo permanente, procesos de continuidad y acuerdos de nivel de servicio que se miden y se cumplen.",
+      "bullets": [
+        "Operación y soporte de sistemas de misión crítica",
+        "Monitoreo proactivo e incidentes con tiempos de respuesta acordados",
+        "Planes de continuidad de negocio y recuperación ante desastres",
+        "Gestión de cambios y ventanas de mantenimiento sin sorpresas",
+        "Informes periódicos de cumplimiento de SLA y salud de la plataforma"
+      ],
+      "stack": ["SLA", "Monitoreo", "Continuidad", "Soporte", "ITSM"]
+    },
+    "software": {
+      "name": "Solución de software",
+      "tagline": "Desarrollo de software a la medida bajo estándares de calidad, escalabilidad y mantenibilidad.",
+      "desc": "Las herramientas genéricas obligan al negocio a doblarse a su forma. Construimos software a la medida que encaja exactamente en tu operación: mantenible, escalable y listo para crecer.",
+      "bullets": [
+        "Descubrimiento que acota el alcance al problema que de verdad importa",
+        "Arquitectura pensada para las restricciones reales: escala, presupuesto y equipo",
+        "Aplicaciones web y móviles con foco en rendimiento y experiencia de uso",
+        "APIs y servicios diseñados para integrarse, no para encerrarte",
+        "Propiedad end-to-end: del primer boceto a producción y su operación"
+      ],
+      "stack": ["Web", "Móvil", "APIs", "Integraciones", "QA"]
+    }
+  },
+  "pricing": {
+    "title": "Cómo empezamos",
+    "text": "No publicamos precios. Cada compromiso se dimensiona contra tu problema, tu contexto y el resultado que hay que mover no contra una tarifa de catálogo."
+  }
+}

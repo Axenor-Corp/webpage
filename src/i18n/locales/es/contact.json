@@ -1,0 +1,12 @@
+{
+  "meta": { "title": "Contacto" },
+  "header": {
+    "title": "Contacto",
+    "subtitle": "Estamos listos para acompañar tu transformación digital."
+  },
+  "emailLabel": "Correo electrónico",
+  "phoneLabel": "Teléfono",
+  "whatsapp": "Escríbenos por WhatsApp",
+  "locationLabel": "Ubicación",
+  "location": "Bogotá, Colombia"
+}

@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "inicio": "Home",
+    "servicios": "Services",
+    "comoTrabajamos": "How we work",
+    "nosotros": "About Us",
+    "contacto": "Contact",
+    "aplicar": "Apply"
+  },
+  "cta": {
+    "title": "Do you have a challenge that demands comprehensive technology solutions?",
+    "text": "We review every application personally and respond within 3 business days.",
+    "primary": "Apply to work with us",
+    "secondaryHow": "How we work",
+    "secondaryContact": "Contact us"
+  },
+  "footer": {
+    "tagline": "Comprehensive technology solutions: software, consulting and technical support from Bogotá, Colombia.",
+    "navTitle": "Site map",
+    "contactTitle": "Contact",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The path you are looking for does not exist or was moved.",
+    "back": "Back to home"
+  }
+}

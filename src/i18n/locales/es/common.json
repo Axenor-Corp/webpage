@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "inicio": "Inicio",
+    "servicios": "Servicios",
+    "comoTrabajamos": "Cómo trabajamos",
+    "nosotros": "Nosotros",
+    "contacto": "Contacto",
+    "aplicar": "Aplicar"
+  },
+  "cta": {
+    "title": "¿Tienes un reto que exige soluciones tecnológicas integrales?",
+    "text": "Revisamos cada aplicación personalmente y respondemos en un máximo de 3 días hábiles.",
+    "primary": "Aplica para trabajar con nosotros",
+    "secondaryHow": "Cómo trabajamos",
+    "secondaryContact": "Contáctanos"
+  },
+  "footer": {
+    "tagline": "Soluciones tecnológicas integrales: software, consultoría y soporte técnico desde Bogotá, Colombia.",
+    "navTitle": "Mapa del sitio",
+    "contactTitle": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "La ruta que buscas no existe o fue movida.",
+    "back": "Volver al inicio"
+  }
+}

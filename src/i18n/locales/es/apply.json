@@ -1,0 +1,42 @@
+{
+  "meta": { "title": "Aplicar" },
+  "header": {
+    "title": "Aplica para trabajar con nosotros.",
+    "subtitle": "Trabajamos con un número limitado de clientes al año. Cuéntanos tu reto: lo leemos personalmente y respondemos en un máximo de 3 días hábiles."
+  },
+  "form": {
+    "name": "Nombre",
+    "email": "Email corporativo",
+    "company": "Empresa (opcional)",
+    "challenge": "Cuéntanos tu reto",
+    "challengeHint": "Qué intentas resolver, dónde se estancó y qué cambiaría si funcionara.",
+    "submit": "Enviar aplicación",
+    "confirmation": "Tu aplicación quedó lista en tu correo: revísala y envíala desde tu cliente de email.",
+    "note": "No usamos formularios automáticos ni filtros de palabras clave: tu aplicación la lee una persona, no un bot.",
+    "emailSubject": "Aplicación {{name}}"
+  },
+  "steps": {
+    "title": "Qué sigue después",
+    "items": {
+      "review": {
+        "num": "01",
+        "title": "Revisión",
+        "text": "Leemos tu aplicación y validamos que podamos aportar de verdad a tu reto."
+      },
+      "conversation": {
+        "num": "02",
+        "title": "Conversación",
+        "text": "Una llamada de 30 minutos sobre tu reto, sus restricciones y el resultado esperado."
+      },
+      "proposal": {
+        "num": "03",
+        "title": "Propuesta",
+        "text": "Un plan concreto: alcance, equipo asignado y la métrica objetivo del compromiso."
+      }
+    }
+  },
+  "direct": {
+    "title": "¿Prefieres escribirnos directo?",
+    "text": "También puedes contactarnos en"
+  }
+}

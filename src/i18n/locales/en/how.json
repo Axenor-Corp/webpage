@@ -1,0 +1,73 @@
+{
+  "meta": { "title": "How we work" },
+  "header": {
+    "title": "How we work",
+    "subtitle": "Integrated inside your business.",
+    "intro": "We don't hand you a team and walk away. We embed in your context your stack, your data, your constraints and own the problem until it produces a measurable result."
+  },
+  "pillars": {
+    "title": "The model",
+    "items": {
+      "context": {
+        "title": "Context before code",
+        "text": "First we understand the business, the data and the real constraints. Code comes after, not before."
+      },
+      "ownership": {
+        "title": "End-to-end ownership",
+        "text": "A single owner of the problem, from discovery to measurement. We don't fragment responsibility."
+      },
+      "seniority": {
+        "title": "Experience, not supervised hands",
+        "text": "Professionals who make technical and product decisions in the same seat, with no intermediate layers."
+      }
+    }
+  },
+  "phases": {
+    "title": "The process",
+    "subtitle": "Four phases, each with a verifiable close.",
+    "items": {
+      "onboarding": {
+        "num": "01",
+        "title": "Onboarding",
+        "text": "We embed in your team and your stack. We get access to the systems, tools and people that matter from week one."
+      },
+      "discovery": {
+        "num": "02",
+        "title": "Discovery",
+        "text": "Immersion in the real context and data. We identify where the value is and which constraints technical, regulatory, human shape the solution."
+      },
+      "delivery": {
+        "num": "03",
+        "title": "Delivery",
+        "text": "Building under real constraints. We iterate in production, not in a lab environment, with visible milestones at every step."
+      },
+      "measurement": {
+        "num": "04",
+        "title": "Measurement",
+        "text": "A quantified result, not a deliverable. We close on a business metric agreed upfront, monitored live."
+      }
+    }
+  },
+  "risk": {
+    "title": "Risk reduction",
+    "subtitle": "Designed for the buyer who cannot afford to be wrong.",
+    "items": {
+      "visibility": {
+        "title": "Continuous visibility",
+        "text": "Access to real progress, not a monthly report. What we build is seen and tested live."
+      },
+      "milestones": {
+        "title": "Short milestones",
+        "text": "Brief, verifiable cycles. Every milestone is a decision point, not an act of faith."
+      },
+      "deliverables": {
+        "title": "Measurable deliverables",
+        "text": "Every phase closes on something verifiable against an agreed criterion, not against an opinion."
+      },
+      "timeToValue": {
+        "title": "Time-to-value",
+        "text": "Value arrives before the project closes. You validate the direction while you can still correct it."
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "meta": { "title": "Home" },
+  "hero": {
+    "kicker": "Axenor Corporation S.A.S",
+    "title": "We combine experience, vision and technology to build the digital future of our clients.",
+    "subtitle": "Comprehensive technology solutions · Bogotá, Colombia",
+    "ctaServices": "Our services",
+    "ctaContact": "Contact us",
+    "scroll": "Scroll to explore"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Six capabilities. One single standard: results in production.",
+    "viewDetail": "View detail",
+    "viewAll": "View all services"
+  },
+  "how": {
+    "title": "How we work",
+    "subtitle": "We don't hand over a report and leave: we integrate into your operation and answer for the result.",
+    "pillars": {
+      "context": {
+        "title": "Context before code",
+        "text": "First we understand the business, the data and the real constraints. The solution comes after, not before."
+      },
+      "ownership": {
+        "title": "End-to-end ownership",
+        "text": "A single owner of the problem, from discovery to measurement. We don't fragment responsibility."
+      },
+      "results": {
+        "title": "Measurable results",
+        "text": "Every engagement closes on a metric agreed upfront, not on billable hours."
+      }
+    },
+    "link": "Learn how we work"
+  }
+}

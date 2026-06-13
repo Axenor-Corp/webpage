@@ -1,0 +1,73 @@
+{
+  "meta": { "title": "Cómo trabajamos" },
+  "header": {
+    "title": "Cómo trabajamos",
+    "subtitle": "Integrados dentro de tu negocio.",
+    "intro": "No te entregamos un equipo y nos vamos. Nos embebemos en tu contexto tu stack, tus datos, tus restricciones y somos dueños del problema hasta que produce un resultado medible."
+  },
+  "pillars": {
+    "title": "El modelo",
+    "items": {
+      "context": {
+        "title": "Contexto antes que código",
+        "text": "Primero entendemos el negocio, los datos y las restricciones reales. El código viene después, no antes."
+      },
+      "ownership": {
+        "title": "Propiedad end-to-end",
+        "text": "Un solo dueño del problema, desde el descubrimiento hasta la medición. No fragmentamos la responsabilidad."
+      },
+      "seniority": {
+        "title": "Experiencia, no manos supervisadas",
+        "text": "Profesionales que toman decisiones técnicas y de producto en el mismo asiento, sin capas intermedias."
+      }
+    }
+  },
+  "phases": {
+    "title": "El proceso",
+    "subtitle": "Cuatro fases, cada una con un cierre verificable.",
+    "items": {
+      "onboarding": {
+        "num": "01",
+        "title": "Onboarding",
+        "text": "Nos embebemos en tu equipo y tu stack. Accedemos a los sistemas, las herramientas y las personas que importan desde la primera semana."
+      },
+      "discovery": {
+        "num": "02",
+        "title": "Discovery",
+        "text": "Inmersión en el contexto y los datos reales. Identificamos dónde está el valor y qué restricciones técnicas, regulatorias, humanascondicionan la solución."
+      },
+      "delivery": {
+        "num": "03",
+        "title": "Delivery",
+        "text": "Construcción bajo restricciones reales. Iteramos en producción, no en un entorno de laboratorio, con hitos visibles en cada paso."
+      },
+      "measurement": {
+        "num": "04",
+        "title": "Medición",
+        "text": "Un resultado cuantificado, no un entregable. Cerramos sobre una métrica de negocio acordada de antemano, monitoreada en vivo."
+      }
+    }
+  },
+  "risk": {
+    "title": "Reducción de riesgo",
+    "subtitle": "Diseñado para el comprador que no puede equivocarse.",
+    "items": {
+      "visibility": {
+        "title": "Visibilidad continua",
+        "text": "Acceso al progreso real, no a un reporte mensual. Lo que construimos se ve y se prueba en vivo."
+      },
+      "milestones": {
+        "title": "Hitos cortos",
+        "text": "Ciclos breves y verificables. Cada hito es un punto de decisión, no un acto de fe."
+      },
+      "deliverables": {
+        "title": "Entregables medibles",
+        "text": "Cada fase cierra sobre algo comprobable contra un criterio acordado, no contra una opinión."
+      },
+      "timeToValue": {
+        "title": "Time-to-value",
+        "text": "El valor llega antes del cierre del proyecto. Validas el rumbo mientras todavía puedes corregirlo."
+      }
+    }
+  }
+}

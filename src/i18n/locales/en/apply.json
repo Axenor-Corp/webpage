@@ -1,0 +1,42 @@
+{
+  "meta": { "title": "Apply" },
+  "header": {
+    "title": "Apply to work with us.",
+    "subtitle": "We work with a limited number of clients per year. Tell us your challenge: we read it personally and respond within 3 business days."
+  },
+  "form": {
+    "name": "Name",
+    "email": "Corporate email",
+    "company": "Company (optional)",
+    "challenge": "Tell us your challenge",
+    "challengeHint": "What you're trying to solve, where it stalled, and what would change if it worked.",
+    "submit": "Submit application",
+    "confirmation": "Your application is ready in your email: review it and send it from your email client.",
+    "note": "We don't use automated forms or keyword filters: your application is read by a person, not a bot.",
+    "emailSubject": "Application {{name}}"
+  },
+  "steps": {
+    "title": "What happens next",
+    "items": {
+      "review": {
+        "num": "01",
+        "title": "Review",
+        "text": "We read your application and validate that we can truly contribute to your challenge."
+      },
+      "conversation": {
+        "num": "02",
+        "title": "Conversation",
+        "text": "A 30-minute call about your challenge, its constraints and the expected result."
+      },
+      "proposal": {
+        "num": "03",
+        "title": "Proposal",
+        "text": "A concrete plan: scope, assigned team and the target metric of the engagement."
+      }
+    }
+  },
+  "direct": {
+    "title": "Prefer to write to us directly?",
+    "text": "You can also reach us at"
+  }
+}

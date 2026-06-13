@@ -1,0 +1,111 @@
+name: CI/CD seguro · Axenor
+
+# Zero Trust: cada push se verifica explícitamente. El despliegue solo ocurre si
+# TODAS las puertas de calidad de seguridad pasan, y requiere aprobación humana
+# (GitHub Environment) antes de tocar producción.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Menor privilegio para el GITHUB_TOKEN: solo lectura del repositorio.
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ===========================================================================
+  # PUERTAS DE CALIDAD DE SEGURIDAD — se ejecutan ANTES del build.
+  # Si cualquiera falla, el pipeline se rompe y no se despliega.
+  # ===========================================================================
+  security-gates:
+    name: Security quality gates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # historial completo para el escaneo de secretos
+
+      # ---- Gate 1: Escaneo de secretos ----------------------------------------
+      - name: Secret scanning (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITLEAKS_LICENSE: solo requerido en organizaciones (repos privados).
+          # GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies (lockfile estricto)
+        run: npm ci --ignore-scripts # ignore-scripts: mitiga ejecución arbitraria en postinstall
+
+      # ---- Gate 2: SCA — rompe si hay deps de PRODUCCIÓN vulnerables ----------
+      - name: SCA · npm audit (producción, bloqueante)
+        run: npm audit --omit=dev --audit-level=high
+
+      # Informativo: vulnerabilidades de tooling de desarrollo (no bloquea deploy
+      # porque no entran al bundle), pero quedan visibles en el log.
+      - name: SCA · npm audit (dev, informativo)
+        run: npm audit --audit-level=high || true
+
+      # ---- Gate 3: Análisis estático (type-check + linter) --------------------
+      - name: SAST · Type check
+        run: npx tsc --noEmit
+
+      - name: SAST · ESLint
+        run: npm run lint
+
+  # ===========================================================================
+  # DESPLIEGUE — solo tras pasar las puertas, solo en push a main, con
+  # aprobación del Environment 'production'.
+  # ===========================================================================
+  deploy:
+    name: Deploy to Vercel
+    needs: security-gates
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production # exige reviewers/protección configurados en GitHub
+    # IDs del proyecto Vercel: en CI no existe .vercel/ (está en .gitignore),
+    # así que se inyectan por entorno para que `vercel pull` enlace sin interacción.
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Vercel CLI
+        run: npm i -g vercel@latest
+
+      # Token de acceso de alcance LIMITADO (scoped al proyecto/equipo).
+      # Las variables VITE_SUPABASE_* viven SOLO en Vercel (single source of
+      # truth) y se traen con 'vercel pull'; no se duplican en GitHub Secrets.
+      - name: Vercel · pull (env de producción)
+        run: vercel pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
+
+      - name: Vercel · build (prebuilt)
+        run: vercel build --prod --token="${{ secrets.VERCEL_TOKEN }}"
+
+      - name: Vercel · deploy
+        run: vercel deploy --prebuilt --prod --token="${{ secrets.VERCEL_TOKEN }}"
+
+    # Secrets requeridos (GitHub → Settings → Secrets and variables → Actions):
+    #   VERCEL_TOKEN       -> token de acceso Vercel con alcance al proyecto
+    #   VERCEL_ORG_ID      -> de .vercel/project.json tras `vercel link`
+    #   VERCEL_PROJECT_ID  -> de .vercel/project.json tras `vercel link`

@@ -1,0 +1,51 @@
+{
+  "meta": { "title": "About Us" },
+  "header": {
+    "title": "About Us",
+    "subtitle": "A firm built on a standard."
+  },
+  "intro": "Axenor Corporation S.A.S is a Colombian company specialized in comprehensive technology solutions, based in Bogotá, Colombia. We combine experience, vision and technology to build the digital future of our clients.",
+  "missionTitle": "Mission",
+  "mission": "To develop high-quality technology solutions through software services, consulting, and technical support, strengthening digital transformation at a national and international level.",
+  "visionTitle": "Vision",
+  "vision": "To establish ourselves within the next 5 years as leaders in technological innovation, recognized for excellence in software solutions, infrastructure and comprehensive services.",
+  "principles": {
+    "title": "Our principles",
+    "subtitle": "Four principles that govern every engagement.",
+    "items": {
+      "ownership": {
+        "title": "Owners of the outcome",
+        "text": "We take on the whole problem and answer for the final metric, not for billable hours."
+      },
+      "proof": {
+        "title": "Proof before claims",
+        "text": "Every claim is demonstrated with deliverables verifiable against an agreed criterion, not against an opinion."
+      },
+      "depth": {
+        "title": "Depth over volume",
+        "text": "We work with a limited number of clients at a time to sustain the standard in every engagement."
+      },
+      "transparency": {
+        "title": "Technical transparency",
+        "text": "Documented architecture decisions and continuous visibility of real progress, not a monthly report."
+      }
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "The people behind Axenor.",
+    "linkedin": "View LinkedIn profile",
+    "companyLinkedin": "Follow Axenor Corporations on LinkedIn",
+    "flipHint": "Hover to learn more",
+    "roles": {
+      "ceo": "CEO",
+      "cto": "Director of Technology and Security",
+      "legal": "Legal Advisor and Director"
+    },
+    "bios": {
+      "ceo": "Leads Axenor's strategic direction and growth vision, building partnerships and new business lines to bring the company's technology solutions to national and international clients.",
+      "cto": "Responsible for Axenor's technology and security strategy: defines the architecture, engineering standards and cybersecurity posture that sustain solutions in production.",
+      "legal": "Legal advisor and director at Axenor: structures the legal, contractual and compliance frameworks that back every engagement and protect both clients and the company."
+    }
+  }
+}

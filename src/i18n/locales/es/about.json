@@ -1,0 +1,51 @@
+{
+  "meta": { "title": "Nosotros" },
+  "header": {
+    "title": "Nosotros",
+    "subtitle": "Una firma construida sobre un estándar."
+  },
+  "intro": "Axenor Corporation S.A.S es una empresa colombiana especializada en soluciones tecnológicas integrales, ubicada en Bogotá, Colombia. Combinamos experiencia, visión y tecnología para construir el futuro digital de nuestros clientes.",
+  "missionTitle": "Misión",
+  "mission": "Desarrollar soluciones tecnológicas de alta calidad mediante servicios de software, consultoría, y soporte técnico, fortaleciendo la transformación digital a nivel nacional e internacional.",
+  "visionTitle": "Visión",
+  "vision": "Consolidarnos en los próximos 5 años como líderes en innovación tecnológica, siendo reconocidos por la excelencia en soluciones de software, infraestructura y servicios integrales.",
+  "principles": {
+    "title": "Nuestros principios",
+    "subtitle": "Cuatro principios que gobiernan cada compromiso.",
+    "items": {
+      "ownership": {
+        "title": "Dueños del resultado",
+        "text": "Asumimos el problema completo y respondemos por la métrica final, no por las horas facturadas."
+      },
+      "proof": {
+        "title": "La prueba antes que el claim",
+        "text": "Cada afirmación se demuestra con entregables comprobables contra un criterio acordado, no contra una opinión."
+      },
+      "depth": {
+        "title": "Profundidad sobre volumen",
+        "text": "Trabajamos con un número limitado de clientes a la vez para sostener el estándar en cada compromiso."
+      },
+      "transparency": {
+        "title": "Transparencia técnica",
+        "text": "Decisiones de arquitectura documentadas y visibilidad continua del progreso real, no un reporte mensual."
+      }
+    }
+  },
+  "team": {
+    "title": "Nuestro Equipo",
+    "subtitle": "Las personas detrás de Axenor.",
+    "linkedin": "Ver perfil en LinkedIn",
+    "companyLinkedin": "Sigue a Axenor Corporations en LinkedIn",
+    "flipHint": "Pasa el cursor para conocer más",
+    "roles": {
+      "ceo": "CEO",
+      "cto": "Director de Tecnología y Seguridad",
+      "legal": "Asesor y Director Jurídico"
+    },
+    "bios": {
+      "ceo": "Lidera la dirección estratégica y la visión de crecimiento de Axenor, articulando alianzas y nuevas líneas de negocio para llevar las soluciones tecnológicas de la compañía a clientes nacionales e internacionales.",
+      "cto": "Responsable de la estrategia de tecnología y seguridad de Axenor: define la arquitectura, los estándares de ingeniería y la postura de ciberseguridad que sostienen las soluciones en producción.",
+      "legal": "Asesor y director jurídico de Axenor: estructura los marcos legales, contractuales y de cumplimiento que respaldan cada compromiso y protegen a clientes y compañía."
+    }
+  }
+}

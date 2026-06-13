@@ -1,0 +1,12 @@
+{
+  "meta": { "title": "Contact" },
+  "header": {
+    "title": "Contact",
+    "subtitle": "We are ready to support your digital transformation."
+  },
+  "emailLabel": "Email",
+  "phoneLabel": "Phone",
+  "whatsapp": "Message us on WhatsApp",
+  "locationLabel": "Location",
+  "location": "Bogotá, Colombia"
+}
