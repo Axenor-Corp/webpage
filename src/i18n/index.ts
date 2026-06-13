@@ -12,6 +12,7 @@ i18n
         import(`./locales/${language}/${namespace}.json`),
     ),
   )
+  
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
