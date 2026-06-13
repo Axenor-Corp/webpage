@@ -26,22 +26,23 @@ export default function Apply() {
   const update = (field: keyof typeof form) => (value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
 
-  // INSERT ciego en Supabase: .insert() SIN .select() => no requiere privilegio
-  // SELECT y respeta la política RLS (anon solo puede insertar, no leer).
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (status === 'sending') return;
     if (!form.name.trim() || !form.email.trim() || !form.challenge.trim()) return;
 
     setStatus('sending');
-    const { error } = await supabase.from('applications').insert({
+    const payload = {
       name: form.name.trim(),
       email: form.email.trim(),
       company: form.company.trim() || null,
       challenge: form.challenge.trim(),
-      locale: i18n.resolvedLanguage === 'en' ? 'en' : 'es',
-    });
+      locale: (i18n.resolvedLanguage === 'en' ? 'en' : 'es') as 'es' | 'en',
+    };
 
+    // 1) Registro confiable y permanente en Supabase (fuente de verdad).
+    //    INSERT ciego: sin .select() => respeta el RLS (anon solo inserta).
+    const { error } = await supabase.from('applications').insert(payload);
     if (error) {
       // El detalle real va a consola; al usuario un mensaje genérico.
       console.error('Error al guardar la aplicación:', error.message);
@@ -51,6 +52,20 @@ export default function Apply() {
 
     setStatus('sent');
     setForm({ name: '', email: '', company: '', challenge: '' });
+
+    // 2) Además, abre un borrador de correo a contact@ con los datos (mejor
+    //    esfuerzo: depende de que el visitante tenga cliente de correo).
+    const subject = t('form.emailSubject', { name: payload.name });
+    const body = [
+      `${t('form.name')}: ${payload.name}`,
+      `${t('form.email')}: ${payload.email}`,
+      payload.company ? `${t('form.company')}: ${payload.company}` : null,
+      '',
+      payload.challenge,
+    ]
+      .filter((line): line is string => line !== null)
+      .join('\r\n');
+    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
