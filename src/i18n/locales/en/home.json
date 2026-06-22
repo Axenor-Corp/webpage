@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Home" },
+  "meta": {
+    "title": "Axenor Corporation S.A.S: Integral Technology Solutions",
+    "description": "A firm for integral technology solutions: AI, cybersecurity, infrastructure, cloud, critical services and custom software. Engineering from Bogotá, Colombia."
+  },
   "hero": {
     "kicker": "Axenor Corporation S.A.S",
     "title": "We combine experience, vision and technology to build the digital future of our clients.",

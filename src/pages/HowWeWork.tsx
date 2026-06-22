@@ -3,14 +3,12 @@ import PageHeader from '../components/ui/PageHeader';
 import SectionHeading from '../components/ui/SectionHeading';
 import CTABanner from '../components/ui/CTABanner';
 import { useReveal } from '../hooks/useReveal';
-import { usePageTitle } from '../hooks/usePageTitle';
 
 const PILLAR_KEYS = ['context', 'ownership', 'seniority'] as const;
 const PHASE_KEYS = ['onboarding', 'discovery', 'delivery', 'measurement'] as const;
 const RISK_KEYS = ['visibility', 'milestones', 'deliverables', 'timeToValue'] as const;
 
 export default function HowWeWork() {
-  usePageTitle('how');
   const { t } = useTranslation('how');
   const pillars = useReveal<HTMLDivElement>(0.1);
   const phases = useReveal<HTMLDivElement>(0.1);

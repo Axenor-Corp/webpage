@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Apply" },
+  "meta": {
+    "title": "Apply",
+    "description": "Apply to work with Axenor. We read every application personally and respond within 3 business days."
+  },
   "header": {
     "title": "Apply to work with us.",
     "subtitle": "We work with a limited number of clients per year. Tell us your challenge: we read it personally and respond within 3 business days."

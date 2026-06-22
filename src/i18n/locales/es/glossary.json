@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "title": "Glosario: términos de tecnología en lenguaje preciso",
+    "description": "Definiciones claras de los términos que usamos: Forward Deployed Engineering, RAG, MLOps, Zero Trust, FinOps, alta disponibilidad y más. Una frase primero, sin jerga de relleno."
+  },
+  "header": {
+    "title": "Glosario",
+    "subtitle": "El vocabulario de la ingeniería, sin humo.",
+    "intro": "Definimos los términos que aparecen en nuestro trabajo con la misma precisión con la que escribimos código, cada uno explicado primero en una sola frase, sin jerga de relleno."
+  },
+  "categories": [
+    "El modelo",
+    "Inteligencia Artificial",
+    "Ciberseguridad",
+    "Cloud e infraestructura",
+    "Entrega y operación"
+  ],
+  "terms": [
+    {
+      "slug": "forward-deployed-engineer",
+      "term": "Forward Deployed Engineer (FDE)",
+      "category": "El modelo",
+      "short": "Ingeniero de élite que se embebe dentro del negocio del cliente (en su contexto, sus datos y sus restricciones) y es dueño de un problema de principio a fin, en lugar de escribir código a distancia.",
+      "body": "Palantir originó el modelo (internamente lo llaman «Deltas») para resolver problemas que ningún producto enlatado podía. En 2026, OpenAI y Anthropic lo institucionalizaron con miles de millones en capital. AXENOR lo aplica como firma boutique de élite."
+    },
+    {
+      "slug": "staff-augmentation",
+      "term": "Aumento de personal (staff augmentation)",
+      "category": "El modelo",
+      "short": "Modelo en el que un proveedor aporta «manos» que trabajan bajo tu dirección: tú sigues siendo dueño del problema, de la arquitectura, del riesgo y de coordinar a todos.",
+      "body": "Se diferencia del modelo Forward Deployed, donde el proveedor asume el problema completo y responde por la métrica final, no por las horas facturadas."
+    },
+    {
+      "slug": "nearshore",
+      "term": "Nearshore",
+      "category": "El modelo",
+      "short": "Modelo de colaboración con un equipo en un país cercano y de huso horario compatible, lo que permite trabajo en tiempo real frente al desfase del offshore lejano.",
+      "body": "Para clientes de EE.UU., Colombia opera en horario del Este (ET) y comparte la ventana laboral, sin la fricción de las 10-12 horas de diferencia del offshore tradicional."
+    },
+    {
+      "slug": "piloto-a-produccion",
+      "term": "De piloto a producción",
+      "category": "El modelo",
+      "short": "El salto desde una prueba de concepto que funciona en un entorno controlado hasta un sistema que opera de forma fiable, medible y mantenible dentro del negocio real.",
+      "body": "Es donde se estanca la mayoría de las iniciativas de tecnología, la IA incluida: el 88% de las empresas la usa, pero pocos pilotos llegan a producción o miden su impacto."
+    },
+    {
+      "slug": "rag",
+      "term": "RAG (generación aumentada por recuperación)",
+      "category": "Inteligencia Artificial",
+      "short": "Técnica que conecta un modelo de lenguaje a tus propias fuentes de información, de modo que responde con datos recuperados de ellas (con citación) en vez de solo con su memoria de entrenamiento.",
+      "body": "Reduce las alucinaciones y permite respuestas verificables sobre documentación privada, sin reentrenar el modelo."
+    },
+    {
+      "slug": "mlops",
+      "term": "MLOps",
+      "category": "Inteligencia Artificial",
+      "short": "Conjunto de prácticas para versionar, desplegar, monitorear y reentrenar modelos de machine learning en producción de forma reproducible, lo que DevOps hace con el software, aplicado a los modelos.",
+      "body": "Es lo que sostiene un modelo en el tiempo: sin MLOps, un piloto de IA se degrada en silencio en cuanto cambian los datos."
+    },
+    {
+      "slug": "agentes-de-ia",
+      "term": "Agentes de IA",
+      "category": "Inteligencia Artificial",
+      "short": "Sistemas de IA que ejecutan tareas de varios pasos de forma autónoma (deciden, invocan herramientas y actúan) en lugar de solo responder a una pregunta.",
+      "body": "En producción exigen barandas (límites de acción), trazabilidad y tareas acotadas; sin ellas, la autonomía se vuelve riesgo."
+    },
+    {
+      "slug": "zero-trust",
+      "term": "Zero Trust",
+      "category": "Ciberseguridad",
+      "short": "Modelo de seguridad que no confía por defecto en ningún usuario, dispositivo o red (ni siquiera dentro del perímetro) y verifica cada acceso de forma explícita y continua.",
+      "body": "Sustituye la idea de «red interna segura» por el principio de mínimo privilegio aplicado a cada solicitud."
+    },
+    {
+      "slug": "pentesting",
+      "term": "Pentesting (pruebas de penetración)",
+      "category": "Ciberseguridad",
+      "short": "Ejercicio controlado en el que especialistas atacan tus sistemas, con el consentimiento del dueño, para encontrar vulnerabilidades reales antes de que lo haga un atacante.",
+      "body": "A diferencia de un escaneo automático, evalúa cómo se encadenan las debilidades en un ataque realista."
+    },
+    {
+      "slug": "hardening",
+      "term": "Hardening (endurecimiento)",
+      "category": "Ciberseguridad",
+      "short": "Proceso de reducir la superficie de ataque de un sistema: cerrar puertos y servicios innecesarios, aplicar mínimo privilegio y configurar de forma segura por defecto.",
+      "body": "Es seguridad preventiva: menos cosas expuestas significan menos cosas que un atacante puede aprovechar."
+    },
+    {
+      "slug": "siem",
+      "term": "SIEM (gestión de información y eventos de seguridad)",
+      "category": "Ciberseguridad",
+      "short": "Plataforma que centraliza y correlaciona los registros (logs) de toda la infraestructura para detectar y alertar sobre actividad sospechosa en tiempo casi real.",
+      "body": "Es el sistema nervioso de un SOC: convierte millones de eventos dispersos en señales accionables."
+    },
+    {
+      "slug": "soc",
+      "term": "SOC (centro de operaciones de seguridad)",
+      "category": "Ciberseguridad",
+      "short": "Función (equipo, procesos y herramientas) que monitorea, detecta y responde a incidentes de seguridad de forma continua, las 24 horas.",
+      "body": "No es un producto que se instala: es una práctica que se opera, y el riesgo que no se monitorea es el que termina costando."
+    },
+    {
+      "slug": "iac",
+      "term": "IaC (infraestructura como código)",
+      "category": "Cloud e infraestructura",
+      "short": "Práctica de definir y aprovisionar la infraestructura (servidores, redes, nube) mediante archivos de código versionados, en lugar de configurarla a mano.",
+      "body": "Hace que los despliegues sean repetibles y auditables: el mismo código produce el mismo entorno, sin sorpresas."
+    },
+    {
+      "slug": "ci-cd",
+      "term": "CI/CD (integración y entrega continuas)",
+      "category": "Cloud e infraestructura",
+      "short": "Automatización del camino del código a producción: cada cambio se prueba (integración continua) y se despliega (entrega continua) de forma frecuente y confiable.",
+      "body": "Acorta el ciclo entre escribir un cambio y verlo en producción, reduciendo el riesgo de cada despliegue."
+    },
+    {
+      "slug": "finops",
+      "term": "FinOps",
+      "category": "Cloud e infraestructura",
+      "short": "Disciplina que lleva responsabilidad financiera al gasto en la nube: dar visibilidad de costos en tiempo real y optimizarlos sin sacrificar rendimiento.",
+      "body": "Migrar a la nube sin FinOps suele trasladar el desorden a una factura más alta; con él, las cargas cuestan lo que deben."
+    },
+    {
+      "slug": "alta-disponibilidad",
+      "term": "Alta disponibilidad (HA)",
+      "category": "Cloud e infraestructura",
+      "short": "Diseño de un sistema para que siga operando pese a fallos de componentes, mediante redundancia y conmutación automática, minimizando el tiempo de caída.",
+      "body": "Se mide en «nueves» de disponibilidad (por ejemplo, 99,99%); cuando la operación descansa en la plataforma, la disponibilidad es la norma, no la excepción."
+    },
+    {
+      "slug": "drp",
+      "term": "DRP (plan de recuperación ante desastres)",
+      "category": "Cloud e infraestructura",
+      "short": "Conjunto documentado de procedimientos para restaurar sistemas y datos tras un incidente grave (un ataque, un fallo mayor, un desastre físico) dentro de un tiempo y una pérdida de datos acordados.",
+      "body": "Define dos metas clave: el RTO (cuánto se tarda en recuperar) y el RPO (cuántos datos se pueden perder)."
+    },
+    {
+      "slug": "strangler-pattern",
+      "term": "Patrón de estrangulamiento (strangler)",
+      "category": "Entrega y operación",
+      "short": "Estrategia para modernizar un sistema heredado de forma gradual: se construyen piezas nuevas alrededor del viejo y se le redirige el tráfico poco a poco, hasta reemplazarlo sin una reescritura de golpe.",
+      "body": "Permite migrar sin ventanas de caída ni el riesgo de un «big bang» que detenga la operación."
+    },
+    {
+      "slug": "sla",
+      "term": "SLA (acuerdo de nivel de servicio)",
+      "category": "Entrega y operación",
+      "short": "Compromiso medible entre un proveedor y un cliente sobre el nivel de servicio (disponibilidad, tiempos de respuesta) que se va a cumplir, con métricas y consecuencias definidas.",
+      "body": "Un SLA serio se reporta y se cumple; sin medición, es una promesa de folleto."
+    },
+    {
+      "slug": "observabilidad",
+      "term": "Observabilidad",
+      "category": "Entrega y operación",
+      "short": "Capacidad de entender el estado interno de un sistema desde sus salidas (métricas, registros y trazas) para diagnosticar problemas, incluso los que no se anticiparon.",
+      "body": "Va más allá del monitoreo: no solo avisa que algo falló, sino que permite preguntar por qué."
+    }
+  ]
+}

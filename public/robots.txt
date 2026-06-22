@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# AI search crawlers (GEO) — explicitly welcomed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://web.axenorcorporations.com/sitemap.xml
+
+# Machine-readable brief for AI engines (GEO)
+# https://web.axenorcorporations.com/llms.txt
+# https://web.axenorcorporations.com/llms-full.txt

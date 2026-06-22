@@ -1,0 +1,134 @@
+# Axenor Corporation S.A.S: referencia completa / full reference
+
+> Firma de soluciones tecnológicas integrales por un equipo de ingeniería con sede en Bogotá, Colombia, con el modelo Forward Deployed. / A firm for integral technology solutions by an engineering team based in Bogotá, Colombia, using the Forward Deployed model.
+
+Axenor Corporation S.A.S es una empresa colombiana con sede en Bogotá / is a Colombian company based in Bogotá. No afiliada a otras entidades de nombre similar / Not affiliated with other entities of a similar name.
+Sitio / Site: https://web.axenorcorporations.com
+Contacto / Contact: contact@axenorcorporations.com · +57 321 874 6238 · https://www.linkedin.com/company/axenorcorporations/
+Bogotá, Colombia · horario del Este / U.S. Eastern Time (ET).
+
+===================== ESPAÑOL =====================
+
+## Resumen
+Combinamos experiencia, visión y tecnología para construir el futuro digital de nuestros clientes. Ofrecemos soluciones tecnológicas integrales y nos integramos dentro de la operación del cliente para responder por un resultado medible.
+
+## Capacidades
+### Inteligencia Artificial
+Llevamos la IA de piloto a producción, con métricas de ROI y no una demostración. La IA no fracasa por la tecnología, sino en la implementación. Diseñamos, integramos y operamos soluciones de IA embebidas en el flujo de trabajo real, medidas contra un objetivo de negocio definido de antemano.
+Stack: Python, LLMs, RAG, MLOps, Agentes.
+
+### Ciberseguridad
+Protección integral de activos digitales mediante gestión de vulnerabilidades, monitoreo continuo y respuesta ante incidentes. La seguridad no es un producto que se instala: es una práctica que se opera.
+Stack: SOC, SIEM, Pentesting, Hardening, Zero Trust.
+
+### Infraestructura
+Diseño, implementación y administración de infraestructura tecnológica de alta disponibilidad, on-premise e híbrida. La operación del negocio descansa sobre la infraestructura; la administramos para que la disponibilidad sea la norma, no la excepción.
+Stack: Redes, Virtualización, Alta disponibilidad, Backup, DRP.
+
+### Cloud
+Arquitectura, migración y optimización de cargas de trabajo en entornos de nube pública, privada e híbrida. La nube no es un destino: es un modelo operativo.
+Stack: AWS, Azure, IaC, CI/CD, FinOps.
+
+### Servicios críticos
+Operación y soporte de sistemas de misión crítica con continuidad de negocio y cumplimiento de acuerdos de nivel de servicio (SLA). Hay sistemas que no pueden detenerse; los operamos con monitoreo permanente y SLA que se miden y se cumplen.
+Stack: SLA, Monitoreo, Continuidad, Soporte, ITSM.
+
+### Solución de software
+Desarrollo de software a la medida bajo estándares de calidad, escalabilidad y mantenibilidad. Construimos software que encaja exactamente en tu operación, con propiedad end-to-end del primer boceto a producción.
+Stack: Web, Móvil, APIs, Integraciones, QA.
+
+## Cómo trabajamos
+Nos embebemos en tu contexto (tu stack, tus datos, tus restricciones) y somos dueños del problema hasta que produce un resultado medible. Principios: contexto antes que código; propiedad end-to-end; experiencia, no manos supervisadas.
+Proceso (4 fases): 01 Onboarding, nos embebemos en tu equipo y tu stack; 02 Discovery, inmersión en el contexto y los datos reales; 03 Delivery, construcción bajo restricciones reales iterando en producción; 04 Medición, cerramos sobre una métrica de negocio acordada de antemano, monitoreada en vivo.
+Reducción de riesgo: visibilidad continua, hitos cortos, entregables medibles y time-to-value antes del cierre del proyecto.
+
+## Nosotros
+Misión: desarrollar soluciones tecnológicas de alta calidad mediante servicios de software, consultoría y soporte técnico, fortaleciendo la transformación digital a nivel nacional e internacional.
+Visión: consolidarnos en los próximos 5 años como líderes en innovación tecnológica, reconocidos por la excelencia en soluciones de software, infraestructura y servicios integrales.
+Principios: dueños del resultado; la prueba antes que el claim; profundidad sobre volumen; transparencia técnica.
+Equipo: Nicolas Ardila Barrera (CEO), Tomas Alberto Rodriguez Peña (Director de Tecnología y Seguridad), Martin Gonzales (Asesor y Director Jurídico).
+
+## Glosario
+- Forward Deployed Engineer (FDE): Ingeniero de élite que se embebe dentro del negocio del cliente y es dueño de un problema de principio a fin, en lugar de escribir código a distancia.
+- Aumento de personal (staff augmentation): Modelo en el que un proveedor aporta «manos» que trabajan bajo tu dirección; tú sigues siendo dueño del problema y del riesgo.
+- Nearshore: Colaboración con un equipo en un país cercano y de huso horario compatible, lo que permite trabajo en tiempo real frente al desfase del offshore lejano.
+- De piloto a producción: El salto desde una prueba de concepto que funciona en un entorno controlado hasta un sistema fiable, medible y mantenible en el negocio real.
+- RAG: Técnica que conecta un modelo de lenguaje a tus propias fuentes para responder con datos recuperados (con citación) en vez de solo con su memoria de entrenamiento.
+- MLOps: Prácticas para versionar, desplegar, monitorear y reentrenar modelos en producción de forma reproducible.
+- Agentes de IA: Sistemas de IA que ejecutan tareas de varios pasos de forma autónoma; en producción exigen barandas, trazabilidad y tareas acotadas.
+- Zero Trust: Modelo de seguridad que no confía por defecto en ningún usuario, dispositivo o red y verifica cada acceso de forma explícita y continua.
+- Pentesting: Ejercicio controlado en el que especialistas atacan tus sistemas, con consentimiento, para encontrar vulnerabilidades reales antes que un atacante.
+- Hardening: Reducir la superficie de ataque de un sistema: cerrar puertos y servicios innecesarios y configurar de forma segura por defecto.
+- SIEM: Plataforma que centraliza y correlaciona los registros de toda la infraestructura para detectar y alertar sobre actividad sospechosa en tiempo casi real.
+- SOC: Función que monitorea, detecta y responde a incidentes de seguridad de forma continua, las 24 horas.
+- IaC (infraestructura como código): Definir y aprovisionar la infraestructura mediante archivos de código versionados, en lugar de configurarla a mano.
+- CI/CD: Automatización del camino del código a producción: cada cambio se prueba y se despliega de forma frecuente y confiable.
+- FinOps: Disciplina que lleva responsabilidad financiera al gasto en la nube, con visibilidad de costos en tiempo real y optimización.
+- Alta disponibilidad (HA): Diseño de un sistema para que siga operando pese a fallos, mediante redundancia y conmutación automática.
+- DRP (plan de recuperación ante desastres): Procedimientos documentados para restaurar sistemas y datos tras un incidente grave, con metas de RTO y RPO.
+- Patrón de estrangulamiento (strangler): Modernizar un sistema heredado de forma gradual, reemplazándolo sin una reescritura de golpe.
+- SLA (acuerdo de nivel de servicio): Compromiso medible sobre el nivel de servicio, con métricas y consecuencias definidas.
+- Observabilidad: Capacidad de entender el estado interno de un sistema desde sus salidas (métricas, registros y trazas) para diagnosticar problemas.
+
+===================== ENGLISH =====================
+
+## Summary
+We combine experience, vision and technology to build our clients' digital future. We deliver integral technology solutions and embed inside the client's operation to answer for a measurable result.
+
+## Capabilities
+### Artificial Intelligence
+We take AI from pilot to production, with ROI metrics, not a demo. AI doesn't fail because of technology; it fails in implementation. We design, integrate and operate AI solutions embedded in the real workflow, measured against a business objective defined upfront.
+Stack: Python, LLMs, RAG, MLOps, Agents.
+
+### Cybersecurity
+Comprehensive protection of digital assets through vulnerability management, continuous monitoring and incident response. Security is not a product you install: it is a practice you operate.
+Stack: SOC, SIEM, Pentesting, Hardening, Zero Trust.
+
+### Infrastructure
+Design, implementation and management of high-availability technology infrastructure, on-premise and hybrid. Business operations rest on infrastructure; we manage it so availability is the norm, not the exception.
+Stack: Networking, Virtualization, High availability, Backup, DRP.
+
+### Cloud
+Architecture, migration and optimization of workloads across public, private and hybrid cloud environments. The cloud is not a destination: it is an operating model.
+Stack: AWS, Azure, IaC, CI/CD, FinOps.
+
+### Critical services
+Operation and support of mission-critical systems with business continuity and service level agreement (SLA) compliance. Some systems cannot stop; we operate them with permanent monitoring and SLAs that are measured and met.
+Stack: SLA, Monitoring, Continuity, Support, ITSM.
+
+### Software solutions
+Custom software development under quality, scalability and maintainability standards. We build software that fits your operation exactly, with end-to-end ownership from first sketch to production.
+Stack: Web, Mobile, APIs, Integrations, QA.
+
+## How we work
+We embed in your context (your stack, your data, your constraints) and own the problem until it produces a measurable result. Principles: context before code; end-to-end ownership; seniority, not supervised hands.
+Process (4 phases): 01 Onboarding, we embed in your team and stack; 02 Discovery, immersion in real context and data; 03 Delivery, building under real constraints iterating in production; 04 Measurement, we close on a business metric agreed upfront, monitored live.
+Risk reduction: continuous visibility, short milestones, measurable deliverables and time-to-value before project close.
+
+## About
+Mission: to develop high-quality technology solutions through software services, consulting and technical support, strengthening digital transformation nationally and internationally.
+Vision: to consolidate within the next 5 years as leaders in technology innovation, recognized for excellence in software, infrastructure and integral services.
+Principles: owners of the result; proof before the claim; depth over volume; technical transparency.
+Team: Nicolas Ardila Barrera (CEO), Tomas Alberto Rodriguez Peña (Director of Technology and Security), Martin Gonzales (Legal Counsel and Director).
+
+## Glossary
+- Forward Deployed Engineer (FDE): An elite engineer who embeds inside the client's business and owns a problem end to end, rather than writing code at a distance.
+- Staff augmentation: A model where a vendor supplies "hands" that work under your direction; you still own the problem and the risk.
+- Nearshore: Collaboration with a team in a nearby, time-zone-compatible country, enabling real-time work versus the lag of distant offshore.
+- Pilot to production: The leap from a proof of concept in a controlled setting to a system that runs reliably, measurably and maintainably in the real business.
+- RAG: A technique that connects a language model to your own sources so it answers with retrieved data (with citations) instead of only its training memory.
+- MLOps: Practices to version, deploy, monitor and retrain models in production reproducibly.
+- AI agents: AI systems that carry out multi-step tasks autonomously; in production they require guardrails, traceability and scoped tasks.
+- Zero Trust: A security model that trusts no user, device or network by default and verifies every access explicitly and continuously.
+- Penetration testing (pentesting): A controlled exercise in which specialists attack your systems, with consent, to find real vulnerabilities before an attacker does.
+- Hardening: Reducing a system's attack surface: closing unnecessary ports and services and configuring securely by default.
+- SIEM: A platform that centralizes and correlates logs from across the infrastructure to detect and alert on suspicious activity in near real time.
+- SOC: The function that continuously monitors, detects and responds to security incidents, around the clock.
+- IaC (Infrastructure as Code): Defining and provisioning infrastructure through versioned code files instead of configuring it by hand.
+- CI/CD: Automation of the path from code to production: every change is tested and deployed frequently and reliably.
+- FinOps: A discipline that brings financial accountability to cloud spend, with real-time cost visibility and optimization.
+- High availability (HA): Designing a system to keep running despite failures, through redundancy and automatic failover.
+- DRP (Disaster Recovery Plan): Documented procedures to restore systems and data after a major incident, with RTO and RPO targets.
+- Strangler pattern: Modernizing a legacy system gradually, replacing it without a single big rewrite.
+- SLA (Service Level Agreement): A measurable commitment on the level of service, with defined metrics and consequences.
+- Observability: The ability to understand a system's internal state from its outputs (metrics, logs and traces) to diagnose problems.

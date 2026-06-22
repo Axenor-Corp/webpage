@@ -44,6 +44,11 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/glosario" className="text-sm text-white/70 transition-colors hover:text-accent">
+                {t('footer.glossary')}
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -68,9 +73,19 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 px-6 pt-6">
-        <p className="text-sm text-white/50">
-          © {year} Axenor Corporation S.A.S · {t('footer.rights')}
-        </p>
+        <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+          <p className="text-sm text-white/50">
+            © {year} Axenor Corporation S.A.S · {t('footer.rights')}
+          </p>
+          <nav className="flex gap-5 text-sm text-white/50" aria-label={t('footer.legalLabel')}>
+            <Link to="/legal/privacidad" className="transition-colors hover:text-accent">
+              {t('footer.privacy')}
+            </Link>
+            <Link to="/legal/terminos" className="transition-colors hover:text-accent">
+              {t('footer.terms')}
+            </Link>
+          </nav>
+        </div>
       </div>
     </footer>
   );

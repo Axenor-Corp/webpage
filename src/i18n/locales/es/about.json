@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Nosotros" },
+  "meta": {
+    "title": "Nosotros",
+    "description": "Quiénes somos: una firma de ingeniería con sede en Bogotá que despliega profesionales senior dentro del negocio del cliente y responde por el resultado."
+  },
   "header": {
     "title": "Nosotros",
     "subtitle": "Una firma construida sobre un estándar."

@@ -7,10 +7,8 @@ import CTABanner from '../components/ui/CTABanner';
 import { SERVICE_ICONS } from '../components/ui/ServiceIcons';
 import { SERVICE_ANCHORS, SERVICE_KEYS } from '../data/services';
 import { useReveal } from '../hooks/useReveal';
-import { usePageTitle } from '../hooks/usePageTitle';
 
 export default function Home() {
-  usePageTitle('home');
   const { t } = useTranslation(['home', 'services']);
   const services = useReveal<HTMLDivElement>(0.1);
   const how = useReveal<HTMLDivElement>(0.1);

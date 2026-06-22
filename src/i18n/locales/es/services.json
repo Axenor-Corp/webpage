@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Servicios" },
+  "meta": {
+    "title": "Servicios",
+    "description": "Seis capacidades, una sola exigencia: resultados en producción. IA, ciberseguridad, infraestructura, cloud, servicios críticos y software a la medida."
+  },
   "header": {
     "title": "Servicios",
     "subtitle": "Seis capacidades. Una sola exigencia: resultados en producción.",

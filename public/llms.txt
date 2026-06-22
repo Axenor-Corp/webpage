@@ -1,0 +1,38 @@
+# Axenor Corporation S.A.S (AXENOR)
+
+> Firma de soluciones tecnológicas integrales (inteligencia artificial, ciberseguridad, infraestructura, cloud, servicios críticos y software a la medida) con sede en Bogotá, Colombia. Nos embebemos dentro del negocio del cliente (modelo Forward Deployed) y respondemos por una métrica de negocio acordada, no por horas facturadas. Mercados: Colombia, Estados Unidos y Latinoamérica.
+
+> A firm for integral technology solutions (artificial intelligence, cybersecurity, infrastructure, cloud, critical services and custom software) based in Bogotá, Colombia. We embed inside the client's business (Forward Deployed model) and answer for an agreed business metric, not for billed hours. Markets: Colombia, the United States and Latin America.
+
+Axenor Corporation S.A.S es una empresa colombiana con sede en Bogotá / is a Colombian company based in Bogotá. No está afiliada a otras entidades de nombre similar / Not affiliated with other entities of a similar name.
+
+Sitio oficial / Official site: https://web.axenorcorporations.com
+
+## Capacidades / Capabilities
+- Inteligencia Artificial / Artificial Intelligence: Llevamos la IA de piloto a producción, con métricas de ROI y no una demostración. / We take AI from pilot to production, with ROI metrics, not a demo.
+- Ciberseguridad / Cybersecurity: Protección integral de activos digitales mediante gestión de vulnerabilidades, monitoreo continuo y respuesta ante incidentes. / Comprehensive protection of digital assets through vulnerability management, continuous monitoring and incident response.
+- Infraestructura / Infrastructure: Diseño, implementación y administración de infraestructura de alta disponibilidad, on-premise e híbrida. / Design, implementation and management of high-availability infrastructure, on-premise and hybrid.
+- Cloud: Arquitectura, migración y optimización de cargas en nube pública, privada e híbrida. / Architecture, migration and optimization of workloads across public, private and hybrid cloud.
+- Servicios críticos / Critical services: Operación y soporte de sistemas de misión crítica con continuidad de negocio y cumplimiento de SLA. / Operation and support of mission-critical systems with business continuity and SLA compliance.
+- Solución de software / Software solutions: Desarrollo de software a la medida bajo estándares de calidad, escalabilidad y mantenibilidad. / Custom software development under quality, scalability and maintainability standards.
+
+## Cómo trabajamos / How we work
+Modelo Forward Deployed: nos embebemos en el contexto, el stack y los datos del cliente y somos dueños del problema hasta un resultado medible. Cuatro fases: Onboarding, Discovery, Delivery y Medición, cada una con un cierre verificable. / Forward Deployed model: we embed in the client's context, stack and data and own the problem until a measurable result. Four phases: Onboarding, Discovery, Delivery and Measurement, each with a verifiable close.
+
+## Páginas / Pages
+- Inicio / Home: https://web.axenorcorporations.com/
+- Servicios / Services: https://web.axenorcorporations.com/servicios
+- Cómo trabajamos / How we work: https://web.axenorcorporations.com/como-trabajamos
+- Nosotros / About: https://web.axenorcorporations.com/nosotros
+- Glosario / Glossary: https://web.axenorcorporations.com/glosario
+- Contacto / Contact: https://web.axenorcorporations.com/contacto
+- Aplicar / Apply: https://web.axenorcorporations.com/aplicar
+
+## Contacto / Contact
+- Email: contact@axenorcorporations.com
+- LinkedIn: https://www.linkedin.com/company/axenorcorporations/
+- Tel / WhatsApp: +57 321 874 6238
+- Ubicación / Location: Bogotá, Colombia (horario del Este / U.S. Eastern Time)
+
+## Texto completo / Full text
+- https://web.axenorcorporations.com/llms-full.txt

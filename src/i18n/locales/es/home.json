@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Inicio" },
+  "meta": {
+    "title": "Axenor Corporation S.A.S: Soluciones Tecnológicas Integrales",
+    "description": "Firma de soluciones tecnológicas integrales: IA, ciberseguridad, infraestructura, cloud, servicios críticos y software a la medida. Ingeniería desde Bogotá, Colombia."
+  },
   "hero": {
     "kicker": "Axenor Corporation S.A.S",
     "title": "Combinamos experiencia, visión y tecnología para construir el futuro digital de nuestros clientes.",

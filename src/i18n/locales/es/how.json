@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Cómo trabajamos" },
+  "meta": {
+    "title": "Cómo trabajamos",
+    "description": "Modelo Forward Deployed: nos integramos en tu operación y respondemos por una métrica acordada, no por horas. Cuatro fases con cierre verificable."
+  },
   "header": {
     "title": "Cómo trabajamos",
     "subtitle": "Integrados dentro de tu negocio.",

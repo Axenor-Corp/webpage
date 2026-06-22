@@ -1,8 +1,11 @@
 import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from '../ui/Navbar';
 import Footer from '../ui/Footer';
 import ScrollManager from './ScrollManager';
+import RouteSeo from '../seo/RouteSeo';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 
@@ -27,11 +30,16 @@ export default function Layout() {
         <Navbar />
         <main className="flex-1">
           <Suspense fallback={<div className="min-h-screen" />}>
+            <RouteSeo />
             <Outlet />
           </Suspense>
         </main>
         <Footer />
       </div>
+
+      {/* Medición de Vercel (se cargan solo en producción) */}
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }

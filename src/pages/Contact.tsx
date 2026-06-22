@@ -3,7 +3,6 @@ import PageHeader from '../components/ui/PageHeader';
 import CTABanner from '../components/ui/CTABanner';
 import { CONTACT } from '../data/company';
 import { useReveal } from '../hooks/useReveal';
-import { usePageTitle } from '../hooks/usePageTitle';
 
 function MailIcon({ className }: { className?: string }) {
   return (
@@ -32,7 +31,6 @@ function PinIcon({ className }: { className?: string }) {
 }
 
 export default function Contact() {
-  usePageTitle('contact');
   const { t } = useTranslation('contact');
   const { ref, visible } = useReveal<HTMLDivElement>(0.1);
 

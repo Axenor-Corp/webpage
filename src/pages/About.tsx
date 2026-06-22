@@ -4,12 +4,10 @@ import SectionHeading from '../components/ui/SectionHeading';
 import CTABanner from '../components/ui/CTABanner';
 import Team from '../components/ui/Team';
 import { useReveal } from '../hooks/useReveal';
-import { usePageTitle } from '../hooks/usePageTitle';
 
 const PRINCIPLE_KEYS = ['ownership', 'proof', 'depth', 'transparency'] as const;
 
 export default function About() {
-  usePageTitle('about');
   const { t } = useTranslation('about');
   const cards = useReveal<HTMLDivElement>(0.1);
   const principles = useReveal<HTMLDivElement>(0.1);
