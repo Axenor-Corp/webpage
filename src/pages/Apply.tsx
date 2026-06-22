@@ -4,13 +4,15 @@ import { useTranslation } from 'react-i18next';
 import PageHeader from '../components/ui/PageHeader';
 import SectionHeading from '../components/ui/SectionHeading';
 import { CONTACT } from '../data/company';
-import { supabase } from '../lib/supabase';
 import { useReveal } from '../hooks/useReveal';
 import { usePageTitle } from '../hooks/usePageTitle';
 
 const STEP_KEYS = ['review', 'conversation', 'proposal'] as const;
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
+
+/** Endpoint de la Cloudflare Pages Function que envía el correo por Resend. */
+const APPLY_ENDPOINT = '/api/apply';
 
 const inputClass =
   'w-full rounded-md border border-carbon/20 bg-white px-4 py-3 text-carbon placeholder:text-carbon-soft/40 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30';
@@ -20,7 +22,15 @@ export default function Apply() {
   const { t, i18n } = useTranslation('apply');
   const steps = useReveal<HTMLDivElement>(0.1);
 
-  const [form, setForm] = useState({ name: '', email: '', company: '', challenge: '' });
+  // `website` es un campo trampa (honeypot): invisible para humanos; si llega
+  // con valor, lo envía un bot y el servidor lo descarta.
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    company: '',
+    challenge: '',
+    website: '',
+  });
   const [status, setStatus] = useState<Status>('idle');
 
   const update = (field: keyof typeof form) => (value: string) =>
@@ -32,40 +42,32 @@ export default function Apply() {
     if (!form.name.trim() || !form.email.trim() || !form.challenge.trim()) return;
 
     setStatus('sending');
-    const payload = {
-      name: form.name.trim(),
-      email: form.email.trim(),
-      company: form.company.trim() || null,
-      challenge: form.challenge.trim(),
-      locale: (i18n.resolvedLanguage === 'en' ? 'en' : 'es') as 'es' | 'en',
-    };
+    try {
+      // Se envía a la Cloudflare Pages Function, que manda el correo por Resend.
+      // Viaja por HTTPS (cifrado en tránsito); no se guarda en ninguna BD.
+      const res = await fetch(APPLY_ENDPOINT, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          company: form.company.trim(),
+          challenge: form.challenge.trim(),
+          locale: i18n.resolvedLanguage === 'en' ? 'en' : 'es',
+          website: form.website, // honeypot
+        }),
+      });
 
-    // 1) Registro confiable y permanente en Supabase (fuente de verdad).
-    //    INSERT ciego: sin .select() => respeta el RLS (anon solo inserta).
-    const { error } = await supabase.from('applications').insert(payload);
-    if (error) {
-      // El detalle real va a consola; al usuario un mensaje genérico.
-      console.error('Error al guardar la aplicación:', error.message);
+      if (!res.ok) {
+        setStatus('error');
+        return;
+      }
+
+      setStatus('sent');
+      setForm({ name: '', email: '', company: '', challenge: '', website: '' });
+    } catch {
       setStatus('error');
-      return;
     }
-
-    setStatus('sent');
-    setForm({ name: '', email: '', company: '', challenge: '' });
-
-    // 2) Además, abre un borrador de correo a contact@ con los datos (mejor
-    //    esfuerzo: depende de que el visitante tenga cliente de correo).
-    const subject = t('form.emailSubject', { name: payload.name });
-    const body = [
-      `${t('form.name')}: ${payload.name}`,
-      `${t('form.email')}: ${payload.email}`,
-      payload.company ? `${t('form.company')}: ${payload.company}` : null,
-      '',
-      payload.challenge,
-    ]
-      .filter((line): line is string => line !== null)
-      .join('\r\n');
-    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -79,6 +81,18 @@ export default function Apply() {
             className="rounded-xl border border-carbon/10 bg-surface p-8 shadow-sm md:p-10"
           >
             <div className="grid gap-6">
+              {/* Honeypot anti-bots: oculto a usuarios reales (off-screen), los
+                  bots tienden a rellenarlo y el servidor descarta esos envíos. */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                value={form.website}
+                onChange={(e) => update('website')(e.target.value)}
+              />
               <div>
                 <label htmlFor="apply-name" className="mb-2 block text-sm font-semibold text-carbon">
                   {t('form.name')} <span className="text-accent">*</span>

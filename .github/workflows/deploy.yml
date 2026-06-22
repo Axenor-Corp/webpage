@@ -70,20 +70,15 @@ jobs:
         run: npm run lint
 
   # ===========================================================================
-  # DESPLIEGUE — solo tras pasar las puertas, solo en push a master, con
-  # aprobación del Environment 'production'.
+  # DESPLIEGUE — a Cloudflare Pages, solo tras pasar las puertas, solo en push a
+  # master, con aprobación del Environment 'production'.
   # ===========================================================================
   deploy:
-    name: Deploy to Vercel
+    name: Deploy to Cloudflare Pages
     needs: security-gates
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment: production # exige reviewers/protección configurados en GitHub
-    # IDs del proyecto Vercel: en CI no existe .vercel/ (está en .gitignore),
-    # así que se inyectan por entorno para que `vercel pull` enlace sin interacción.
-    env:
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -94,22 +89,24 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install Vercel CLI
-        run: npm i -g vercel@latest
+      - name: Install dependencies
+        run: npm ci
 
-      # Token de acceso de alcance LIMITADO (scoped al proyecto/equipo).
-      # Las variables VITE_SUPABASE_* viven SOLO en Vercel (single source of
-      # truth) y se traen con 'vercel pull'; no se duplican en GitHub Secrets.
-      - name: Vercel · pull (env de producción)
-        run: vercel pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
+      - name: Build
+        run: npm run build
 
-      - name: Vercel · build (prebuilt)
-        run: vercel build --prod --token="${{ secrets.VERCEL_TOKEN }}"
-
-      - name: Vercel · deploy
-        run: vercel deploy --prebuilt --prod --token="${{ secrets.VERCEL_TOKEN }}"
+      # Sube dist/ + functions/ a Cloudflare Pages. Los secrets de la Function
+      # (RESEND_API_KEY, etc.) NO van aquí: viven en Cloudflare -> Pages -> Settings.
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=axenor-webpage --branch=master
 
     # Secrets requeridos (GitHub → Settings → Secrets and variables → Actions):
-    #   VERCEL_TOKEN       -> token de acceso Vercel con alcance al proyecto
-    #   VERCEL_ORG_ID      -> de .vercel/project.json tras `vercel link`
-    #   VERCEL_PROJECT_ID  -> de .vercel/project.json tras `vercel link`
+    #   CLOUDFLARE_API_TOKEN   -> token con permiso "Cloudflare Pages: Edit"
+    #   CLOUDFLARE_ACCOUNT_ID  -> Cloudflare dashboard (barra lateral / URL)
+    #
+    # Alternativa más simple: conectar el repo a Cloudflare Pages (Git nativo)
+    # para que construya solo en cada push; en ese caso este job 'deploy' sobra.

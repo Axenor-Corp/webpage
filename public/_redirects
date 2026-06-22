@@ -1,0 +1,3 @@
+# SPA fallback: las rutas de React Router se sirven desde index.html (200, sin
+# cambiar la URL). Las Pages Functions (/api/*) se resuelven antes que esta regla.
+/*    /index.html   200

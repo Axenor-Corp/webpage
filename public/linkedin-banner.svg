@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1128 191" role="img" aria-label="Banner de Axenor Corporation S.A.S">
+  <rect width="1128" height="191" fill="#2D2D2D" />
+
+  <!-- Red de nodos sutil (mismo motivo del sitio 3D) -->
+  <g stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1">
+    <line x1="90" y1="50" x2="150" y2="110" />
+    <line x1="150" y1="110" x2="70" y2="140" />
+    <line x1="210" y1="70" x2="150" y2="110" />
+    <line x1="1040" y1="60" x2="980" y2="120" />
+    <line x1="980" y1="120" x2="1080" y2="140" />
+    <line x1="920" y1="40" x2="1040" y2="60" />
+    <line x1="1010" y1="30" x2="920" y2="40" />
+    <line x1="870" y1="150" x2="980" y2="120" />
+  </g>
+  <g fill="#F27429">
+    <circle cx="90" cy="50" r="3" opacity="0.55" />
+    <circle cx="70" cy="140" r="2" opacity="0.4" />
+    <circle cx="1040" cy="60" r="3" opacity="0.55" />
+    <circle cx="1080" cy="140" r="2" opacity="0.4" />
+    <circle cx="870" cy="150" r="2" opacity="0.35" />
+    <circle cx="820" cy="60" r="2" opacity="0.3" />
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="150" cy="110" r="2.5" opacity="0.3" />
+    <circle cx="210" cy="70" r="2.5" opacity="0.25" />
+    <circle cx="980" cy="120" r="2.5" opacity="0.3" />
+    <circle cx="920" cy="40" r="2.5" opacity="0.25" />
+    <circle cx="1010" cy="30" r="2" opacity="0.25" />
+    <circle cx="300" cy="150" r="2" opacity="0.2" />
+    <circle cx="470" cy="40" r="2" opacity="0.15" />
+    <circle cx="660" cy="150" r="2" opacity="0.15" />
+  </g>
+
+  <!-- Marca: "A" geométrica naranja -->
+  <g transform="translate(524 10) scale(1.25)">
+    <path d="M32 13 L51 51 H42.5 L32 29.5 L21.5 51 H13 Z" fill="#F27429" />
+  </g>
+
+  <!-- Wordmark + tagline + datos -->
+  <text x="564" y="114" text-anchor="middle" font-family="system-ui, 'Segoe UI', Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="5" fill="#FFFFFF">AXENOR<tspan fill="#F27429">.</tspan></text>
+  <text x="564" y="145" text-anchor="middle" font-family="system-ui, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="1" fill="#FFFFFF" opacity="0.85">Construimos el futuro digital de nuestros clientes</text>
+  <text x="564" y="173" text-anchor="middle" font-family="system-ui, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="3" fill="#F27429" opacity="0.9">IA · CIBERSEGURIDAD · INFRAESTRUCTURA · CLOUD · SERVICIOS CRÍTICOS · SOFTWARE</text>
+</svg>

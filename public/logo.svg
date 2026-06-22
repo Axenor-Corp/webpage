@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 100" role="img" aria-label="AXENOR Corporation S.A.S">
+  <!-- Marca: cuadrado carbón con la "A" geométrica naranja (mismo mark del favicon) -->
+  <g transform="translate(14 14) scale(1.125)">
+    <rect width="64" height="64" rx="12" fill="#2D2D2D" />
+    <path d="M32 13 L51 51 H42.5 L32 29.5 L21.5 51 H13 Z" fill="#F27429" />
+  </g>
+  <!-- Wordmark: AXENOR con punto naranja + microtexto corporativo -->
+  <text x="104" y="56" font-family="'Segoe UI', system-ui, -apple-system, Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="5" fill="#2D2D2D">AXENOR<tspan fill="#F27429">.</tspan></text>
+  <text x="106" y="78" font-family="'Segoe UI', system-ui, -apple-system, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="4" fill="#2D2D2D" opacity="0.55">CORPORATION S.A.S</text>
+</svg>

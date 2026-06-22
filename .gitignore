@@ -10,3 +10,7 @@ dist
 !.env.example
 
 .vercel
+
+# Cloudflare Wrangler (secrets locales de la Function + caché)
+.dev.vars*
+.wrangler
