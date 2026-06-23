@@ -10,6 +10,7 @@ interface GlossaryTerm {
   body: string;
 }
 
+
 const SITE = 'https://web.axenorcorporations.com';
 
 export default function Glossary() {
