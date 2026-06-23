@@ -4,13 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import './i18n';
 import App from './App.tsx';
+import Logo from './components/ui/Logo';
 
 function Loader() {
+  // Fuera del Router: Logo sin `to` (no enlace), wordmark carbón sobre blanco.
   return (
     <div className="flex min-h-screen items-center justify-center bg-white">
-      <span className="animate-pulse text-2xl font-bold tracking-[0.3em] text-carbon">
-        AXENOR<span className="text-accent">.</span>
-      </span>
+      <Logo onDark={false} size={28} wordmarkClass="text-2xl" className="animate-pulse" />
     </div>
   );
 }

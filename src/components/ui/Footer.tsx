@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LinkedInIcon from './LinkedInIcon';
+import Logo from './Logo';
 import { APPLY_ROUTE, COMPANY_LINKEDIN, CONTACT, NAV_ROUTES } from '../../data/company';
 
 export default function Footer() {
@@ -12,12 +13,7 @@ export default function Footer() {
     <footer className="relative bg-carbon py-14 text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-3">
         <div>
-          <Link to="/" className="flex items-center gap-2.5" aria-label="AXENOR Inicio">
-            <span className="h-2 w-2 rotate-45 bg-accent" aria-hidden="true" />
-            <span className="font-bold tracking-[0.3em]">
-              AXENOR<span className="text-accent">.</span>
-            </span>
-          </Link>
+          <Logo to="/" size={20} wordmarkClass="text-base" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
             {t('footer.tagline')}
           </p>
