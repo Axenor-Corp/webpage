@@ -5,6 +5,7 @@ import './index.css';
 import './i18n';
 import App from './App.tsx';
 import Logo from './components/ui/Logo';
+import ErrorBoundary from './components/ui/ErrorBoundary';
 
 function Loader() {
   // Fuera del Router: Logo sin `to` (no enlace), wordmark carbón sobre blanco.
@@ -17,11 +18,13 @@ function Loader() {
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* Suspense cubre la carga diferida (lazy) de los recursos de i18next */}
-    <Suspense fallback={<Loader />}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <ErrorBoundary>
+        {/* Suspense cubre la carga diferida (lazy) de i18next y de las rutas. */}
+        <Suspense fallback={<Loader />}>
+          <App />
+        </Suspense>
+      </ErrorBoundary>
+    </BrowserRouter>
   </StrictMode>,
 );

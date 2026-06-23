@@ -5,8 +5,11 @@
     "comoTrabajamos": "How we work",
     "nosotros": "About Us",
     "contacto": "Contact",
-    "aplicar": "Apply"
+    "aplicar": "Apply",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
+  "skipToContent": "Skip to content",
   "cta": {
     "title": "Do you have a challenge that demands comprehensive technology solutions?",
     "text": "We review every application personally and respond within 3 business days.",

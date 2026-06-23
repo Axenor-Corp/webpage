@@ -13,8 +13,10 @@ export default function LanguageSwitcher() {
           {index > 0 && <span className="text-white/30">/</span>}
           <button
             type="button"
+            lang={lng}
             onClick={() => i18n.changeLanguage(lng)}
             aria-pressed={current === lng}
+            aria-label={lng === 'es' ? 'Español' : 'English'}
             className={`text-sm uppercase tracking-wider transition-colors hover:text-accent ${
               current === lng ? 'font-semibold text-accent' : 'text-white/70'
             }`}

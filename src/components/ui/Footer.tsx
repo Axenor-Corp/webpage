@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
 
         <nav aria-label={t('footer.navTitle')}>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/40">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60">
             {t('footer.navTitle')}
           </h3>
           <ul className="mt-4 space-y-2.5">
@@ -49,7 +49,7 @@ export default function Footer() {
         </nav>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/40">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-white/60">
             {t('footer.contactTitle')}
           </h3>
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">

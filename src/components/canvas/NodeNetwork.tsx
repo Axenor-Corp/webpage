@@ -63,11 +63,20 @@ function buildNetwork(): NetworkData {
   );
   pointsGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
+  // Posiciones iniciales de las líneas desde las posiciones base, para que se
+  // vean correctas aun si el rebuild por-frame está pausado (reduced-motion).
+  const linePositions = new Float32Array(pairs.length * 6);
+  for (let k = 0; k < pairs.length; k++) {
+    const [i, j] = pairs[k];
+    linePositions[k * 6] = basePositions[i * 3];
+    linePositions[k * 6 + 1] = basePositions[i * 3 + 1];
+    linePositions[k * 6 + 2] = basePositions[i * 3 + 2];
+    linePositions[k * 6 + 3] = basePositions[j * 3];
+    linePositions[k * 6 + 4] = basePositions[j * 3 + 1];
+    linePositions[k * 6 + 5] = basePositions[j * 3 + 2];
+  }
   const linesGeometry = new THREE.BufferGeometry();
-  linesGeometry.setAttribute(
-    'position',
-    new THREE.BufferAttribute(new Float32Array(pairs.length * 6), 3),
-  );
+  linesGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
 
   return { basePositions, phases, speeds, pairs, pointsGeometry, linesGeometry };
 }
@@ -100,28 +109,38 @@ export default function NodeNetwork() {
   useFrame((state, delta) => {
     const group = groupRef.current;
     if (!group) return;
+    // Pestaña en segundo plano: no gastar CPU/GPU.
+    if (typeof document !== 'undefined' && document.hidden) return;
 
     const { heroProgress, reducedMotion } = useAppStore.getState();
+
+    // Fade + desplazamiento al salir del Hero (barato; se hace siempre).
+    group.position.y = heroProgress * 1.5;
+    const fade = Math.max(1 - heroProgress * 1.15, 0);
+    if (pointsMatRef.current) pointsMatRef.current.opacity = 0.85 * fade;
+    if (linesMatRef.current) linesMatRef.current.opacity = 0.16 * fade;
+
+    // Fuera del Hero (invisible) o reduced-motion: saltar todo el trabajo pesado
+    // por-frame. Bajo reduced-motion las líneas quedan en su posición base (estáticas).
+    if (fade <= 0.001 || reducedMotion) return;
+
     const { basePositions, phases, speeds, pairs, pointsGeometry, linesGeometry } =
       network;
     const time = state.clock.elapsedTime;
 
     const posAttr = pointsGeometry.getAttribute('position') as THREE.BufferAttribute;
     const positions = posAttr.array as Float32Array;
-
-    if (!reducedMotion) {
-      for (let i = 0; i < NODE_COUNT; i++) {
-        const s = speeds[i];
-        positions[i * 3] =
-          basePositions[i * 3] + Math.sin(time * s + phases[i * 3]) * DRIFT_AMP;
-        positions[i * 3 + 1] =
-          basePositions[i * 3 + 1] + Math.cos(time * s + phases[i * 3 + 1]) * DRIFT_AMP;
-        positions[i * 3 + 2] =
-          basePositions[i * 3 + 2] +
-          Math.sin(time * s * 0.8 + phases[i * 3 + 2]) * DRIFT_AMP;
-      }
-      posAttr.needsUpdate = true;
+    for (let i = 0; i < NODE_COUNT; i++) {
+      const s = speeds[i];
+      positions[i * 3] =
+        basePositions[i * 3] + Math.sin(time * s + phases[i * 3]) * DRIFT_AMP;
+      positions[i * 3 + 1] =
+        basePositions[i * 3 + 1] + Math.cos(time * s + phases[i * 3 + 1]) * DRIFT_AMP;
+      positions[i * 3 + 2] =
+        basePositions[i * 3 + 2] +
+        Math.sin(time * s * 0.8 + phases[i * 3 + 2]) * DRIFT_AMP;
     }
+    posAttr.needsUpdate = true;
 
     const lineAttr = linesGeometry.getAttribute('position') as THREE.BufferAttribute;
     const linePositions = lineAttr.array as Float32Array;
@@ -136,18 +155,12 @@ export default function NodeNetwork() {
     }
     lineAttr.needsUpdate = true;
 
-    // Parallax sutil hacia el puntero
-    const targetRotY = reducedMotion ? 0 : pointer.current.x * 0.18;
-    const targetRotX = reducedMotion ? 0 : -pointer.current.y * 0.12;
+    // Parallax sutil hacia el puntero.
+    const targetRotY = pointer.current.x * 0.18;
+    const targetRotX = -pointer.current.y * 0.12;
     const lerp = Math.min(delta * 2.5, 1);
     group.rotation.y += (targetRotY - group.rotation.y) * lerp;
     group.rotation.x += (targetRotX - group.rotation.x) * lerp;
-
-    // Al salir del Hero la red asciende y se desvanece
-    group.position.y = heroProgress * 1.5;
-    const fade = Math.max(1 - heroProgress * 1.15, 0);
-    if (pointsMatRef.current) pointsMatRef.current.opacity = 0.85 * fade;
-    if (linesMatRef.current) linesMatRef.current.opacity = 0.16 * fade;
   });
 
   return (

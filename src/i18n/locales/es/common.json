@@ -5,8 +5,11 @@
     "comoTrabajamos": "Cómo trabajamos",
     "nosotros": "Nosotros",
     "contacto": "Contacto",
-    "aplicar": "Aplicar"
+    "aplicar": "Aplicar",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
+  "skipToContent": "Saltar al contenido",
   "cta": {
     "title": "¿Tienes un reto que exige soluciones tecnológicas integrales?",
     "text": "Revisamos cada aplicación personalmente y respondemos en un máximo de 3 días hábiles.",

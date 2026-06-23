@@ -5,6 +5,7 @@ import PageHeader from '../components/ui/PageHeader';
 import SectionHeading from '../components/ui/SectionHeading';
 import { CONTACT } from '../data/company';
 import { useReveal } from '../hooks/useReveal';
+import Turnstile, { TURNSTILE_ENABLED } from '../components/ui/Turnstile';
 
 const STEP_KEYS = ['review', 'conversation', 'proposal'] as const;
 
@@ -30,6 +31,10 @@ export default function Apply() {
     website: '',
   });
   const [status, setStatus] = useState<Status>('idle');
+  const [turnstileToken, setTurnstileToken] = useState('');
+  // Cambia en cada envío exitoso para remontar el widget Turnstile (su token es
+  // de un solo uso): permite enviar una segunda aplicación sin recargar.
+  const [turnstileKey, setTurnstileKey] = useState(0);
 
   const update = (field: keyof typeof form) => (value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -37,7 +42,26 @@ export default function Apply() {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (status === 'sending') return;
-    if (!form.name.trim() || !form.email.trim() || !form.challenge.trim()) return;
+
+    // Si un requerido está vacío o es solo espacios, enfoca el primero. (La
+    // validación nativa cubre el vacío; esto cubre además el caso solo-espacios.)
+    const firstEmpty = !form.name.trim()
+      ? 'apply-name'
+      : !form.email.trim()
+        ? 'apply-email'
+        : !form.challenge.trim()
+          ? 'apply-challenge'
+          : null;
+    if (firstEmpty) {
+      document.getElementById(firstEmpty)?.focus();
+      return;
+    }
+
+    // Captcha (solo si está activo en el build): exige token antes de enviar.
+    if (TURNSTILE_ENABLED && !turnstileToken) {
+      setStatus('error');
+      return;
+    }
 
     setStatus('sending');
     try {
@@ -53,6 +77,7 @@ export default function Apply() {
           challenge: form.challenge.trim(),
           locale: i18n.resolvedLanguage === 'en' ? 'en' : 'es',
           website: form.website, // honeypot
+          cfTurnstileResponse: turnstileToken,
         }),
       });
 
@@ -63,6 +88,8 @@ export default function Apply() {
 
       setStatus('sent');
       setForm({ name: '', email: '', company: '', challenge: '', website: '' });
+      setTurnstileToken('');
+      setTurnstileKey((k) => k + 1);
     } catch {
       setStatus('error');
     }
@@ -150,6 +177,7 @@ export default function Apply() {
                   onChange={(e) => update('challenge')(e.target.value)}
                 />
               </div>
+              <Turnstile key={turnstileKey} onToken={setTurnstileToken} />
               <button
                 type="submit"
                 disabled={status === 'sending'}
@@ -174,7 +202,7 @@ export default function Apply() {
           <p className="mt-8 text-center text-carbon-soft/70">
             <span className="font-semibold text-carbon">{t('direct.title')}</span>{' '}
             {t('direct.text')}{' '}
-            <a href={`mailto:${CONTACT.email}`} className="font-medium text-accent hover:underline">
+            <a href={`mailto:${CONTACT.email}`} className="font-medium text-accent-text hover:underline">
               {CONTACT.email}
             </a>
           </p>

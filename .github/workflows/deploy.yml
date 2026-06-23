@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0 # historial completo para el escaneo de secretos
 
@@ -45,7 +45,7 @@ jobs:
           ./gitleaks dir . --redact --exit-code 1
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
           cache: npm
@@ -66,6 +66,11 @@ jobs:
       - name: SAST · Type check
         run: npx tsc --noEmit
 
+      # La Function de Cloudflare (functions/) queda fuera de tsconfig "src";
+      # se type-checkea con su propia config para no enviar el backend sin verificar.
+      - name: SAST · Type check (functions)
+        run: npx tsc -p functions/tsconfig.json --noEmit
+
       - name: SAST · ESLint
         run: npm run lint
 
@@ -81,16 +86,16 @@ jobs:
     environment: production # exige reviewers/protección configurados en GitHub
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts # no lifecycle scripts en el job con credenciales
 
       - name: Build
         run: npm run build
@@ -98,7 +103,7 @@ jobs:
       # Sube dist/ + functions/ a Cloudflare Pages. Los secrets de la Function
       # (RESEND_API_KEY, etc.) NO van aquí: viven en Cloudflare -> Pages -> Settings.
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

@@ -43,7 +43,8 @@ export default function Navbar() {
           className="p-2 text-white md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-label="Menu"
+          aria-controls="mobile-nav"
+          aria-label={open ? t('nav.closeMenu') : t('nav.openMenu')}
         >
           <svg
             viewBox="0 0 24 24"
@@ -63,7 +64,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 px-6 pb-6 pt-3 md:hidden">
+        <div id="mobile-nav" className="border-t border-white/10 px-6 pb-6 pt-3 md:hidden">
           <ul className="flex flex-col gap-4">
             {NAV_ROUTES.map(({ path, key }) => (
               <li key={path}>

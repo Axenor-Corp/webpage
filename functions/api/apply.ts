@@ -11,6 +11,9 @@ interface Env {
   // singular o plural por comodidad.
   ALLOWED_ORIGIN?: string;
   ALLOWED_ORIGINS?: string;
+  // Anti-abuso opcional: si está definido, se exige y verifica un token de
+  // Cloudflare Turnstile. Mientras no exista, el endpoint funciona sin captcha.
+  TURNSTILE_SECRET?: string;
 }
 
 interface RequestContext {
@@ -25,7 +28,12 @@ interface ApplyBody {
   challenge?: unknown;
   locale?: unknown;
   website?: unknown; // honeypot
+  cfTurnstileResponse?: unknown; // token de Turnstile (si está habilitado)
 }
+
+// Límite de tamaño del cuerpo: el formulario más grande posible cabe de sobra en
+// 16 KB (nombre 120 + email 160 + empresa 160 + reto 5000 + overhead JSON).
+const MAX_BODY_BYTES = 16 * 1024;
 
 const json = (data: unknown, status: number): Response =>
   new Response(JSON.stringify(data), {
@@ -37,6 +45,11 @@ const asString = (v: unknown): string => (typeof v === 'string' ? v : '');
 const clamp = (v: string, max: number): string => v.trim().slice(0, max);
 const isEmail = (v: string): boolean => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
+// Colapsa saltos de línea y control chars a un espacio: campos de una sola línea
+// (asunto/nombre) no pueden traer caracteres de control aunque Resend ya serializa
+// por JSON (defensa en profundidad, CWE-93).
+const oneLine = (v: string): string => v.replace(/\p{Cc}/gu, ' ').trim();
+
 const escapeHtml = (v: string): string =>
   v.replace(/[&<>"']/g, (c) =>
     c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : c === '"' ? '&quot;' : '&#39;',
@@ -45,19 +58,27 @@ const escapeHtml = (v: string): string =>
 export const onRequestPost = async (context: RequestContext): Promise<Response> => {
   const { request, env } = context;
 
-  // Verificación estricta de origen (CWE-346): Rechaza POSTs si no hay Origin o no coincide.
-  const allowedRaw = env.ALLOWED_ORIGIN ?? env.ALLOWED_ORIGINS;
-  if (allowedRaw) {
-    const allowed = allowedRaw
-      .split(',')
-      .map((o) => o.trim())
-      .filter(Boolean);
-    const origin = request.headers.get('origin');
-    const isAllowed = origin && allowed.includes(origin);
+  // 1) Verificación estricta de origen (CWE-346), FAIL-CLOSED: si la allow-list no
+  //    está configurada, se rechaza con 500 en vez de aceptar cualquier origen.
+  const allowed = (env.ALLOWED_ORIGIN ?? env.ALLOWED_ORIGINS ?? '')
+    .split(',')
+    .map((o) => o.trim())
+    .filter(Boolean);
+  if (allowed.length === 0) {
+    return json({ error: 'not_configured' }, 500);
+  }
+  const origin = request.headers.get('origin');
+  if (!origin || !allowed.includes(origin)) {
+    return json({ error: 'forbidden' }, 403);
+  }
 
-    if (!origin || (!isAllowed)) {
-      return json({ error: 'forbidden', origin_received: origin }, 403);
-    }
+  // 2) Guardas baratas anti-DoS antes de parsear (CWE-770): tipo y tamaño.
+  if (!request.headers.get('content-type')?.includes('application/json')) {
+    return json({ error: 'unsupported_media_type' }, 415);
+  }
+  const declaredLen = Number(request.headers.get('content-length') ?? '0');
+  if (declaredLen > MAX_BODY_BYTES) {
+    return json({ error: 'too_large' }, 413);
   }
 
   let body: ApplyBody;
@@ -67,7 +88,7 @@ export const onRequestPost = async (context: RequestContext): Promise<Response> 
     return json({ error: 'invalid_json' }, 400);
   }
 
-  // Honeypot: si viene con valor, lo llenó un bot. Fingimos éxito y descartamos.
+  // 3) Honeypot: si viene con valor, lo llenó un bot. Fingimos éxito y descartamos.
   if (asString(body.website).length > 0) {
     return json({ ok: true }, 200);
   }
@@ -78,17 +99,44 @@ export const onRequestPost = async (context: RequestContext): Promise<Response> 
   const challenge = clamp(asString(body.challenge), 5000);
   const locale = asString(body.locale) === 'en' ? 'en' : 'es';
 
-  // Validación en servidor (no se confía en el cliente).
+  // 4) Validación en servidor (no se confía en el cliente).
   if (!name || !isEmail(email) || !challenge) {
     return json({ error: 'validation' }, 422);
   }
 
-  if (!env.RESEND_API_KEY) {
-    return json({ error: 'not_configured' }, 500);
+  // 5) Anti-abuso (gated): si hay TURNSTILE_SECRET, se exige y verifica el token.
+  //    Inactivo mientras no se configure el secret (el endpoint sigue funcionando).
+  if (env.TURNSTILE_SECRET) {
+    const token = asString(body.cfTurnstileResponse);
+    if (!token) {
+      return json({ error: 'captcha_required' }, 403);
+    }
+    try {
+      const verify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          secret: env.TURNSTILE_SECRET,
+          response: token,
+          remoteip: request.headers.get('CF-Connecting-IP') ?? undefined,
+        }),
+      });
+      const outcome = (await verify.json()) as { success?: boolean };
+      if (!outcome.success) {
+        return json({ error: 'captcha_failed' }, 403);
+      }
+    } catch {
+      return json({ error: 'captcha_unavailable' }, 502);
+    }
   }
 
-  const to = env.APPLY_TO_EMAIL ?? 'contact@axenorcorporations.com';
-  const from = env.APPLY_FROM_EMAIL ?? 'Axenor Web <onboarding@resend.dev>';
+  // 6) Configuración del remitente: fallar fuerte si falta (sin caer al sandbox
+  //    onboarding@resend.dev, que bypassa SPF/DKIM/DMARC del dominio real).
+  const to = env.APPLY_TO_EMAIL;
+  const from = env.APPLY_FROM_EMAIL;
+  if (!env.RESEND_API_KEY || !to || !from) {
+    return json({ error: 'not_configured' }, 500);
+  }
 
   const html = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
@@ -133,7 +181,7 @@ export const onRequestPost = async (context: RequestContext): Promise<Response> 
     body: JSON.stringify({
       from,
       to,
-      subject: `Nueva aplicación: ${name}`,
+      subject: `Nueva aplicación: ${oneLine(name)}`,
       html,
       reply_to: email,
     }),
