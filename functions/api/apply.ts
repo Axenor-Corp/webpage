@@ -45,8 +45,7 @@ const escapeHtml = (v: string): string =>
 export const onRequestPost = async (context: RequestContext): Promise<Response> => {
   const { request, env } = context;
 
-  // Verificación de origen: rechaza POSTs disparados desde otros sitios.
-  // Admite varios dominios (ej. www. y web.) separados por coma.
+  // Verificación estricta de origen (CWE-346): Rechaza POSTs si no hay Origin o no coincide.
   const allowedRaw = env.ALLOWED_ORIGIN ?? env.ALLOWED_ORIGINS;
   if (allowedRaw) {
     const allowed = allowedRaw
@@ -54,8 +53,10 @@ export const onRequestPost = async (context: RequestContext): Promise<Response> 
       .map((o) => o.trim())
       .filter(Boolean);
     const origin = request.headers.get('origin');
-    if (origin && !allowed.includes(origin)) {
-      return json({ error: 'forbidden' }, 403);
+    const isAllowed = origin && allowed.includes(origin);
+
+    if (!origin || (!isAllowed)) {
+      return json({ error: 'forbidden', origin_received: origin }, 403);
     }
   }
 
