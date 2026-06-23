@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Contact" },
+  "meta": {
+    "title": "Contact",
+    "description": "Let's talk about your challenge. Write to contact@axenorcorporations.com or reach us on WhatsApp. Bogotá, Colombia, U.S. Eastern Time."
+  },
   "header": {
     "title": "Contact",
     "subtitle": "We are ready to support your digital transformation."

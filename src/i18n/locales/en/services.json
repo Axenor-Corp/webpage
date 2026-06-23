@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Services" },
+  "meta": {
+    "title": "Services",
+    "description": "Six capabilities, one standard: results in production. AI, cybersecurity, infrastructure, cloud, critical services and custom software."
+  },
   "header": {
     "title": "Services",
     "subtitle": "Six capabilities. One single standard: results in production.",

@@ -5,7 +5,6 @@ import PageHeader from '../components/ui/PageHeader';
 import SectionHeading from '../components/ui/SectionHeading';
 import { CONTACT } from '../data/company';
 import { useReveal } from '../hooks/useReveal';
-import { usePageTitle } from '../hooks/usePageTitle';
 
 const STEP_KEYS = ['review', 'conversation', 'proposal'] as const;
 
@@ -18,7 +17,6 @@ const inputClass =
   'w-full rounded-md border border-carbon/20 bg-white px-4 py-3 text-carbon placeholder:text-carbon-soft/40 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30';
 
 export default function Apply() {
-  usePageTitle('apply');
   const { t, i18n } = useTranslation('apply');
   const steps = useReveal<HTMLDivElement>(0.1);
 

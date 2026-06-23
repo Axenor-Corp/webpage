@@ -9,6 +9,8 @@ const HowWeWork = lazy(() => import('./pages/HowWeWork'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Apply = lazy(() => import('./pages/Apply'));
+const Glossary = lazy(() => import('./pages/Glossary'));
+const Legal = lazy(() => import('./pages/Legal'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
@@ -21,6 +23,9 @@ export default function App() {
         <Route path="nosotros" element={<About />} />
         <Route path="contacto" element={<Contact />} />
         <Route path="aplicar" element={<Apply />} />
+        <Route path="glosario" element={<Glossary />} />
+        <Route path="legal/privacidad" element={<Legal doc="privacidad" />} />
+        <Route path="legal/terminos" element={<Legal doc="terminos" />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

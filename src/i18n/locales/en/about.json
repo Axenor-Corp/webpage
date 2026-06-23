@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "About Us" },
+  "meta": {
+    "title": "About Us",
+    "description": "Who we are: an engineering firm based in Bogotá that embeds senior professionals inside the client's business and answers for the result."
+  },
   "header": {
     "title": "About Us",
     "subtitle": "A firm built on a standard."

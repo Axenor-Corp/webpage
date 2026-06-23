@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "How we work" },
+  "meta": {
+    "title": "How we work",
+    "description": "Forward Deployed model: we embed in your operation and answer for an agreed metric, not for hours. Four phases, each with a verifiable close."
+  },
   "header": {
     "title": "How we work",
     "subtitle": "Integrated inside your business.",

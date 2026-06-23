@@ -3,10 +3,8 @@ import PageHeader from '../components/ui/PageHeader';
 import CTABanner from '../components/ui/CTABanner';
 import { SERVICE_ICONS } from '../components/ui/ServiceIcons';
 import { SERVICE_ANCHORS, SERVICE_KEYS } from '../data/services';
-import { usePageTitle } from '../hooks/usePageTitle';
 
 export default function Services() {
-  usePageTitle('services');
   const { t } = useTranslation('services');
 
   return (

@@ -1,5 +1,8 @@
 {
-  "meta": { "title": "Aplicar" },
+  "meta": {
+    "title": "Aplicar",
+    "description": "Aplica para trabajar con Axenor. Leemos cada solicitud personalmente y respondemos en un máximo de 3 días hábiles."
+  },
   "header": {
     "title": "Aplica para trabajar con nosotros.",
     "subtitle": "Trabajamos con un número limitado de clientes al año. Cuéntanos tu reto: lo leemos personalmente y respondemos en un máximo de 3 días hábiles."

@@ -1,0 +1,56 @@
+{
+  "privacidad": {
+    "meta": {
+      "title": "Privacy policy",
+      "description": "How Axenor Corporation S.A.S collects, uses, and protects your data."
+    },
+    "title": "Privacy policy",
+    "updated": "Last updated: January 2026",
+    "note": "Initial template. To be reviewed by counsel before launch.",
+    "sections": [
+      {
+        "h": "What we collect",
+        "body": "We collect only what you share when you apply or contact us: name, work email, company, and your project description. We do not use third-party advertising trackers."
+      },
+      {
+        "h": "How we use your data",
+        "body": "We use your data only to evaluate your application, reply, and maintain our professional relationship. We never sell or share your data with third parties."
+      },
+      {
+        "h": "Retention & security",
+        "body": "We retain your data only as long as needed for the purposes described and apply reasonable, industry-standard security controls."
+      },
+      {
+        "h": "Your rights",
+        "body": "You may request access to, correction of, or deletion of your data by writing to contact@axenorcorporations.com."
+      }
+    ]
+  },
+  "terminos": {
+    "meta": {
+      "title": "Terms of use",
+      "description": "Terms governing the use of the Axenor Corporation S.A.S site."
+    },
+    "title": "Terms of use",
+    "updated": "Last updated: January 2026",
+    "note": "Initial template. To be reviewed by counsel before launch.",
+    "sections": [
+      {
+        "h": "Use of the site",
+        "body": "This site is provided for informational purposes. Content may change without notice. Case studies shown are representative and may be anonymized for confidentiality."
+      },
+      {
+        "h": "Intellectual property",
+        "body": "The brand, design, and content of this site belong to Axenor Corporation S.A.S unless otherwise noted."
+      },
+      {
+        "h": "Limitation of liability",
+        "body": "Axenor Corporation S.A.S is not liable for damages arising from use of this site or reliance on its content."
+      },
+      {
+        "h": "Contact",
+        "body": "For questions about these terms, write to contact@axenorcorporations.com."
+      }
+    ]
+  }
+}

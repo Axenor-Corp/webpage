@@ -1,0 +1,56 @@
+{
+  "privacidad": {
+    "meta": {
+      "title": "Política de privacidad",
+      "description": "Cómo Axenor Corporation S.A.S recopila, usa y protege tus datos."
+    },
+    "title": "Política de privacidad",
+    "updated": "Última actualización: enero de 2026",
+    "note": "Plantilla inicial. Revisar con asesoría legal antes de publicar.",
+    "sections": [
+      {
+        "h": "Qué datos recopilamos",
+        "body": "Recopilamos únicamente los datos que nos compartes al aplicar o contactarnos: nombre, correo corporativo, empresa y la descripción de tu reto. No usamos rastreadores publicitarios de terceros."
+      },
+      {
+        "h": "Cómo usamos tus datos",
+        "body": "Usamos tus datos solo para evaluar tu solicitud, responderte y mantener nuestra relación profesional. No vendemos ni cedemos tus datos a terceros."
+      },
+      {
+        "h": "Conservación y seguridad",
+        "body": "Conservamos tus datos el tiempo necesario para los fines descritos y aplicamos controles de seguridad razonables acordes a estándares de la industria."
+      },
+      {
+        "h": "Tus derechos",
+        "body": "Puedes solicitar acceso, corrección o eliminación de tus datos escribiendo a contact@axenorcorporations.com."
+      }
+    ]
+  },
+  "terminos": {
+    "meta": {
+      "title": "Términos de uso",
+      "description": "Términos que rigen el uso del sitio de Axenor Corporation S.A.S."
+    },
+    "title": "Términos de uso",
+    "updated": "Última actualización: enero de 2026",
+    "note": "Plantilla inicial. Revisar con asesoría legal antes de publicar.",
+    "sections": [
+      {
+        "h": "Uso del sitio",
+        "body": "Este sitio se ofrece con fines informativos. El contenido puede actualizarse sin previo aviso. Los casos presentados son representativos y pueden estar anonimizados por confidencialidad."
+      },
+      {
+        "h": "Propiedad intelectual",
+        "body": "La marca, el diseño y el contenido de este sitio pertenecen a Axenor Corporation S.A.S, salvo indicación contraria."
+      },
+      {
+        "h": "Limitación de responsabilidad",
+        "body": "Axenor Corporation S.A.S no será responsable por daños derivados del uso de este sitio o de la confianza depositada en su contenido."
+      },
+      {
+        "h": "Contacto",
+        "body": "Para cualquier consulta sobre estos términos, escríbenos a contact@axenorcorporations.com."
+      }
+    ]
+  }
+}

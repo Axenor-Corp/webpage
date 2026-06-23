@@ -1,0 +1,13 @@
+{
+  "name": "Axenor Corporation S.A.S",
+  "short_name": "AXENOR",
+  "description": "Soluciones tecnológicas integrales: inteligencia artificial, ciberseguridad, infraestructura, cloud, servicios críticos y software a la medida. Bogotá, Colombia.",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any maskable" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#2d2d2d",
+  "background_color": "#ffffff",
+  "display": "browser",
+  "start_url": "/"
+}
