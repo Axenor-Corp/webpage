@@ -1,3 +1,8 @@
 name = "axenor-webpage"
 compatibility_date = "2026-06-22"
 pages_build_output_dir = "dist"
+
+[vars]
+APPLY_TO_EMAIL = "contact@axenorcorporations.com"
+APPLY_FROM_EMAIL = "contact-form@axenorcorporations.com"
+ALLOWED_ORIGIN = "https://www.axenorcorporations.com,https://web.axenorcorporations.com,https://axenorcorporations.com"

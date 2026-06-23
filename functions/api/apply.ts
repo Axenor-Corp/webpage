@@ -89,14 +89,39 @@ export const onRequestPost = async (context: RequestContext): Promise<Response> 
   const to = env.APPLY_TO_EMAIL ?? 'contact@axenorcorporations.com';
   const from = env.APPLY_FROM_EMAIL ?? 'Axenor Web <onboarding@resend.dev>';
 
-  const html =
-    '<h2>Nueva aplicación &mdash; axenorcorporations.com</h2>' +
-    `<p><strong>Nombre:</strong> ${escapeHtml(name)}</p>` +
-    `<p><strong>Email:</strong> ${escapeHtml(email)}</p>` +
-    (company ? `<p><strong>Empresa:</strong> ${escapeHtml(company)}</p>` : '') +
-    `<p><strong>Idioma:</strong> ${locale}</p>` +
-    '<hr />' +
-    `<p style="white-space:pre-wrap">${escapeHtml(challenge)}</p>`;
+  const html = `
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #eee;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="color: #ea580c; margin: 0; font-size: 24px;">Nueva aplicación recibida</h2>
+        <p style="color: #666; margin-top: 4px; font-size: 14px;">axenorcorporations.com</p>
+      </div>
+      <div style="background-color: #ffffff; padding: 24px; border-radius: 6px; border: 1px solid #e5e5e5;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 8px 0; border-bottom: 1px solid #eee; width: 100px;"><strong style="color: #444;">Nombre:</strong></td>
+            <td style="padding: 8px 0; border-bottom: 1px solid #eee; color: #111;">${escapeHtml(name)}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong style="color: #444;">Email:</strong></td>
+            <td style="padding: 8px 0; border-bottom: 1px solid #eee; color: #111;"><a href="mailto:${escapeHtml(email)}" style="color: #ea580c; text-decoration: none;">${escapeHtml(email)}</a></td>
+          </tr>
+          ${company ? `
+          <tr>
+            <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong style="color: #444;">Empresa:</strong></td>
+            <td style="padding: 8px 0; border-bottom: 1px solid #eee; color: #111;">${escapeHtml(company)}</td>
+          </tr>` : ''}
+          <tr>
+            <td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong style="color: #444;">Idioma:</strong></td>
+            <td style="padding: 8px 0; border-bottom: 1px solid #eee; color: #111;">${locale === 'en' ? 'Inglés (en)' : 'Español (es)'}</td>
+          </tr>
+        </table>
+        <div style="margin-top: 24px;">
+          <strong style="color: #444; display: block; margin-bottom: 8px;">Mensaje de la aplicación:</strong>
+          <div style="background-color: #f5f5f5; padding: 16px; border-radius: 4px; color: #222; font-size: 15px; line-height: 1.5; white-space: pre-wrap;">${escapeHtml(challenge)}</div>
+        </div>
+      </div>
+    </div>
+  `;
 
   const resend = await fetch('https://api.resend.com/emails', {
     method: 'POST',
