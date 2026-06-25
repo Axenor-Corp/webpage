@@ -33,7 +33,7 @@ function loadInitialConsent(): PrivacyConsent | null {
     // or just leave it null so banner shows but defaults are false.
     // The requirement: "Si recibes este header (o señal), tu código debe mutar el estado automáticamente para apagar los SDKs de publicidad sin exigirle al usuario que haga clic en tu banner."
     // We will use navigator.globalPrivacyControl if available.
-    // @ts-ignore - globalPrivacyControl is not standard in all TS lib typings yet
+    // @ts-expect-error - globalPrivacyControl is not standard in all TS lib typings yet
     const gpc = typeof navigator !== 'undefined' && navigator.globalPrivacyControl;
     if (gpc) {
       const gpcConsent: PrivacyConsent = {
