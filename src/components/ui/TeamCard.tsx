@@ -36,7 +36,11 @@ export default function TeamCard({ member, visible, delay }: TeamCardProps) {
         onMouseEnter={() => setFlipped(true)}
         onMouseLeave={() => setFlipped(false)}
         onFocus={() => setFlipped(true)}
-        onBlur={() => setFlipped(false)}
+        onBlur={(e) => {
+          // No desvoltear si el foco pasa a un elemento interno (p. ej. el
+          // enlace de LinkedIn de la cara posterior): evita atrapar el teclado.
+          if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFlipped(false);
+        }}
         onClick={() => setFlipped((v) => !v)}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -57,7 +61,7 @@ export default function TeamCard({ member, visible, delay }: TeamCardProps) {
             </span>
           </div>
           <h3 className="mt-6 text-lg font-semibold text-carbon">{member.name}</h3>
-          <p className="mt-1 text-sm font-medium uppercase tracking-wide text-accent">{role}</p>
+          <p className="mt-1 text-sm font-medium uppercase tracking-wide text-accent-text">{role}</p>
           <span className="mt-4 inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-carbon-soft/50">
             <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M3 12a9 9 0 1 0 9-9" />

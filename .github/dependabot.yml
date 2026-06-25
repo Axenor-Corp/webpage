@@ -1,0 +1,14 @@
+version: 2
+updates:
+  # Mantiene los SHAs de las GitHub Actions al día (al ir pineadas a commit,
+  # Dependabot abre PRs que actualizan el SHA cuando hay nueva versión).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  # Avisos de seguridad / actualizaciones de dependencias npm.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5

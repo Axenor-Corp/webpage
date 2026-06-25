@@ -3,17 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { APPLY_ROUTE, NAV_ROUTES } from '../../data/company';
 import LanguageSwitcher from './LanguageSwitcher';
-
-function Logo() {
-  return (
-    <Link to="/" className="flex items-center gap-2.5" aria-label="AXENOR Inicio">
-      <span className="h-2.5 w-2.5 rotate-45 bg-accent" aria-hidden="true" />
-      <span className="text-lg font-bold tracking-[0.3em] text-white">
-        AXENOR<span className="text-accent">.</span>
-      </span>
-    </Link>
-  );
-}
+import Logo from './Logo';
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -27,7 +17,7 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-carbon/95 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Logo />
+        <Logo to="/" />
 
         <div className="hidden items-center gap-7 md:flex">
           <ul className="flex items-center gap-6">
@@ -53,7 +43,8 @@ export default function Navbar() {
           className="p-2 text-white md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-label="Menu"
+          aria-controls="mobile-nav"
+          aria-label={open ? t('nav.closeMenu') : t('nav.openMenu')}
         >
           <svg
             viewBox="0 0 24 24"
@@ -73,7 +64,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 px-6 pb-6 pt-3 md:hidden">
+        <div id="mobile-nav" className="border-t border-white/10 px-6 pb-6 pt-3 md:hidden">
           <ul className="flex flex-col gap-4">
             {NAV_ROUTES.map(({ path, key }) => (
               <li key={path}>

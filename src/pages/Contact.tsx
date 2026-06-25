@@ -56,7 +56,7 @@ export default function Contact() {
             href={CONTACT.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-accent underline-offset-4 hover:underline"
+            className="text-sm font-medium text-accent-text underline-offset-4 hover:underline"
           >
             {t('whatsapp')}
           </a>
@@ -90,7 +90,7 @@ export default function Contact() {
                 <div className="mx-auto mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/15 text-accent">
                   {icon}
                 </div>
-                <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-carbon-soft/60">
+                <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-carbon-soft/75">
                   {label}
                 </h2>
                 {content}

@@ -4,24 +4,27 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import './i18n';
 import App from './App.tsx';
+import Logo from './components/ui/Logo';
+import ErrorBoundary from './components/ui/ErrorBoundary';
 
 function Loader() {
+  // Fuera del Router: Logo sin `to` (no enlace), wordmark carbón sobre blanco.
   return (
     <div className="flex min-h-screen items-center justify-center bg-white">
-      <span className="animate-pulse text-2xl font-bold tracking-[0.3em] text-carbon">
-        AXENOR<span className="text-accent">.</span>
-      </span>
+      <Logo onDark={false} size={28} wordmarkClass="text-2xl" className="animate-pulse" />
     </div>
   );
 }
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {/* Suspense cubre la carga diferida (lazy) de los recursos de i18next */}
-    <Suspense fallback={<Loader />}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <ErrorBoundary>
+        {/* Suspense cubre la carga diferida (lazy) de i18next y de las rutas. */}
+        <Suspense fallback={<Loader />}>
+          <App />
+        </Suspense>
+      </ErrorBoundary>
+    </BrowserRouter>
   </StrictMode>,
 );

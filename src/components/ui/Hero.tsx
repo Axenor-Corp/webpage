@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center">
       <div className="mx-auto max-w-5xl px-6 pt-16 text-center">
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-accent md:text-sm">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-accent-text md:text-sm">
           {t('hero.kicker')}
         </p>
         <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-carbon md:text-6xl">

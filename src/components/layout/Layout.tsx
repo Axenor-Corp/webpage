@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../ui/Navbar';
 import Footer from '../ui/Footer';
 import ScrollManager from './ScrollManager';
@@ -17,6 +18,7 @@ export default function Layout() {
   useScrollProgress();
   usePrefersReducedMotion();
   useAdvancedTracking();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -27,9 +29,15 @@ export default function Layout() {
 
       {/* Capa UI */}
       <div className="relative z-10 flex min-h-screen flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:font-semibold focus:text-white"
+        >
+          {t('skipToContent')}
+        </a>
         <ScrollManager />
         <Navbar />
-        <main className="flex-1">
+        <main id="main-content" tabIndex={-1} className="flex-1">
           <Suspense fallback={<div className="min-h-screen" />}>
             <RouteSeo />
             <Outlet />
