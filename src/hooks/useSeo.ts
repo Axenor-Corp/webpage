@@ -24,6 +24,7 @@ export interface SeoInput {
 }
 
 function upsertMeta(selector: string, attr: 'name' | 'property', key: string, content: string) {
+  if (typeof document === 'undefined') return;
   let el = document.head.querySelector<HTMLMetaElement>(selector);
   if (!el) {
     el = document.createElement('meta');
@@ -34,6 +35,7 @@ function upsertMeta(selector: string, attr: 'name' | 'property', key: string, co
 }
 
 function upsertLink(rel: string, href: string) {
+  if (typeof document === 'undefined') return;
   let el = document.head.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`);
   if (!el) {
     el = document.createElement('link');
@@ -45,6 +47,7 @@ function upsertLink(rel: string, href: string) {
 
 export function useSeo({ title, description, path, ogLocale, noindex = false }: SeoInput): void {
   useEffect(() => {
+    if (typeof document === 'undefined') return;
     const url = SITE + path;
 
     document.title = title;

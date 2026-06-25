@@ -28,5 +28,12 @@
     "title": "Página no encontrada",
     "text": "La ruta que buscas no existe o fue movida.",
     "back": "Volver al inicio"
+  },
+  "cookies": {
+    "title": "Uso de cookies",
+    "text": "Usamos cookies de analítica (Google y Meta) para entender el uso del sitio y mejorar tu experiencia. Solo se activan si las aceptas.",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "policy": "Política de privacidad"
   }
 }

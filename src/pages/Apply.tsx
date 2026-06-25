@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import PageHeader from '../components/ui/PageHeader';
 import SectionHeading from '../components/ui/SectionHeading';
 import { CONTACT } from '../data/company';
+import { trackLead } from '../lib/tracking';
 import { useReveal } from '../hooks/useReveal';
 
 const STEP_KEYS = ['review', 'conversation', 'proposal'] as const;
@@ -62,6 +63,7 @@ export default function Apply() {
       }
 
       setStatus('sent');
+      trackLead(); // conversión: GA4 generate_lead + Google Ads + Meta Lead
       setForm({ name: '', email: '', company: '', challenge: '', website: '' });
     } catch {
       setStatus('error');

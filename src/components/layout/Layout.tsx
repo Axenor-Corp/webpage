@@ -4,8 +4,10 @@ import Navbar from '../ui/Navbar';
 import Footer from '../ui/Footer';
 import ScrollManager from './ScrollManager';
 import RouteSeo from '../seo/RouteSeo';
+import Analytics from '../analytics/Analytics';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
+import { useAdvancedTracking } from '../../hooks/useAdvancedTracking';
 
 // three.js + R3F se cargan como chunk independiente: la UI pinta de inmediato
 // y la escena aparece cuando termina de descargarse.
@@ -14,6 +16,7 @@ const Scene = lazy(() => import('../canvas/Scene'));
 export default function Layout() {
   useScrollProgress();
   usePrefersReducedMotion();
+  useAdvancedTracking();
 
   return (
     <>
@@ -34,6 +37,9 @@ export default function Layout() {
         </main>
         <Footer />
       </div>
+
+      {/* Analítica consent-gated: banner de cookies + carga de trackers */}
+      <Analytics />
     </>
   );
 }
