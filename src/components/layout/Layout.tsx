@@ -9,6 +9,7 @@ import Analytics from '../analytics/Analytics';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 import { useAdvancedTracking } from '../../hooks/useAdvancedTracking';
+import PrivacyCenter from '../privacy/PrivacyCenter';
 
 // three.js + R3F se cargan como chunk independiente: la UI pinta de inmediato
 // y la escena aparece cuando termina de descargarse.
@@ -48,6 +49,7 @@ export default function Layout() {
 
       {/* Analítica consent-gated: banner de cookies + carga de trackers */}
       <Analytics />
+      <PrivacyCenter />
     </>
   );
 }

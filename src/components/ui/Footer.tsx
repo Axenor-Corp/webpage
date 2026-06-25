@@ -3,11 +3,13 @@ import { useTranslation } from 'react-i18next';
 import LinkedInIcon from './LinkedInIcon';
 import Logo from './Logo';
 import { APPLY_ROUTE, COMPANY_LINKEDIN, CONTACT, NAV_ROUTES } from '../../data/company';
+import { usePrivacyStore } from '../../store/usePrivacyStore';
 
 export default function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
   const links = [...NAV_ROUTES.filter(({ path }) => path !== '/'), APPLY_ROUTE];
+  const { openPrivacyCenter } = usePrivacyStore();
 
   return (
     <footer className="relative bg-carbon py-14 text-white">
@@ -73,14 +75,22 @@ export default function Footer() {
           <p className="text-sm text-white/50">
             © {year} Axenor Corporation S.A.S · {t('footer.rights')}
           </p>
-          <nav className="flex gap-5 text-sm text-white/50" aria-label={t('footer.legalLabel')}>
-            <Link to="/legal/privacidad" className="transition-colors hover:text-accent">
-              {t('footer.privacy')}
-            </Link>
-            <Link to="/legal/terminos" className="transition-colors hover:text-accent">
-              {t('footer.terms')}
-            </Link>
-          </nav>
+          <div className="flex flex-col gap-2 md:items-end">
+            <nav className="flex flex-wrap gap-5 text-sm text-white/50" aria-label={t('footer.legalLabel')}>
+              <Link to="/legal/privacidad" className="transition-colors hover:text-accent">
+                {t('footer.privacy')}
+              </Link>
+              <Link to="/legal/terminos" className="transition-colors hover:text-accent">
+                {t('footer.terms')}
+              </Link>
+            </nav>
+            <button 
+              onClick={openPrivacyCenter}
+              className="text-left text-xs text-white/40 hover:text-white/80 transition-colors underline decoration-white/20 underline-offset-4"
+            >
+              Do Not Sell or Share My Personal Information
+            </button>
+          </div>
         </div>
       </div>
     </footer>
