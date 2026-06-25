@@ -7,173 +7,95 @@ export default function PrivacyPolicy() {
 
       <section className="relative bg-white pb-24">
         <div className="mx-auto max-w-4xl px-6">
-          <p className="text-sm text-carbon-soft/50">Fecha de entrada en vigor: 25 de Junio de 2026 | Última actualización: 25 de Junio de 2026</p>
+          <p className="text-sm text-carbon-soft/50">Fecha de entrada en vigor: 25 de Junio de 2026</p>
 
           <div className="mt-10 space-y-12 text-carbon-soft/80">
             <div>
               <h2 className="text-2xl font-bold text-carbon mb-4">1. Introducción y Responsable del Tratamiento</h2>
               <p className="leading-relaxed">
-                Esta Política de Privacidad describe cómo recopilamos, utilizamos, procesamos y protegemos su información personal al utilizar nuestra aplicación y servicios (el "Servicio"). El responsable del tratamiento de sus datos es [Nombre de la Empresa], constituida bajo las leyes de la República de Colombia, con domicilio principal en [Dirección, Ciudad, Colombia] ("Nosotros", "Nuestro").
+                Esta Política de Privacidad describe el marco legal bajo el cual <strong>Axenor Corporations S.A.S.</strong> ("Axenor", "Nosotros", "Nuestro"), constituida bajo las leyes de la República de Colombia con domicilio principal en la CALLE 181 C 13 91, Bogotá D.C., Colombia, recopila, procesa y protege su información personal. Axenor actúa como el responsable del tratamiento de los datos frente a nuestras aplicaciones móviles, plataformas web y servicios de Inteligencia Artificial (en adelante, el "Servicio" o los "Servicios").
               </p>
               <p className="mt-4 leading-relaxed">
-                Esta política actúa como un marco de cumplimiento global diseñado para satisfacer los estrictos requisitos de la <strong>Ley 1581 de 2012 (Colombia)</strong>, el <strong>Reglamento General de Protección de Datos (GDPR - Europa)</strong> y la <strong>Ley de Privacidad del Consumidor de California (CCPA) modificada por la CPRA</strong>.
+                Nuestros Servicios están dirigidos principalmente a empresas, pymes y negocios (B2B). En consecuencia, no recopilamos deliberadamente información de personas menores de 18 años.
+              </p>
+              <p className="mt-4 leading-relaxed">
+                Esta política está diseñada para cumplir con la <strong>Ley 1581 de 2012 (Colombia)</strong>, el <strong>Reglamento General de Protección de Datos (GDPR - Europa)</strong>, y la <strong>Ley de Privacidad del Consumidor de California (CCPA / CPRA)</strong>.
               </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold text-carbon mb-4">2. Información que Recopilamos</h2>
-              <p className="leading-relaxed mb-4">Recopilamos información de forma directa e indirecta para proporcionar y optimizar nuestro Servicio:</p>
+              <p className="leading-relaxed mb-4">Al interactuar con nuestros Servicios, recopilamos los siguientes datos:</p>
               <ul className="list-disc pl-5 space-y-2">
-                <li><strong>Datos de Cuenta e Identidad:</strong> Nombre, correo electrónico, credenciales de acceso.</li>
-                <li><strong>Datos de Uso y Analítica de Tracking:</strong> Dirección IP, tipo de dispositivo, sistema operativo, interacciones dentro de la app (clics, tiempo de uso, flujos de navegación), y rastreo de ubicación precisa (con consentimiento expreso).</li>
-                <li><strong>Datos para Entrenamiento de IA y ADMT:</strong> Recopilamos inputs textuales, de voz o visuales que usted proporciona explícitamente para interactuar con nuestras funciones de Inteligencia Artificial. Esto incluye datos utilizados para tecnología de toma de decisiones automatizadas (ADMT).</li>
-                <li><strong>Datos Procesados Localmente:</strong> Parte de la información es procesada localmente en su dispositivo mediante integraciones nativas del sistema operativo (ej. Apple Intelligence o equivalentes en Android). No tenemos acceso directo a estos datos procesados de forma estrictamente local, a menos que sean sincronizados con la nube bajo su consentimiento.</li>
-                <li><strong>Cookies y Tecnologías Similares:</strong> Utilizamos cookies propias y de terceros, balizas web y SDKs para segmentación de publicidad dirigida (Ads) y análisis de rendimiento.</li>
+                <li><strong>Datos de Cuenta y Perfil:</strong> Nombre, correo electrónico, datos de facturación de la empresa y credenciales.</li>
+                <li><strong>Datos de Uso y Telemetría:</strong> Direcciones IP, interacciones dentro de las aplicaciones y datos de rendimiento.</li>
+                <li><strong>Datos Locales e Híbridos:</strong> Parte de la información es procesada en sus dispositivos y posteriormente sincronizada con nuestra infraestructura en la nube (ej. bases de datos en Supabase) y nuestros servidores físicos ubicados en Bogotá.</li>
+                <li><strong>Datos para Inteligencia Artificial:</strong> Recopilamos los <em>inputs</em>, contextos y comandos que usted suministra a nuestros modelos de IA, así como los metadatos generados al interactuar con IAs nativas de su sistema operativo.</li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">3. Fines del Tratamiento y Bases Legales (GDPR)</h2>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse border border-gray-200">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-200 p-3 font-semibold text-carbon">Finalidad del Tratamiento</th>
-                      <th className="border border-gray-200 p-3 font-semibold text-carbon">Base Legal (GDPR)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Provisión del Servicio:</strong> Operación de la app, autenticación, almacenamiento en la nube vía túneles seguros (ej. Supabase, Cloudflare).</td>
-                      <td className="border border-gray-200 p-3">Ejecución de un Contrato</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Analítica y Tracking:</strong> Mejora de la experiencia de usuario y monitoreo de estabilidad.</td>
-                      <td className="border border-gray-200 p-3">Interés Legítimo / Consentimiento</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Publicidad Dirigida (Ads):</strong> Segmentación y entrega de anuncios personalizados.</td>
-                      <td className="border border-gray-200 p-3">Consentimiento</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Entrenamiento de Modelos de IA:</strong> Uso de sus datos anonimizados para mejorar nuestros algoritmos de IA propietarios.</td>
-                      <td className="border border-gray-200 p-3">Consentimiento Explícito</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Tecnología de Toma de Decisiones Automatizadas (ADMT):</strong> Para perfilar o automatizar flujos dentro de la plataforma.</td>
-                      <td className="border border-gray-200 p-3">Consentimiento Explícito</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Cumplimiento Legal:</strong> Respuesta a requerimientos de autoridades competentes.</td>
-                      <td className="border border-gray-200 p-3">Obligación Legal</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">3. Uso de la Información, Sub-procesadores y Base Legal</h2>
+              <p className="leading-relaxed mb-4">
+                Procesamos su información basándonos en la ejecución de nuestro contrato corporativo, nuestro interés legítimo y, cuando corresponde, su consentimiento explícito. Los fines incluyen:
+              </p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Operación de la Plataforma:</strong> Proveer la funcionalidad de nuestras aplicaciones.</li>
+                <li><strong>Infraestructura y Procesamiento Externo:</strong> Para escalar y mantener nuestras aplicaciones, compartimos datos estrictamente necesarios con sub-procesadores de infraestructura y modelos de lenguaje de terceros, específicamente <strong>Amazon Web Services (AWS) y OpenAI</strong>.</li>
+                <li><strong>Entrenamiento de IA Propietaria:</strong> Utilizamos datos anonimizados para entrenar y mejorar modelos de IA propios alojados en nuestros servidores locales en Bogotá.</li>
+                <li><strong>Tecnología de Decisiones Automatizadas (ADMT):</strong> Empleamos ADMT para optimizar flujos comerciales y predecir comportamientos de la plataforma.</li>
+              </ul>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">4. Compartir Información y Transferencias Internacionales</h2>
-              <p className="leading-relaxed mb-4">Utilizamos infraestructura moderna para garantizar la seguridad. Sus datos se transfieren y almacenan utilizando:</p>
-              <ul className="list-disc pl-5 space-y-2 mb-4">
-                <li><strong>Servicios en la Nube (BaaS):</strong> Como Supabase, para el almacenamiento seguro de bases de datos.</li>
-                <li><strong>Túneles y Redes de Distribución:</strong> Como Cloudflare, para protección y enrutamiento.</li>
-              </ul>
+              <h2 className="text-2xl font-bold text-carbon mb-4">4. Publicidad y "Venta/Intercambio" de Datos (CCPA)</h2>
+              <p className="leading-relaxed mb-4">
+                Para nuestros esfuerzos de comercialización, integramos píxeles y tecnologías de rastreo, específicamente <strong>Google Ads y Meta Pixel</strong>. Bajo la definición estricta de la Ley de Privacidad de California (CCPA), el uso de estas herramientas para publicidad dirigida (<em>behavioral advertising</em>) constituye un "intercambio" (Sharing) de información.
+              </p>
               <p className="leading-relaxed">
-                <strong>Transferencias Internacionales:</strong> Al estar basados en Colombia y utilizar infraestructura en EE. UU. y la UE, realizamos transferencias transfronterizas. Para los usuarios en el EEE, nos amparamos en las <strong>Cláusulas Contractuales Tipo (SCCs)</strong> y salvaguardas técnicas adicionales exigidas por el GDPR.
+                Usted tiene el derecho inalienable de excluirse (<em>opt-out</em>) de este rastreo a través del centro de preferencias en nuestro sitio web oficial https://axenorcorporations.com o configurando en su navegador la señal <em>Global Privacy Control</em> (GPC), la cual nuestra infraestructura respetará de manera automática.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">5. Derechos de los Usuarios por Jurisdicción</h2>
-              
-              <h3 className="text-xl font-semibold text-carbon mt-6 mb-3">A. Usuarios en Colombia (Ley 1581 de 2012)</h3>
-              <p className="leading-relaxed mb-2">Como titular de la información, tiene derecho a:</p>
-              <ul className="list-disc pl-5 space-y-2 mb-4">
-                <li>Conocer, actualizar y rectificar sus datos personales.</li>
-                <li>Solicitar prueba de la autorización otorgada.</li>
-                <li>Ser informado sobre el uso de sus datos.</li>
-                <li>Revocar la autorización y/o solicitar la supresión del dato.</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-carbon mt-6 mb-3">B. Usuarios en Europa (GDPR)</h3>
-              <p className="leading-relaxed mb-2">Los residentes del Espacio Económico Europeo tienen derecho a:</p>
-              <ul className="list-disc pl-5 space-y-2 mb-4">
-                <li>Acceso, Rectificación, y Borrado (Derecho al olvido).</li>
-                <li>Restricción y Oposición al procesamiento (incluido el profiling).</li>
-                <li>Portabilidad de los datos en formato estructurado.</li>
-                <li>Retirar el consentimiento en cualquier momento.</li>
-                <li>Presentar una queja ante una autoridad de control local.</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-carbon mt-6 mb-3">C. Usuarios en California (CCPA / CPRA)</h3>
-              <p className="leading-relaxed mb-2">En los últimos 12 meses, hemos recopilado las categorías de información detalladas en la Sección 2.</p>
-              <ul className="list-disc pl-5 space-y-2 mb-4">
-                <li><strong>"Do Not Sell or Share My Personal Information":</strong> Utilizamos datos para publicidad conductual (sharing). Usted tiene derecho a excluirse (opt-out) en cualquier momento.</li>
-                <li><strong>Tecnología de Toma de Decisiones Automatizadas (ADMT):</strong> Derecho de conocer la lógica subyacente y a solicitar exclusión.</li>
-                <li><strong>Delete Request and Opt-Out Platform (DROP):</strong> Cumplimos y respondemos a las señales universales de exclusión (Global Privacy Control).</li>
-                <li><strong>Evaluaciones de Riesgo (Risk Assessments):</strong> Realizamos auditorías de riesgo obligatorias regulares sobre el uso de nuestra IA.</li>
-              </ul>
+              <h2 className="text-2xl font-bold text-carbon mb-4">5. Retención y Eliminación de Datos (Soft-Delete)</h2>
+              <p className="leading-relaxed mb-4">
+                Retenemos la información personal y los registros del sistema operativo por el <strong>tiempo máximo permitido por las leyes aplicables</strong> relativas a la retención de documentación contable, fiscal y comercial (generalmente 10 años en jurisdicciones como Colombia).
+              </p>
+              <p className="leading-relaxed mb-4">
+                Cuando un usuario ejerce su derecho a la eliminación de la cuenta (Derecho al Olvido), Axenor ejecuta un procedimiento de <strong>retención bloqueada o "Soft-Delete"</strong>. Esto significa que:
+              </p>
+              <ol className="list-decimal pl-5 space-y-2">
+                <li>Su perfil y datos desaparecen del entorno en vivo (frontend) y cesa todo procesamiento para marketing o entrenamiento de IA.</li>
+                <li>Los datos son encriptados y conservados en nuestra base de datos en un estado inactivo de acceso restringido, única y exclusivamente para cumplir con requerimientos de autoridades legales, auditorías fiscales y defensa ante reclamaciones judiciales. Finalizado el periodo legal obligatorio de conservación, los datos son purgados permanentemente.</li>
+              </ol>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">6. Retención de Datos</h2>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse border border-gray-200">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-200 p-3 font-semibold text-carbon">Tipo de Dato</th>
-                      <th className="border border-gray-200 p-3 font-semibold text-carbon">Periodo de Retención</th>
-                      <th className="border border-gray-200 p-3 font-semibold text-carbon">Acción Post-Retención</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Datos de Cuenta y Perfil</strong></td>
-                      <td className="border border-gray-200 p-3">Hasta que el usuario elimine su cuenta + 30 días.</td>
-                      <td className="border border-gray-200 p-3">Borrado permanente o anonimización total.</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Datos de Tracking y Analítica</strong></td>
-                      <td className="border border-gray-200 p-3">14 meses (estándar de la industria).</td>
-                      <td className="border border-gray-200 p-3">Borrado permanente.</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Cookies y Datos Publicitarios</strong></td>
-                      <td className="border border-gray-200 p-3">6 a 12 meses desde el último consentimiento.</td>
-                      <td className="border border-gray-200 p-3">Expiración automática.</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Datos Ingeridos por IA (Propios)</strong></td>
-                      <td className="border border-gray-200 p-3">Hasta que el usuario revoque el consentimiento para entrenamiento.</td>
-                      <td className="border border-gray-200 p-3">Desvinculación inmediata y depuración.</td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-200 p-3"><strong>Logs de Seguridad (Cloudflare/Servidor)</strong></td>
-                      <td className="border border-gray-200 p-3">90 días.</td>
-                      <td className="border border-gray-200 p-3">Borrado automático y sobrescritura.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">7. Seguridad de los Datos y Procesamiento Local</h2>
+              <h2 className="text-2xl font-bold text-carbon mb-4">6. Transferencias Internacionales de Datos</h2>
               <p className="leading-relaxed">
-                Implementamos medidas de seguridad técnicas y organizativas, incluyendo cifrado en tránsito (TLS/SSL) y en reposo. Para funcionalidades que utilizan IA nativa del sistema operativo (Apple Intelligence, etc.), el procesamiento se realiza localmente ("On-Device"), minimizando la exposición de datos a la nube.
+                Dado que utilizamos sub-procesadores como AWS y OpenAI, y operamos bases de datos distribuidas a través de Supabase, su información se procesa de forma transfronteriza. Para residentes del Espacio Económico Europeo (EEE), todas las transferencias hacia Colombia y Estados Unidos están protegidas mediante las Cláusulas Contractuales Tipo (SCCs) aprobadas por la Comisión Europea.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">8. Cambios y Contacto</h2>
-              <p className="leading-relaxed">
-                Podemos actualizar esta política. Le notificaremos sobre cambios significativos a través de la app. Para ejercer sus derechos, póngase en contacto con nuestro Oficial de Protección de Datos (DPO) en:
+              <h2 className="text-2xl font-bold text-carbon mb-4">7. Sus Derechos Legales</h2>
+              <p className="leading-relaxed mb-4">
+                Independientemente de si usted actúa bajo el amparo de la Ley 1581 (Colombia), el GDPR o la CCPA, Axenor le garantiza los siguientes derechos fundamentales:
               </p>
-              <ul className="mt-2 space-y-1">
-                <li><strong>Email:</strong> privacy@[dominio].com</li>
-                <li><strong>Portal de Privacidad (Opt-Out / DROP):</strong> Accesible desde el enlace "Do Not Sell or Share My Personal Information" en el pie de página.</li>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Acceso y Portabilidad:</strong> Solicitar una copia de la información que tenemos sobre usted.</li>
+                <li><strong>Rectificación:</strong> Actualizar o corregir datos inexactos.</li>
+                <li><strong>Supresión:</strong> Solicitar la eliminación de su cuenta, sujeta a la política de <em>Soft-Delete</em> por cumplimiento legal detallada en la Sección 5.</li>
+                <li><strong>Oposición y Restricción:</strong> Oponerse al procesamiento de datos para fines de marketing directo o uso en modelos de ADMT.</li>
               </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">8. Contacto</h2>
+              <p className="leading-relaxed">
+                Para ejercer cualquiera de sus derechos, presentar una queja sobre el manejo de sus datos o realizar solicitudes a través de plataformas DROP, debe comunicarse directamente con nuestro equipo de cumplimiento de privacidad mediante el correo electrónico oficial: <strong>contact@axenorcorporations.com</strong>. Atenderemos su solicitud dentro de los plazos estipulados por la ley correspondiente a su país de residencia.
+              </p>
             </div>
           </div>
         </div>

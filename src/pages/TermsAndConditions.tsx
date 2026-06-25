@@ -3,7 +3,7 @@ import PageHeader from '../components/ui/PageHeader';
 export default function TermsAndConditions() {
   return (
     <>
-      <PageHeader title="Términos y Condiciones de Uso" />
+      <PageHeader title="Términos y Condiciones Generales de Uso" />
 
       <section className="relative bg-white pb-24">
         <div className="mx-auto max-w-4xl px-6">
@@ -12,72 +12,74 @@ export default function TermsAndConditions() {
           <div className="mt-10 space-y-12 text-carbon-soft/80">
             <div>
               <p className="leading-relaxed font-medium">
-                Al descargar, acceder o utilizar la plataforma de [Nombre de la Empresa] ("Nosotros", el "Servicio"), usted ("el Usuario") acepta estar sujeto a estos Términos y Condiciones. Si no está de acuerdo, no debe utilizar el Servicio.
+                Al instalar, descargar, acceder o utilizar cualquier plataforma móvil, aplicación web, sistema de Inteligencia Artificial (IA) o servicio proporcionado por <strong>Axenor Corporations S.A.S.</strong> ("Axenor", "Nosotros", el "Servicio"), usted (el "Cliente" o "Usuario") acepta estar sujeto de forma vinculante a estos Términos y Condiciones. Este acuerdo es de naturaleza corporativa y comercial, dado que nuestros sistemas están diseñados preferentemente para el entorno B2B (empresas, pymes y negocios). Si no está de acuerdo con estos términos, debe abstenerse inmediatamente de utilizar nuestros Servicios.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">1. Descripción del Servicio y Arquitectura Técnica</h2>
+              <h2 className="text-2xl font-bold text-carbon mb-4">1. Descripción del Servicio y Arquitectura</h2>
               <p className="leading-relaxed">
-                Nuestro Servicio proporciona soluciones de software que operan a través de una arquitectura híbrida, combinando procesamiento local en el dispositivo, servidores gestionados mediante túneles seguros y bases de datos en la nube (BaaS). El Servicio incluye funcionalidades impulsadas por Inteligencia Artificial (IA), tanto modelos propios alojados en nuestra infraestructura como integraciones con IA nativa de los sistemas operativos de terceros (ej., Apple Intelligence o equivalentes en Android).
+                Axenor ofrece un portafolio de software, herramientas operacionales y modelos de Inteligencia Artificial. La arquitectura de nuestros Servicios opera mediante una sincronización híbrida: la información es procesada localmente en su dispositivo, pero también se almacena, procesa y sincroniza con bases de datos en la nube (como Supabase) y servidores de nuestra propiedad alojados físicamente en la ciudad de Bogotá D.C., Colombia.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">2. Uso Aceptable y Restricciones</h2>
-              <p className="leading-relaxed mb-4">Usted se compromete a no:</p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Descompilar, aplicar ingeniería inversa, o intentar extraer el código fuente, algoritmos o modelos de IA de la plataforma.</li>
-                <li>Utilizar el Servicio para generar, procesar o transmitir contenido ilegal, difamatorio, discriminatorio o que infrinja la propiedad intelectual de terceros.</li>
-                <li>Utilizar procesos automatizados (bots, scrapers) para acceder al Servicio sin nuestra autorización expresa.</li>
+              <h2 className="text-2xl font-bold text-carbon mb-4">2. Propiedad Intelectual</h2>
+              <ul className="list-disc pl-5 space-y-4">
+                <li><strong>Titularidad de Axenor:</strong> Axenor Corporations S.A.S. conserva exclusivamente la totalidad de los derechos, títulos e intereses, incluyendo código fuente, arquitecturas de software, interfaces, marcas registradas y algoritmos de IA de desarrollo local.</li>
+                <li><strong>Inputs del Cliente y Licencia:</strong> Usted retiene la propiedad de los datos y documentos que ingresa en la plataforma. No obstante, al utilizar el Servicio, usted otorga a Axenor una licencia global, no exclusiva y libre de regalías para procesar dichos datos a fin de mantener la operatividad del software, realizar sincronizaciones y entrenar nuestros algoritmos de Inteligencia Artificial, salvo que ejerza activamente su derecho de exclusión (Opt-Out) a través de nuestros canales oficiales.</li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">3. Propiedad Intelectual y Licencia de Uso</h2>
-              <ul className="list-disc pl-5 space-y-2">
-                <li><strong>Propiedad de la Empresa:</strong> Conservamos todos los derechos, títulos e intereses, incluyendo derechos de autor y patentes, sobre el software, la arquitectura de la nube, las interfaces y nuestros modelos de IA propietarios.</li>
-                <li><strong>Propiedad del Usuario:</strong> Usted conserva todos los derechos sobre la información, textos, imágenes u otros contenidos que introduzca en la plataforma ("Inputs").</li>
-                <li><strong>Licencia para Entrenamiento de IA:</strong> A menos que usted revoque expresamente su consentimiento (Opt-out) en el panel de configuración de privacidad, al usar el Servicio usted nos otorga una licencia global, libre de regalías y no exclusiva para usar, procesar y anonimizar sus "Inputs" con el fin de entrenar, refinar y mejorar nuestros modelos de IA y Tecnologías de Toma de Decisiones Automatizadas (ADMT).</li>
+              <h2 className="text-2xl font-bold text-carbon mb-4">3. Uso de Inteligencia Artificial (Local y de Terceros)</h2>
+              <p className="leading-relaxed mb-4">
+                Nuestros Servicios implementan capacidades de Inteligencia Artificial impulsadas por modelos propietarios locales e integraciones con proveedores de infraestructura externa de primera línea, específicamente <strong>Amazon Web Services (AWS) y OpenAI</strong>. Asimismo, la plataforma puede interactuar con la IA nativa del sistema operativo de su dispositivo.
+              </p>
+              <ul className="list-disc pl-5 space-y-4">
+                <li><strong>Resultados Probabilísticos:</strong> Los modelos de IA generan outputs basados en probabilidades estadísticas. Axenor no garantiza la precisión, exactitud, imparcialidad o idoneidad legal de las respuestas, recomendaciones o textos generados por la IA.</li>
+                <li><strong>Verificación Humana Obligatoria:</strong> El Usuario reconoce y acepta que es enteramente responsable de validar y verificar de manera independiente cualquier decisión comercial, operativa o legal tomada con base en los resultados proporcionados por los Servicios de IA de Axenor.</li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">4. Renuncia y Limitación de Responsabilidad (Especial IA)</h2>
-              <p className="leading-relaxed mb-4"><strong>Uso de Inteligencia Artificial:</strong></p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li><strong>Naturaleza Probabilística:</strong> El Usuario reconoce que las respuestas y resultados generados por los modelos de IA son de naturaleza probabilística. El Servicio se proporciona "TAL CUAL" (As Is).</li>
-                <li><strong>Sin Garantías de Precisión:</strong> No garantizamos la exactitud, fiabilidad, imparcialidad o idoneidad de las respuestas generadas por la IA. El usuario es el único responsable de revisar y verificar de forma independiente cualquier resultado o decisión (incluidas las influenciadas por ADMT) tomada con base en el uso de la plataforma.</li>
-                <li><strong>Integraciones de Terceros:</strong> No somos responsables por el rendimiento, fallas de seguridad, violaciones de privacidad o sesgos provenientes de la Inteligencia Artificial nativa de los sistemas operativos (ej. Apple, Google) utilizados de manera local en el dispositivo del usuario.</li>
+              <h2 className="text-2xl font-bold text-carbon mb-4">4. Renuncia de Garantías y Limitación de Responsabilidad</h2>
+              <p className="leading-relaxed mb-4">
+                <strong>Disponibilidad "As Is":</strong> El software y los Servicios se proporcionan en estado "TAL CUAL" y "SEGÚN DISPONIBILIDAD". Axenor repudia explícitamente cualquier garantía implícita de comerciabilidad o idoneidad para un propósito particular. No garantizamos que los Servicios estarán libres de interrupciones, errores, latencias o fallos de sincronización con la nube.
+              </p>
+              <p className="leading-relaxed">
+                <strong>Daños Indirectos:</strong> En ningún caso Axenor Corporations S.A.S., sus directores, empleados o proveedores serán legalmente responsables por daños indirectos, incidentales, lucro cesante, pérdida de datos o interrupciones del negocio derivados del uso o la incapacidad de uso de las aplicaciones.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">5. Cuentas y Restricciones de Uso</h2>
+              <p className="leading-relaxed mb-4">
+                Para utilizar el Servicio, usted debe ser mayor de 18 años y poseer la capacidad legal plena para celebrar contratos vinculantes. Queda terminantemente prohibido:
+              </p>
+              <ul className="list-disc pl-5 space-y-2 mb-4">
+                <li>Realizar ingeniería inversa, descompilación o escaneo profundo de la arquitectura de la red o los modelos de IA de Axenor.</li>
+                <li>Utilizar la plataforma para distribuir código malicioso, llevar a cabo actividades ilícitas o violar derechos de terceros.</li>
+                <li>Utilizar <em>web scrapers</em> o extracción automatizada masiva sin la debida autorización por escrito.</li>
               </ul>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">5. Disponibilidad del Servicio ("As Available")</h2>
               <p className="leading-relaxed">
-                No garantizamos que el Servicio será ininterrumpido, oportuno, seguro o libre de errores. La conexión depende de la infraestructura del usuario y de terceros (proveedores cloud, Cloudflare, ISPs). Nos reservamos el derecho de suspender, modificar o discontinuar el Servicio por mantenimiento o actualizaciones sin previo aviso.
+                Nos reservamos el derecho unilateral de suspender, terminar o bloquear de manera inmediata cualquier cuenta que infrinja estas disposiciones, sin necesidad de notificación previa.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">6. Suspensión y Terminación de la Cuenta</h2>
+              <h2 className="text-2xl font-bold text-carbon mb-4">6. Ley Aplicable y Jurisdicción</h2>
               <p className="leading-relaxed">
-                Nos reservamos el derecho de suspender o terminar el acceso al Servicio en cualquier momento, con o sin causa, de manera inmediata, especialmente frente al incumplimiento de la cláusula de "Uso Aceptable".
+                La validez, interpretación y ejecución de este contrato se regirán bajo las leyes de la <strong>República de Colombia</strong>. Toda controversia, disputa o reclamación que surja en relación con estos Términos, el uso del software o la privacidad de los datos, y que no pueda resolverse de mutuo acuerdo, será sometida a la jurisdicción exclusiva de los <strong>Jueces de la República de Colombia en la ciudad de Bogotá D.C.</strong>. Usted renuncia irrevocablemente a presentar cualquier objeción en relación con la competencia de dichos tribunales.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">7. Ley Aplicable y Jurisdicción</h2>
-              <p className="leading-relaxed">
-                Estos Términos se regirán e interpretarán de acuerdo con las leyes de la <strong>República de Colombia</strong>, sin dar efecto a sus principios de conflictos de leyes. Cualquier disputa, controversia o reclamo que surja en relación con estos Términos será sometida a la jurisdicción exclusiva de los tribunales competentes en [Ciudad], Colombia. No obstante, esto no impedirá a los consumidores internacionales ejercer los derechos inderogables previstos en la legislación de su país de residencia.
-              </p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-carbon mb-4">8. Modificaciones</h2>
-              <p className="leading-relaxed">
-                Podemos modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor en el momento de su publicación. El uso continuado del Servicio constituye su aceptación de los nuevos Términos.
-              </p>
+              <h2 className="text-2xl font-bold text-carbon mb-4">7. Disposiciones Finales</h2>
+              <ul className="list-disc pl-5 space-y-4">
+                <li><strong>Contacto Legal:</strong> Para notificaciones legales y comerciales relacionadas con el presente contrato, dirija sus comunicaciones a <strong>contact@axenorcorporations.com</strong>.</li>
+                <li><strong>Modificaciones:</strong> Axenor se reserva el derecho de modificar estos Términos en cualquier momento para adaptarse a nuevas regulaciones o cambios en el portafolio de productos. Se considerará que usted ha aceptado tácitamente las modificaciones si continúa utilizando la plataforma tras su publicación en el sitio web de la empresa: https://axenorcorporations.com.</li>
+              </ul>
             </div>
           </div>
         </div>
