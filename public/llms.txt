@@ -16,12 +16,17 @@ Sitio oficial / Official site: https://web.axenorcorporations.com
 - Servicios críticos / Critical services: Operación y soporte de sistemas de misión crítica con continuidad de negocio y cumplimiento de SLA. / Operation and support of mission-critical systems with business continuity and SLA compliance.
 - Solución de software / Software solutions: Desarrollo de software a la medida bajo estándares de calidad, escalabilidad y mantenibilidad. / Custom software development under quality, scalability and maintainability standards.
 
+## Casos / Case studies
+- Faro (software a la medida con IA / custom software with AI): plataforma diseñada, construida y operada por Axenor para un programa de aceleración empresarial de 85 empresas: diagnóstico de 147 preguntas, 9 lienzos estratégicos, asesor de IA con 6 modos, mentorías y consola del programa. Cliente confidencial. / Platform designed, built and run by Axenor for an 85-company business acceleration program. Confidential client. https://web.axenorcorporations.com/casos/faro
+- Autodiagnóstico para emprendedores (cloud y ciberseguridad / cloud and cybersecurity): aplicación de un tercero que Axenor llevó a producción en Google Cloud, aseguró (mínimo privilegio, copias de seguridad, secretos administrados) y operó durante su campaña: 329 registros y 191 diagnósticos completos. / A third-party app Axenor took to production on Google Cloud, secured and ran for its campaign: 329 sign-ups and 191 completed assessments. https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores
+
 ## Cómo trabajamos / How we work
 Modelo Forward Deployed: nos embebemos en el contexto, el stack y los datos del cliente y somos dueños del problema hasta un resultado medible. Cuatro fases: Onboarding, Discovery, Delivery y Medición, cada una con un cierre verificable. / Forward Deployed model: we embed in the client's context, stack and data and own the problem until a measurable result. Four phases: Onboarding, Discovery, Delivery and Measurement, each with a verifiable close.
 
 ## Páginas / Pages
 - Inicio / Home: https://web.axenorcorporations.com/
 - Servicios / Services: https://web.axenorcorporations.com/servicios
+- Casos / Case studies: https://web.axenorcorporations.com/casos
 - Cómo trabajamos / How we work: https://web.axenorcorporations.com/como-trabajamos
 - Nosotros / About: https://web.axenorcorporations.com/nosotros
 - Glosario / Glossary: https://web.axenorcorporations.com/glosario

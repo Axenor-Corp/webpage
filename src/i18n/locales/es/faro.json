@@ -1,0 +1,251 @@
+{
+  "frame": {
+    "label": "Faro · plataforma de aceleración empresarial"
+  },
+  "confidential": "Cliente y participantes bajo acuerdo de confidencialidad. Las capturas usan datos de demostración.",
+  "roles": {
+    "company": "Empresa",
+    "mentor": "Mentor",
+    "program": "Equipo del programa"
+  },
+  "screens": {
+    "journey": {
+      "tab": "Recorrido",
+      "title": "Un plano de ruta por fases",
+      "text": "Cada empresa ve dónde está, qué superó y qué viene. La fase en curso abre o cierra secciones de la plataforma de forma automática.",
+      "alt": "Pantalla de Faro con el recorrido de una empresa de demostración por las fases del programa"
+    },
+    "diagnostic": {
+      "tab": "Diagnóstico",
+      "title": "Diagnóstico X-Ray con línea base",
+      "text": "147 preguntas en siete áreas del negocio. Al enviarlo, la empresa recibe su madurez global, un mapa de araña y sus retos priorizados.",
+      "alt": "Resultados del diagnóstico: madurez global del 60 % y mapa de araña de siete áreas"
+    },
+    "bootcamp": {
+      "tab": "Bootcamp",
+      "title": "Lienzos estratégicos que se guardan solos",
+      "text": "Nueve lienzos interactivos (Moonshot, Ansoff, Playing to Win, Propuesta de Valor, OKRs y más) con autoguardado, recuperación sin conexión y edición simultánea.",
+      "alt": "Lienzo Moonshot del bootcamp con su consigna y sus pasos"
+    },
+    "assistant": {
+      "tab": "Asesor IA",
+      "title": "Un asesor de IA que conoce la empresa",
+      "text": "Responde con los documentos de la propia empresa y los cita, recuerda lo acordado entre conversaciones y trabaja en seis modos: uno automático y cinco especialistas.",
+      "alt": "Conversación con el asesor de inteligencia artificial de Faro"
+    },
+    "mentor": {
+      "tab": "Mentor",
+      "title": "El espacio del mentor",
+      "text": "Diagnóstico, modelos, mentorías y actas de cada empresa asignada en un solo tablero, con vista en vivo durante las jornadas.",
+      "alt": "Tablero del mentor con la madurez, los retos prioritarios y el cumplimiento de una empresa"
+    },
+    "console": {
+      "tab": "Consola",
+      "title": "La consola del programa",
+      "text": "El equipo opera toda la cohorte: fases, mentores, agenda, asistencia, encuestas y exportes, con el estado de cada empresa a la vista.",
+      "alt": "Consola de administración con el listado de empresas participantes anonimizado"
+    },
+    "company": {
+      "tab": "Gestión",
+      "title": "Gestión por empresa",
+      "text": "Control de fase y módulos por empresa, y entregables oficiales en un clic: brief estratégico y perfil del empresario en PDF, Excel del diagnóstico y exportación completa.",
+      "alt": "Ficha de gestión de una empresa de demostración con sus entregables en PDF y Excel"
+    }
+  },
+  "metrics": {
+    "companies": "empresas en la cohorte",
+    "questions": "preguntas en el diagnóstico",
+    "canvases": "lienzos estratégicos",
+    "modes": "modos del asesor de IA",
+    "roles": "roles con espacio propio",
+    "policies": "políticas de aislamiento de datos"
+  },
+  "modules": {
+    "diagnostic": {
+      "title": "Diagnóstico de entrada",
+      "text": "Cuestionario por áreas con línea base numérica, devolución inmediata y comparación anónima con el grupo."
+    },
+    "journey": {
+      "title": "Recorrido por fases",
+      "text": "El programa modelado como fases en orden: cada etapa abre lo que corresponde y el equipo puede forzar módulos."
+    },
+    "bootcamp": {
+      "title": "Bootcamp de lienzos",
+      "text": "Lienzos con consigna, tiempo sugerido, avance, historial de versiones y un muro en vivo de toda la cohorte."
+    },
+    "assistant": {
+      "title": "Asesor de IA con fuentes",
+      "text": "Responde sobre el negocio con los documentos de cada empresa, cita de dónde saca cada dato y guía sin escribir por el participante."
+    },
+    "mentoring": {
+      "title": "Mentorías y actas",
+      "text": "Acta GROW con cronómetro y compromisos, y actas formales con aprobación en dos niveles sellada con nombre y fecha."
+    },
+    "documents": {
+      "title": "Carpeta documental",
+      "text": "Ocho categorías, subida directa a la nube e indexación automática para que el asesor la consulte."
+    },
+    "agenda": {
+      "title": "Agenda y encuestas",
+      "text": "Sesiones con invitación por empresa, asistencia, grabaciones y encuestas de satisfacción por formato."
+    },
+    "console": {
+      "title": "Consola y exportes",
+      "text": "Altas, fases, asignación de mentores, matriz de cumplimiento y exportes en PDF, Excel y JSON."
+    }
+  },
+  "tour": {
+    "title": "Recorre Faro por dentro",
+    "subtitle": "Tres roles, un mismo sistema, cada uno con su propio espacio. Elige uno y explora sus pantallas.",
+    "rolesLabel": "Elige un rol",
+    "roles": {
+      "company": "La empresa hace su diagnóstico, trabaja sus modelos de negocio y consulta al asesor de IA cuando lo necesita.",
+      "mentor": "El mentor prepara y documenta cada sesión con el contexto completo de las empresas que acompaña.",
+      "program": "El equipo del programa opera la cohorte, controla fases y genera los entregables oficiales."
+    },
+    "extras": {
+      "company": [
+        "Carpeta documental que alimenta al asesor",
+        "Agenda con sus sesiones y encuestas",
+        "Directorio de participantes con buscador"
+      ],
+      "mentor": [
+        "Acta GROW con cronómetro y compromisos con fecha",
+        "Revisión y visto bueno de actas antes de publicarse",
+        "Vista en vivo de lo que la empresa escribe en la jornada"
+      ],
+      "program": [
+        "Matriz de cumplimiento de toda la cohorte",
+        "Agenda, asistencia y encuestas por formato",
+        "Muro en vivo durante las jornadas de bootcamp"
+      ]
+    }
+  },
+  "showcase": {
+    "kicker": "Caso destacado · Software a la medida",
+    "title": "Faro: la plataforma detrás de un programa de aceleración de 85 empresas",
+    "text": "La diseñamos y la construimos a la medida de un programa concreto, y hoy la operamos. Cada empresa hace su diagnóstico, trabaja sus modelos de negocio con un asesor de IA y avanza junto a su mentor, mientras el equipo del programa sigue toda la cohorte en tiempo real.",
+    "cta": "Ver el caso completo",
+    "ctaSecondary": "Necesito algo a mi medida",
+    "tabsLabel": "Pantallas de Faro"
+  },
+  "case": {
+    "meta": {
+      "title": "Caso Faro: software a la medida para un programa de aceleración",
+      "description": "Cómo Axenor diseñó y construyó a la medida Faro, la plataforma con diagnóstico, lienzos estratégicos, asesor de IA y mentorías de un programa de aceleración de 85 empresas."
+    },
+    "hero": {
+      "kicker": "Caso · Software a la medida",
+      "title": "Faro",
+      "lead": "La plataforma que construimos a la medida de un programa de aceleración empresarial.",
+      "text": "Como todo lo que hacemos, Faro no salió de un catálogo: la diseñamos alrededor de la metodología de un programa concreto, con sus fases, sus instrumentos y sus roles. Hoy opera en producción con 85 empresas.",
+      "cta": "Cuéntanos tu reto",
+      "ctaSecondary": "Recorre la plataforma"
+    },
+    "facts": {
+      "client": {
+        "label": "Cliente",
+        "value": "Programa de aceleración (confidencial)"
+      },
+      "type": {
+        "label": "Tipo de proyecto",
+        "value": "Software a la medida"
+      },
+      "scope": {
+        "label": "Alcance",
+        "value": "Diseño, ingeniería, IA y operación"
+      },
+      "status": {
+        "label": "Estado",
+        "value": "En producción"
+      }
+    },
+    "story": {
+      "challenge": {
+        "title": "El reto",
+        "text": "Decenas de empresas, mentores y un equipo de programa trabajando en paralelo con información sensible de cada negocio. Había que medir una línea base, guiar talleres intensivos, documentar cada mentoría y rendir cuentas al cierre, sin que una empresa pudiera ver jamás los datos de otra."
+      },
+      "solution": {
+        "title": "La solución",
+        "text": "Una plataforma diseñada a partir de su metodología, con tres espacios: el de la empresa, el del mentor y la consola del programa. El diagnóstico abre el recorrido, los lienzos se guardan solos, un asesor de IA responde con los documentos de cada empresa y las actas pasan por aprobación antes de publicarse."
+      },
+      "result": {
+        "title": "El resultado",
+        "text": "La cohorte completa trabaja dentro de Faro: diagnósticos, modelos, mentorías, agenda, asistencia y encuestas en un mismo lugar, con entregables oficiales que salen en un clic y trazabilidad de cada paso."
+      }
+    },
+    "modules": {
+      "title": "Hecha pieza por pieza para el programa",
+      "subtitle": "Cada módulo responde a una parte concreta de su metodología, no a una plantilla genérica."
+    },
+    "engineering": {
+      "title": "La ingeniería detrás",
+      "subtitle": "Construida para proteger los datos de cada empresa y escalar sin sobresaltos.",
+      "stack": "Stack",
+      "items": {
+        "isolation": {
+          "title": "Aislamiento en la base de datos",
+          "text": "121 políticas de seguridad a nivel de fila. La separación entre empresas la impone el motor de datos, no la interfaz."
+        },
+        "ai": {
+          "title": "IA dentro de la nube del programa",
+          "text": "Modelo Gemini en Vertex AI, en la misma región que el resto de la infraestructura, con búsqueda semántica sobre pgvector."
+        },
+        "scale": {
+          "title": "Escala automática",
+          "text": "Contenedores en Cloud Run que pasan de cero a diez instancias según la demanda, sin servidores que administrar."
+        },
+        "mobile": {
+          "title": "Lista para el celular",
+          "text": "Instalable como app en Android y escritorio, app nativa para iPhone y pantalla sin conexión en español."
+        }
+      }
+    },
+    "process": {
+      "title": "Cómo la construimos",
+      "subtitle": "El mismo método que aplicamos en cada proyecto.",
+      "link": "Conoce cómo trabajamos",
+      "items": {
+        "understand": {
+          "title": "Entender el programa",
+          "text": "Nos sentamos con el equipo a entender su metodología, sus instrumentos y quién hace qué en cada fase."
+        },
+        "design": {
+          "title": "Diseñar a su medida",
+          "text": "Convertimos cada fase, formato y rol en flujos, permisos y pantallas, sin forzar el programa a una herramienta genérica."
+        },
+        "build": {
+          "title": "Construir y lanzar",
+          "text": "Entregamos por módulos, en la nube y con la seguridad de los datos resuelta desde la base."
+        },
+        "operate": {
+          "title": "Operar y ajustar",
+          "text": "Seguimos a cargo de la plataforma: la operamos, la mantenemos y la ajustamos a lo que pide el programa."
+        }
+      }
+    },
+    "capabilities": {
+      "title": "Lo que Faro demuestra, aplicado a tu reto",
+      "text": "Faro resolvió el problema de un programa concreto. Tu reto será otro, pero las capacidades que lo hicieron posible son las mismas que ponemos en cada proyecto a la medida.",
+      "items": [
+        "Plataformas multiempresa con datos aislados",
+        "Asistentes de IA sobre tus propios documentos",
+        "Flujos de aprobación con trazabilidad",
+        "Diagnósticos y tableros de seguimiento",
+        "Apps instalables en el celular",
+        "Informes y exportes automáticos"
+      ]
+    },
+    "cta": {
+      "title": "¿Qué herramienta necesita tu operación?",
+      "text": "Cuéntanos el problema. La diseñamos y la construimos a tu medida, de la idea a producción, y respondemos por el resultado.",
+      "primary": "Cuéntanos tu reto",
+      "secondary": "Ver servicios"
+    }
+  },
+  "callout": {
+    "label": "Caso real",
+    "title": "Faro: plataforma a la medida para un programa de aceleración de 85 empresas",
+    "link": "Ver el caso"
+  }
+}

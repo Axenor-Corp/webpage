@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "Case studies",
+    "description": "Real Axenor projects told without names: custom software with AI, and hosting and cybersecurity for applications in production."
+  },
+  "header": {
+    "title": "Case studies",
+    "subtitle": "What we build, run and secure",
+    "intro": "Real projects, told without names: our clients work with us under confidentiality agreements."
+  },
+  "view": "Read the case",
+  "items": {
+    "faro": {
+      "tag": "Custom software · AI",
+      "title": "Faro: a platform for an acceleration program",
+      "text": "The platform we designed, built and run around one program's methodology: diagnostics, strategy canvases, an AI advisor, mentoring and a console for the whole cohort.",
+      "imageAlt": "Faro screen showing a demo company's journey through the program phases",
+      "figures": [
+        { "value": "85", "label": "companies in the cohort" },
+        { "value": "9", "label": "strategy canvases" },
+        { "value": "6", "label": "AI advisor modes" }
+      ]
+    },
+    "hosting": {
+      "tag": "Cloud · Cybersecurity",
+      "title": "Self-assessment for entrepreneurs",
+      "text": "A third-party app we took to production, secured and ran for its whole campaign, without reprinting the QR code already in circulation.",
+      "panelLabel": "Hosting and security case",
+      "panelText": "founders registered during the campaign",
+      "figures": [
+        { "value": "191", "label": "completed assessments" },
+        { "value": "0", "label": "QR codes reprinted" },
+        { "value": "~28 USD", "label": "a month to run" }
+      ]
+    }
+  },
+  "note": "Screenshots use demo data, and we do not show screens of applications that are not ours."
+}

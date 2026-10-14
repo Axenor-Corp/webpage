@@ -37,6 +37,15 @@ Stack: SLA, Monitoreo, Continuidad, Soporte, ITSM.
 Desarrollo de software a la medida bajo estándares de calidad, escalabilidad y mantenibilidad. Construimos software que encaja exactamente en tu operación, con propiedad end-to-end del primer boceto a producción.
 Stack: Web, Móvil, APIs, Integraciones, QA.
 
+## Casos
+### Faro: plataforma a la medida para un programa de aceleración
+Plataforma diseñada, construida y operada por Axenor alrededor de la metodología de un programa de aceleración empresarial (cliente confidencial), en producción con 85 empresas. Tres espacios (empresa, mentor y equipo del programa): diagnóstico X-Ray de 147 preguntas en 7 áreas con línea base, recorrido por fases, bootcamp con 9 lienzos estratégicos con autoguardado, asesor de IA que responde con los documentos de cada empresa (6 modos), mentorías con actas y aprobación, agenda, encuestas y exportes. Aislamiento entre empresas en la base de datos con 121 políticas de seguridad a nivel de fila. Stack: Next.js, React 19, TypeScript, PostgreSQL con pgvector, Google Cloud Run, Vertex AI (Gemini), PWA e iOS.
+URL: https://web.axenorcorporations.com/casos/faro
+
+### Autodiagnóstico para emprendedores: alojamiento y ciberseguridad
+Axenor no desarrolló esta aplicación: la llevó a producción, la aseguró y la operó. Era un test para fundadores hecho por un tercero sobre una plataforma de prototipado, con un QR ya impreso. Migración a Google Cloud (Cloud Run y Cloud SQL con PostgreSQL 17), redirección permanente del QR sin romper enlaces, dominio propio con TLS administrado, rol de base de datos de mínimo privilegio, copias automáticas y protección contra borrado, secretos en Secret Manager, presupuesto con alertas y capacidad ajustada (de 50 a 8 conexiones, 160 sesiones simultáneas). Resultado: 329 registros y 191 diagnósticos completos, operación por unos 28 USD al mes y cierre con respaldo completo verificado.
+URL: https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores
+
 ## Cómo trabajamos
 Nos embebemos en tu contexto (tu stack, tus datos, tus restricciones) y somos dueños del problema hasta que produce un resultado medible. Principios: contexto antes que código; propiedad end-to-end; experiencia, no manos supervisadas.
 Proceso (4 fases): 01 Onboarding, nos embebemos en tu equipo y tu stack; 02 Discovery, inmersión en el contexto y los datos reales; 03 Delivery, construcción bajo restricciones reales iterando en producción; 04 Medición, cerramos sobre una métrica de negocio acordada de antemano, monitoreada en vivo.
@@ -99,6 +108,15 @@ Stack: SLA, Monitoring, Continuity, Support, ITSM.
 ### Software solutions
 Custom software development under quality, scalability and maintainability standards. We build software that fits your operation exactly, with end-to-end ownership from first sketch to production.
 Stack: Web, Mobile, APIs, Integrations, QA.
+
+## Case studies
+### Faro: a custom platform for an acceleration program
+Platform designed, built and run by Axenor around the methodology of a business acceleration program (confidential client), in production with 85 companies. Three workspaces (company, mentor and program team): 147-question X-Ray diagnostic across 7 areas with a baseline, phase journey, a bootcamp with 9 auto-saving strategy canvases, an AI advisor that answers from each company's documents (6 modes), mentoring with approved minutes, scheduling, surveys and exports. Isolation between companies enforced in the database with 121 row-level security policies. Stack: Next.js, React 19, TypeScript, PostgreSQL with pgvector, Google Cloud Run, Vertex AI (Gemini), PWA and iOS.
+URL: https://web.axenorcorporations.com/casos/faro
+
+### Self-assessment for entrepreneurs: hosting and cybersecurity
+Axenor did not build this app: it took it to production, secured it and ran it. It was a founder test built by a third party on a prototyping platform, with a QR code already printed. Migration to Google Cloud (Cloud Run and Cloud SQL with PostgreSQL 17), a permanent QR redirect without breaking links, a custom domain with managed TLS, a least-privilege database role, automatic backups and deletion protection, secrets in Secret Manager, a budget with alerts and tuned capacity (from 50 to 8 connections, 160 concurrent sessions). Result: 329 sign-ups and 191 completed assessments, about 28 USD a month to run, and a shutdown with a complete verified backup.
+URL: https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores
 
 ## How we work
 We embed in your context (your stack, your data, your constraints) and own the problem until it produces a measurable result. Principles: context before code; end-to-end ownership; seniority, not supervised hands.

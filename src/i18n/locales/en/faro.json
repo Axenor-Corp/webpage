@@ -1,0 +1,251 @@
+{
+  "frame": {
+    "label": "Faro · business acceleration platform"
+  },
+  "confidential": "Client and participants are under a confidentiality agreement. Screenshots use demo data.",
+  "roles": {
+    "company": "Company",
+    "mentor": "Mentor",
+    "program": "Program team"
+  },
+  "screens": {
+    "journey": {
+      "tab": "Journey",
+      "title": "A phase-by-phase roadmap",
+      "text": "Each company sees where it stands, what it has completed and what comes next. The current phase opens or closes parts of the platform automatically.",
+      "alt": "Faro screen showing a demo company's journey through the program phases"
+    },
+    "diagnostic": {
+      "tab": "Diagnostic",
+      "title": "X-Ray diagnostic with a baseline",
+      "text": "147 questions across seven business areas. On submission the company gets its overall maturity, a radar map and its prioritized challenges.",
+      "alt": "Diagnostic results: 60% overall maturity and a seven-area radar map"
+    },
+    "bootcamp": {
+      "tab": "Bootcamp",
+      "title": "Strategy canvases that save themselves",
+      "text": "Nine interactive canvases (Moonshot, Ansoff, Playing to Win, Value Proposition, OKRs and more) with autosave, offline recovery and simultaneous editing.",
+      "alt": "Bootcamp Moonshot canvas with its prompt and steps"
+    },
+    "assistant": {
+      "tab": "AI advisor",
+      "title": "An AI advisor that knows the company",
+      "text": "It answers from the company's own documents and cites them, remembers what was agreed across conversations and works in six modes: one automatic and five specialists.",
+      "alt": "Conversation with Faro's artificial intelligence advisor"
+    },
+    "mentor": {
+      "tab": "Mentor",
+      "title": "The mentor workspace",
+      "text": "Diagnostic, models, mentoring sessions and minutes for every assigned company on one board, with a live view during workshops.",
+      "alt": "Mentor board with a company's maturity, priority challenges and compliance"
+    },
+    "console": {
+      "tab": "Console",
+      "title": "The program console",
+      "text": "The team runs the whole cohort: phases, mentors, schedule, attendance, surveys and exports, with every company's status in sight.",
+      "alt": "Admin console with an anonymized list of participating companies"
+    },
+    "company": {
+      "tab": "Management",
+      "title": "Per-company management",
+      "text": "Phase and module control per company, plus official deliverables in one click: strategic brief and founder profile as PDF, diagnostic workbook and full export.",
+      "alt": "Management view of a demo company with its PDF and Excel deliverables"
+    }
+  },
+  "metrics": {
+    "companies": "companies in the cohort",
+    "questions": "diagnostic questions",
+    "canvases": "strategy canvases",
+    "modes": "AI advisor modes",
+    "roles": "roles with their own workspace",
+    "policies": "data isolation policies"
+  },
+  "modules": {
+    "diagnostic": {
+      "title": "Entry diagnostic",
+      "text": "Area-based questionnaire with a numeric baseline, instant feedback and an anonymous comparison with the group."
+    },
+    "journey": {
+      "title": "Phase journey",
+      "text": "The program modeled as ordered phases: each stage unlocks what applies and the team can override modules."
+    },
+    "bootcamp": {
+      "title": "Canvas bootcamp",
+      "text": "Canvases with prompts, suggested timing, progress, version history and a live wall of the whole cohort."
+    },
+    "assistant": {
+      "title": "AI advisor with sources",
+      "text": "Answers business questions from each company's documents, cites where every fact comes from and guides without writing for the participant."
+    },
+    "mentoring": {
+      "title": "Mentoring and minutes",
+      "text": "GROW minutes with a timer and commitments, and formal minutes with two-level approval stamped with name and date."
+    },
+    "documents": {
+      "title": "Document folder",
+      "text": "Eight categories, direct cloud upload and automatic indexing so the advisor can use them."
+    },
+    "agenda": {
+      "title": "Schedule and surveys",
+      "text": "Sessions with per-company invitations, attendance, recordings and satisfaction surveys by format."
+    },
+    "console": {
+      "title": "Console and exports",
+      "text": "Onboarding, phases, mentor assignment, compliance matrix and PDF, Excel and JSON exports."
+    }
+  },
+  "tour": {
+    "title": "Take a look inside Faro",
+    "subtitle": "Three roles, one system, each with its own workspace. Pick one and explore its screens.",
+    "rolesLabel": "Pick a role",
+    "roles": {
+      "company": "The company completes its diagnostic, works on its business models and asks the AI advisor whenever it needs to.",
+      "mentor": "The mentor prepares and documents every session with the full context of the companies they support.",
+      "program": "The program team runs the cohort, controls phases and generates the official deliverables."
+    },
+    "extras": {
+      "company": [
+        "Document folder that feeds the advisor",
+        "Schedule with its sessions and surveys",
+        "Searchable participant directory"
+      ],
+      "mentor": [
+        "GROW minutes with a timer and dated commitments",
+        "Review and sign-off of minutes before publishing",
+        "Live view of what the company writes during workshops"
+      ],
+      "program": [
+        "Compliance matrix for the whole cohort",
+        "Schedule, attendance and surveys by format",
+        "Live wall during bootcamp workshops"
+      ]
+    }
+  },
+  "showcase": {
+    "kicker": "Featured case · Custom software",
+    "title": "Faro: the platform behind an 85-company acceleration program",
+    "text": "We designed and built it around one specific program, and we run it today. Each company completes its diagnostic, works on its business models with an AI advisor and moves forward with its mentor, while the program team follows the whole cohort in real time.",
+    "cta": "Read the full case",
+    "ctaSecondary": "I need something custom",
+    "tabsLabel": "Faro screens"
+  },
+  "case": {
+    "meta": {
+      "title": "Faro case study: custom software for an acceleration program",
+      "description": "How Axenor custom-designed and built Faro, the platform with diagnostics, strategy canvases, an AI advisor and mentoring for an 85-company acceleration program."
+    },
+    "hero": {
+      "kicker": "Case study · Custom software",
+      "title": "Faro",
+      "lead": "The platform we custom-built for a business acceleration program.",
+      "text": "Like everything we do, Faro did not come out of a catalog: we designed it around one program's methodology, with its phases, its instruments and its roles. Today it runs in production with 85 companies.",
+      "cta": "Tell us your challenge",
+      "ctaSecondary": "Tour the platform"
+    },
+    "facts": {
+      "client": {
+        "label": "Client",
+        "value": "Acceleration program (confidential)"
+      },
+      "type": {
+        "label": "Project type",
+        "value": "Custom software"
+      },
+      "scope": {
+        "label": "Scope",
+        "value": "Design, engineering, AI and operations"
+      },
+      "status": {
+        "label": "Status",
+        "value": "In production"
+      }
+    },
+    "story": {
+      "challenge": {
+        "title": "The challenge",
+        "text": "Dozens of companies, mentors and a program team working in parallel with sensitive data from each business. The program had to set a baseline, run intensive workshops, document every mentoring session and report at the close, without any company ever seeing another's data."
+      },
+      "solution": {
+        "title": "The solution",
+        "text": "A platform designed from their methodology, with three workspaces: the company's, the mentor's and the program console. The diagnostic opens the journey, canvases save themselves, an AI advisor answers from each company's documents and minutes go through approval before they are published."
+      },
+      "result": {
+        "title": "The result",
+        "text": "The whole cohort works inside Faro: diagnostics, models, mentoring, schedule, attendance and surveys in one place, with official deliverables in one click and traceability for every step."
+      }
+    },
+    "modules": {
+      "title": "Built piece by piece for the program",
+      "subtitle": "Each module answers a specific part of their methodology, not a generic template."
+    },
+    "engineering": {
+      "title": "The engineering behind it",
+      "subtitle": "Built to protect each company's data and to scale without surprises.",
+      "stack": "Stack",
+      "items": {
+        "isolation": {
+          "title": "Isolation in the database",
+          "text": "121 row-level security policies. Separation between companies is enforced by the data engine, not the interface."
+        },
+        "ai": {
+          "title": "AI inside the program's cloud",
+          "text": "Gemini on Vertex AI, in the same region as the rest of the infrastructure, with semantic search on pgvector."
+        },
+        "scale": {
+          "title": "Automatic scaling",
+          "text": "Cloud Run containers that go from zero to ten instances on demand, with no servers to manage."
+        },
+        "mobile": {
+          "title": "Ready for mobile",
+          "text": "Installable as an app on Android and desktop, a native iPhone app and an offline screen in Spanish."
+        }
+      }
+    },
+    "process": {
+      "title": "How we built it",
+      "subtitle": "The same method we apply to every project.",
+      "link": "See how we work",
+      "items": {
+        "understand": {
+          "title": "Understand the program",
+          "text": "We sat down with the team to understand their methodology, their instruments and who does what in each phase."
+        },
+        "design": {
+          "title": "Design around it",
+          "text": "We turned every phase, format and role into flows, permissions and screens, without forcing the program into a generic tool."
+        },
+        "build": {
+          "title": "Build and launch",
+          "text": "We delivered module by module, in the cloud, with data security solved at the foundation."
+        },
+        "operate": {
+          "title": "Run and adjust",
+          "text": "We still own the platform: we run it, maintain it and adjust it to what the program needs."
+        }
+      }
+    },
+    "capabilities": {
+      "title": "What Faro proves, applied to your challenge",
+      "text": "Faro solved one program's problem. Your challenge will be different, but the capabilities that made it possible are the same ones we bring to every custom project.",
+      "items": [
+        "Multi-company platforms with isolated data",
+        "AI assistants over your own documents",
+        "Approval flows with traceability",
+        "Diagnostics and tracking dashboards",
+        "Installable mobile apps",
+        "Automatic reports and exports"
+      ]
+    },
+    "cta": {
+      "title": "What tool does your operation need?",
+      "text": "Tell us the problem. We design and build it to fit you, from idea to production, and we stand behind the result.",
+      "primary": "Tell us your challenge",
+      "secondary": "See services"
+    }
+  },
+  "callout": {
+    "label": "Real case",
+    "title": "Faro: a custom platform for an 85-company acceleration program",
+    "link": "Read the case"
+  }
+}

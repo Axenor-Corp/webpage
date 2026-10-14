@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "title": "Caso: alojamiento y ciberseguridad para un autodiagnóstico de emprendedores",
+    "description": "Cómo Axenor llevó a producción, aseguró y operó una aplicación desarrollada por un tercero: migración a la nube, dominio propio, mínimo privilegio, copias de seguridad y cierre ordenado."
+  },
+  "hero": {
+    "kicker": "Caso · Cloud y ciberseguridad",
+    "title": "Autodiagnóstico para emprendedores",
+    "lead": "No lo construimos. Lo pusimos en producción, lo aseguramos y lo operamos.",
+    "text": "Una organización de emprendimiento tenía un test para fundadores hecho por un tercero, montado sobre una plataforma de prototipado y con un QR ya impreso y circulando. Nos encargamos del alojamiento y la seguridad: lo migramos a una nube administrada por nosotros, cerramos las brechas y lo mantuvimos estable hasta el cierre de la campaña.",
+    "cta": "Cuéntanos tu caso",
+    "ctaSecondary": "Ver el antes y el después",
+    "statsLabel": "La campaña, en cifras"
+  },
+  "stats": {
+    "registered": { "value": "329", "label": "fundadores registrados" },
+    "completed": { "value": "191", "label": "diagnósticos completos" },
+    "reprints": { "value": "0", "label": "QR reimpresos" },
+    "sessions": { "value": "160", "label": "sesiones simultáneas soportadas" }
+  },
+  "facts": {
+    "client": { "label": "Cliente", "value": "Organización de emprendimiento (confidencial)" },
+    "role": { "label": "Nuestro rol", "value": "Alojamiento, ciberseguridad y operación" },
+    "app": { "label": "La aplicación", "value": "Desarrollada por un tercero" },
+    "cycle": { "label": "Alcance en el tiempo", "value": "Migración, campaña y cierre" }
+  },
+  "story": {
+    "challenge": {
+      "title": "El reto",
+      "text": "La aplicación funcionaba y el QR ya estaba impreso, pero corría en un entorno pensado para prototipos: sin copias de seguridad, sin protección contra borrado, con permisos de base de datos más abiertos de lo necesario y con más conexiones de las que la base podía atender en un pico."
+    },
+    "solution": {
+      "title": "Lo que hicimos",
+      "text": "Migramos la aplicación a una nube administrada por nosotros, redirigimos el QR existente sin romper enlaces ni la analítica de campaña, pusimos dominio propio con certificado automático, dejamos la base con el mínimo privilegio y copias automáticas, y ajustamos la capacidad para los picos de los eventos."
+    },
+    "result": {
+      "title": "El resultado",
+      "text": "La campaña corrió completa sobre la nueva infraestructura, con un costo de operación cercano a 28 USD al mes. Al terminar entregamos un respaldo verificado de todo y dimos de baja los recursos para que el cliente no siguiera pagando."
+    }
+  },
+  "architecture": {
+    "title": "Antes y después",
+    "subtitle": "La misma aplicación y el mismo QR. Lo que cambió fue todo lo que la sostiene.",
+    "before": {
+      "label": "Antes",
+      "nodes": {
+        "qr": {
+          "title": "QR impreso en circulación",
+          "text": "Apuntaba directo a la plataforma de prototipado."
+        },
+        "host": {
+          "title": "Plataforma de prototipado",
+          "text": "Alojamiento y base de datos en cuentas de terceros, sin control propio."
+        },
+        "db": {
+          "title": "Base de datos con datos personales",
+          "issues": [
+            "Sin copias de seguridad",
+            "Sin protección contra borrado",
+            "Permisos más abiertos de lo necesario"
+          ]
+        },
+        "capacity": {
+          "title": "Capacidad sin ajustar",
+          "text": "Hasta 50 conexiones contra una base que admite unas 25."
+        }
+      }
+    },
+    "after": {
+      "label": "Después",
+      "nodes": {
+        "qr": {
+          "title": "El mismo QR, redirigido",
+          "text": "Redirección permanente que conserva enlaces y parámetros de campaña."
+        },
+        "domain": {
+          "title": "Dominio propio con TLS automático",
+          "text": "Certificado administrado y renovación sin intervención."
+        },
+        "run": {
+          "title": "Contenedor en Cloud Run",
+          "text": "Sin servidores que mantener, máximo 4 instancias y 160 sesiones simultáneas."
+        },
+        "db": {
+          "title": "PostgreSQL 17 en Cloud SQL",
+          "checks": [
+            "Rol que solo puede consultar e insertar",
+            "30 copias retenidas y un respaldo verificado",
+            "Protección contra borrado y tope de disco"
+          ]
+        },
+        "guards": {
+          "title": "Guardas alrededor",
+          "text": "Credenciales en Secret Manager y presupuesto con alertas al 50, 90 y 100 %."
+        }
+      }
+    }
+  },
+  "security": {
+    "title": "Ciberseguridad aplicada",
+    "subtitle": "Controles concretos, pensados para una app con datos personales y tráfico de eventos.",
+    "items": {
+      "privilege": {
+        "title": "Mínimo privilegio",
+        "text": "La aplicación se conecta con un rol que solo puede consultar e insertar. No puede borrar ni modificar lo que ya existe."
+      },
+      "secrets": {
+        "title": "Secretos fuera del código",
+        "text": "Las credenciales viven en Secret Manager y los archivos de entorno quedan excluidos del repositorio y de las imágenes."
+      },
+      "backups": {
+        "title": "Copias y protección contra borrado",
+        "text": "Copias automáticas con 30 retenidas, un respaldo manual verificado y protección contra borrado de la instancia."
+      },
+      "inherited": {
+        "title": "Revisión de lo heredado",
+        "text": "Auditamos permisos, costos y fallos del entorno anterior, y verificamos cada hallazgo antes de actuar."
+      },
+      "transport": {
+        "title": "Tráfico cifrado y dominio propio",
+        "text": "HTTPS con certificado administrado y renovación automática, con la campaña servida desde un dominio bajo nuestro control."
+      },
+      "spend": {
+        "title": "Freno al abuso y al gasto",
+        "text": "Tope de instancias y presupuesto con alertas: un pico o un ataque no se convierte en una factura sorpresa."
+      }
+    }
+  },
+  "reliability": {
+    "title": "Estable en los picos de los eventos",
+    "items": {
+      "connections": {
+        "value": "50 → 8",
+        "label": "conexiones a la base, ajustadas a lo que realmente soporta"
+      },
+      "cost": {
+        "value": "~28 USD",
+        "label": "al mes de operación, 93 % de ellos en la base de datos"
+      },
+      "scale": {
+        "value": "30.000",
+        "label": "diagnósticos al mes posibles sin costo adicional de cómputo"
+      }
+    },
+    "fixes": "Al ponerla en producción encontramos y corregimos dos fallos que afectaban la operación: una fuga de conexiones que podía dejar el servicio caído y un doble envío que dejaba al usuario atascado justo después de responder las 28 preguntas."
+  },
+  "closure": {
+    "title": "Un cierre tan cuidado como el lanzamiento",
+    "text": "Cuando terminó la campaña no apagamos y ya. Entregamos un paquete completo y verificado para que el cliente pueda restaurar el servicio cuando quiera, en esta nube o en otra, y dimos de baja los recursos.",
+    "items": [
+      "Volcado completo de la base y tablas listas para Excel",
+      "Código, configuración exacta de la infraestructura y registros",
+      "Imagen del contenedor que estaba en producción, verificada por SHA-256",
+      "Instrucciones para restaurar paso a paso"
+    ]
+  },
+  "stack": {
+    "title": "Stack",
+    "items": [
+      "Google Cloud Run",
+      "Cloud SQL · PostgreSQL 17",
+      "Secret Manager",
+      "Artifact Registry",
+      "Cloudflare DNS",
+      "TLS administrado",
+      "Presupuestos y alertas"
+    ]
+  },
+  "cta": {
+    "title": "¿Tienes una aplicación que funciona pero no está lista para producción?",
+    "text": "La alojamos, la aseguramos y la operamos, la hayamos construido nosotros o no.",
+    "primary": "Cuéntanos tu caso",
+    "secondary": "Ver servicios de cloud"
+  },
+  "confidential": "Cliente bajo acuerdo de confidencialidad. La aplicación es de un tercero, por eso aquí no mostramos sus pantallas.",
+  "callout": {
+    "label": "Caso real",
+    "title": "Pusimos en producción y aseguramos una app de terceros con 329 usuarios",
+    "link": "Ver el caso"
+  }
+}

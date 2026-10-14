@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "title": "Case study: hosting and cybersecurity for an entrepreneur self-assessment",
+    "description": "How Axenor took a third-party app to production, secured it and ran it: cloud migration, custom domain, least privilege, backups and an orderly shutdown."
+  },
+  "hero": {
+    "kicker": "Case study · Cloud and cybersecurity",
+    "title": "Self-assessment for entrepreneurs",
+    "lead": "We did not build it. We took it to production, secured it and ran it.",
+    "text": "An entrepreneurship organization had a founder test built by a third party, running on a prototyping platform, with a QR code already printed and in circulation. We took over hosting and security: we migrated it to a cloud we manage, closed the gaps and kept it stable until the campaign ended.",
+    "cta": "Tell us about your case",
+    "ctaSecondary": "See the before and after",
+    "statsLabel": "The campaign in numbers"
+  },
+  "stats": {
+    "registered": { "value": "329", "label": "founders registered" },
+    "completed": { "value": "191", "label": "completed assessments" },
+    "reprints": { "value": "0", "label": "QR codes reprinted" },
+    "sessions": { "value": "160", "label": "concurrent sessions supported" }
+  },
+  "facts": {
+    "client": { "label": "Client", "value": "Entrepreneurship organization (confidential)" },
+    "role": { "label": "Our role", "value": "Hosting, cybersecurity and operations" },
+    "app": { "label": "The application", "value": "Built by a third party" },
+    "cycle": { "label": "Time scope", "value": "Migration, campaign and shutdown" }
+  },
+  "story": {
+    "challenge": {
+      "title": "The challenge",
+      "text": "The app worked and the QR code was already printed, but it ran on an environment meant for prototypes: no backups, no deletion protection, database permissions wider than needed and more connections than the database could handle at peak."
+    },
+    "solution": {
+      "title": "What we did",
+      "text": "We migrated the app to a cloud we manage, redirected the existing QR without breaking links or campaign analytics, set up a custom domain with an automatic certificate, left the database on least privilege with automatic backups, and tuned capacity for event peaks."
+    },
+    "result": {
+      "title": "The result",
+      "text": "The whole campaign ran on the new infrastructure at roughly 28 USD a month. When it ended we delivered a verified backup of everything and shut the resources down so the client stopped paying."
+    }
+  },
+  "architecture": {
+    "title": "Before and after",
+    "subtitle": "Same app, same QR code. What changed was everything holding it up.",
+    "before": {
+      "label": "Before",
+      "nodes": {
+        "qr": {
+          "title": "Printed QR code in circulation",
+          "text": "It pointed straight at the prototyping platform."
+        },
+        "host": {
+          "title": "Prototyping platform",
+          "text": "Hosting and database on third-party accounts, with no direct control."
+        },
+        "db": {
+          "title": "Database with personal data",
+          "issues": ["No backups", "No deletion protection", "Permissions wider than needed"]
+        },
+        "capacity": {
+          "title": "Untuned capacity",
+          "text": "Up to 50 connections against a database that accepts about 25."
+        }
+      }
+    },
+    "after": {
+      "label": "After",
+      "nodes": {
+        "qr": {
+          "title": "The same QR, redirected",
+          "text": "Permanent redirect that keeps links and campaign parameters."
+        },
+        "domain": {
+          "title": "Custom domain with automatic TLS",
+          "text": "Managed certificate with hands-off renewal."
+        },
+        "run": {
+          "title": "Container on Cloud Run",
+          "text": "No servers to maintain, 4 instances max and 160 concurrent sessions."
+        },
+        "db": {
+          "title": "PostgreSQL 17 on Cloud SQL",
+          "checks": [
+            "Role that can only read and insert",
+            "30 retained backups plus a verified one",
+            "Deletion protection and a disk cap"
+          ]
+        },
+        "guards": {
+          "title": "Guards around it",
+          "text": "Credentials in Secret Manager and a budget with alerts at 50, 90 and 100%."
+        }
+      }
+    }
+  },
+  "security": {
+    "title": "Cybersecurity in practice",
+    "subtitle": "Concrete controls for an app with personal data and event traffic.",
+    "items": {
+      "privilege": {
+        "title": "Least privilege",
+        "text": "The app connects with a role that can only read and insert. It cannot delete or change existing data."
+      },
+      "secrets": {
+        "title": "Secrets out of the code",
+        "text": "Credentials live in Secret Manager and environment files are excluded from the repository and the images."
+      },
+      "backups": {
+        "title": "Backups and deletion protection",
+        "text": "Automatic backups with 30 retained, a verified manual backup and deletion protection on the instance."
+      },
+      "inherited": {
+        "title": "Review of what we inherited",
+        "text": "We audited permissions, costs and failures in the previous setup, and verified every finding before acting."
+      },
+      "transport": {
+        "title": "Encrypted traffic, own domain",
+        "text": "HTTPS with a managed, auto-renewing certificate, with the campaign served from a domain under our control."
+      },
+      "spend": {
+        "title": "Brakes on abuse and spend",
+        "text": "An instance cap and a budget with alerts: a traffic spike or an attack does not turn into a surprise bill."
+      }
+    }
+  },
+  "reliability": {
+    "title": "Stable through event peaks",
+    "items": {
+      "connections": {
+        "value": "50 → 8",
+        "label": "database connections, tuned to what it can actually handle"
+      },
+      "cost": {
+        "value": "~28 USD",
+        "label": "a month to run, 93% of it the database"
+      },
+      "scale": {
+        "value": "30,000",
+        "label": "assessments a month possible with no extra compute cost"
+      }
+    },
+    "fixes": "While taking it to production we found and fixed two issues affecting operations: a connection leak that could take the service down, and a double submit that left users stuck right after answering all 28 questions."
+  },
+  "closure": {
+    "title": "A shutdown as careful as the launch",
+    "text": "When the campaign ended we did not just switch it off. We delivered a complete, verified package so the client can restore the service whenever they want, on this cloud or another, and then shut the resources down.",
+    "items": [
+      "Full database dump plus Excel-ready tables",
+      "Code, exact infrastructure configuration and logs",
+      "The production container image, verified by SHA-256",
+      "Step-by-step restore instructions"
+    ]
+  },
+  "stack": {
+    "title": "Stack",
+    "items": [
+      "Google Cloud Run",
+      "Cloud SQL · PostgreSQL 17",
+      "Secret Manager",
+      "Artifact Registry",
+      "Cloudflare DNS",
+      "Managed TLS",
+      "Budgets and alerts"
+    ]
+  },
+  "cta": {
+    "title": "Do you have an app that works but is not ready for production?",
+    "text": "We host it, secure it and run it, whether we built it or not.",
+    "primary": "Tell us about your case",
+    "secondary": "See cloud services"
+  },
+  "confidential": "Client under a confidentiality agreement. The app belongs to a third party, so we do not show its screens here.",
+  "callout": {
+    "label": "Real case",
+    "title": "We took a third-party app to production and secured it for 329 users",
+    "link": "Read the case"
+  }
+}

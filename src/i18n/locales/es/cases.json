@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "Casos",
+    "description": "Proyectos reales de Axenor contados sin nombres: software a la medida con IA, y alojamiento y ciberseguridad para aplicaciones en producción."
+  },
+  "header": {
+    "title": "Casos",
+    "subtitle": "Lo que construimos, operamos y aseguramos",
+    "intro": "Proyectos reales, contados sin nombres: nuestros clientes trabajan con nosotros bajo acuerdos de confidencialidad."
+  },
+  "view": "Ver el caso",
+  "items": {
+    "faro": {
+      "tag": "Software a la medida · IA",
+      "title": "Faro: plataforma para un programa de aceleración",
+      "text": "La plataforma que diseñamos, construimos y operamos alrededor de la metodología de un programa concreto: diagnóstico, lienzos estratégicos, asesor de IA, mentorías y la consola de toda la cohorte.",
+      "imageAlt": "Pantalla de Faro con el recorrido de una empresa de demostración por las fases del programa",
+      "figures": [
+        { "value": "85", "label": "empresas en la cohorte" },
+        { "value": "9", "label": "lienzos estratégicos" },
+        { "value": "6", "label": "modos del asesor de IA" }
+      ]
+    },
+    "hosting": {
+      "tag": "Cloud · Ciberseguridad",
+      "title": "Autodiagnóstico para emprendedores",
+      "text": "Una aplicación hecha por un tercero que pusimos en producción, aseguramos y operamos durante toda su campaña, sin reimprimir el QR que ya circulaba.",
+      "panelLabel": "Caso de alojamiento y seguridad",
+      "panelText": "fundadores registrados en la campaña",
+      "figures": [
+        { "value": "191", "label": "diagnósticos completos" },
+        { "value": "0", "label": "QR reimpresos" },
+        { "value": "~28 USD", "label": "al mes de operación" }
+      ]
+    }
+  },
+  "note": "Las capturas usan datos de demostración y no mostramos pantallas de aplicaciones que no son nuestras."
+}

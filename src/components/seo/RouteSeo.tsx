@@ -25,6 +25,9 @@ const ROUTES: Record<string, RouteMeta> = {
   '/glosario': { ns: 'glossary' },
   '/legal/privacidad': { ns: 'legal', key: 'privacidad' },
   '/legal/terminos': { ns: 'legal', key: 'terminos' },
+  '/casos': { ns: 'cases' },
+  '/casos/faro': { ns: 'faro', key: 'case' },
+  '/casos/autodiagnostico-emprendedores': { ns: 'hosting' },
 };
 
 /**

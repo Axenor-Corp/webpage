@@ -75,3 +75,18 @@ body {
     transition-duration: 1ms;
   }
 }
+
+/* Barra de progreso de la pestaña activa en el caso destacado de Faro. */
+@keyframes faro-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.faro-progress {
+  animation-name: faro-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

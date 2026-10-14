@@ -1,11 +1,20 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PageHeader from '../components/ui/PageHeader';
 import CTABanner from '../components/ui/CTABanner';
 import { SERVICE_ICONS } from '../components/ui/ServiceIcons';
-import { SERVICE_ANCHORS, SERVICE_KEYS } from '../data/services';
+import { SERVICE_ANCHORS, SERVICE_KEYS, type ServiceKey } from '../data/services';
+
+/** Caso real que respalda cada servicio (namespace i18n con su `callout`). */
+const CASE_BY_SERVICE: Partial<Record<ServiceKey, { ns: 'faro' | 'hosting'; to: string }>> = {
+  ai: { ns: 'faro', to: '/casos/faro' },
+  software: { ns: 'faro', to: '/casos/faro' },
+  cloud: { ns: 'hosting', to: '/casos/autodiagnostico-emprendedores' },
+  cybersecurity: { ns: 'hosting', to: '/casos/autodiagnostico-emprendedores' },
+};
 
 export default function Services() {
-  const { t } = useTranslation('services');
+  const { t } = useTranslation(['services', 'faro', 'hosting']);
 
   return (
     <>
@@ -72,6 +81,34 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+                {CASE_BY_SERVICE[key] && (
+                  <Link
+                    to={CASE_BY_SERVICE[key].to}
+                    className="group mt-8 block rounded-lg border border-accent/30 bg-white p-5 shadow-sm transition hover:border-accent hover:shadow-md"
+                  >
+                    <span className="text-xs font-bold uppercase tracking-widest text-accent-text">
+                      {t(`${CASE_BY_SERVICE[key].ns}:callout.label`)}
+                    </span>
+                    <span className="mt-2 block font-semibold leading-snug text-carbon">
+                      {t(`${CASE_BY_SERVICE[key].ns}:callout.title`)}
+                    </span>
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-text">
+                      {t(`${CASE_BY_SERVICE[key].ns}:callout.link`)}
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-4 w-4 transition group-hover:translate-x-1"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </span>
+                  </Link>
+                )}
               </div>
             </div>
           </section>

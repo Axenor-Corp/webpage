@@ -10,7 +10,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm uppercase tracking-wider transition-colors hover:text-accent ${
+    `whitespace-nowrap text-sm uppercase tracking-wider transition-colors hover:text-accent ${
       isActive ? 'text-accent' : 'text-white/80'
     }`;
 
@@ -19,8 +19,8 @@ export default function Navbar() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Logo to="/" />
 
-        <div className="hidden items-center gap-7 md:flex">
-          <ul className="flex items-center gap-6">
+        <div className="hidden items-center gap-5 lg:flex xl:gap-7">
+          <ul className="flex items-center gap-5 xl:gap-6">
             {NAV_ROUTES.map(({ path, key }) => (
               <li key={path}>
                 <NavLink to={path} end={path === '/'} className={linkClass}>
@@ -40,7 +40,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="p-2 text-white md:hidden"
+          className="p-2 text-white lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-nav"
@@ -64,7 +64,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div id="mobile-nav" className="border-t border-white/10 px-6 pb-6 pt-3 md:hidden">
+        <div id="mobile-nav" className="border-t border-white/10 px-6 pb-6 pt-3 lg:hidden">
           <ul className="flex flex-col gap-4">
             {NAV_ROUTES.map(({ path, key }) => (
               <li key={path}>

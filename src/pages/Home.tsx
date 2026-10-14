@@ -7,6 +7,7 @@ import CTABanner from '../components/ui/CTABanner';
 import { SERVICE_ICONS } from '../components/ui/ServiceIcons';
 import { SERVICE_ANCHORS, SERVICE_KEYS } from '../data/services';
 import { useReveal } from '../hooks/useReveal';
+import FaroShowcase from '../components/faro/FaroShowcase';
 
 export default function Home() {
   const { t } = useTranslation(['home', 'services']);
@@ -53,6 +54,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Caso destacado: Faro, con enlace al caso completo */}
+      <FaroShowcase />
 
       {/* Teaser del modelo de trabajo */}
       <section className="relative bg-white py-24">

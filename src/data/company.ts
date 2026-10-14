@@ -7,6 +7,7 @@
 export const NAV_ROUTES = [
   { path: '/', key: 'inicio' },
   { path: '/servicios', key: 'servicios' },
+  { path: '/casos', key: 'casos' },
   { path: '/como-trabajamos', key: 'comoTrabajamos' },
   { path: '/nosotros', key: 'nosotros' },
   { path: '/contacto', key: 'contacto' },
