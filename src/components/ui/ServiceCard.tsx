@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import type { MouseEvent as ReactMouseEvent, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from './LocalizedLink';
 import { useAppStore } from '../../store/useAppStore';
 
 interface ServiceCardProps {

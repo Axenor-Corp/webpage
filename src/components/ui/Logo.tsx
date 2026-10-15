@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from './LocalizedLink';
 
 // Símbolo oficial de AXENOR: la "A" geométrica naranja (manual de marca v1.0).
 // Es el ÚNICO símbolo de la marca. Prohibido rotar, recolorear, deformar, dar

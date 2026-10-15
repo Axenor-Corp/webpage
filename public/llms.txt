@@ -6,7 +6,7 @@
 
 Axenor Corporation S.A.S es una empresa colombiana con sede en Bogotá / is a Colombian company based in Bogotá. No está afiliada a otras entidades de nombre similar / Not affiliated with other entities of a similar name.
 
-Sitio oficial / Official site: https://web.axenorcorporations.com
+Sitio oficial / Official site: https://web.axenorcorporations.com (español) · https://web.axenorcorporations.com/en (English)
 
 ## Capacidades / Capabilities
 - Inteligencia Artificial / Artificial Intelligence: Llevamos la IA de piloto a producción, con métricas de ROI y no una demostración. / We take AI from pilot to production, with ROI metrics, not a demo.
@@ -17,21 +17,21 @@ Sitio oficial / Official site: https://web.axenorcorporations.com
 - Solución de software / Software solutions: Desarrollo de software a la medida bajo estándares de calidad, escalabilidad y mantenibilidad. / Custom software development under quality, scalability and maintainability standards.
 
 ## Casos / Case studies
-- Faro (software a la medida con IA / custom software with AI): plataforma diseñada, construida y operada por Axenor para un programa de aceleración empresarial de 85 empresas: diagnóstico de 147 preguntas, 9 lienzos estratégicos, asesor de IA con 6 modos, mentorías y consola del programa. Cliente confidencial. / Platform designed, built and run by Axenor for an 85-company business acceleration program. Confidential client. https://web.axenorcorporations.com/casos/faro
-- Autodiagnóstico para emprendedores (cloud y ciberseguridad / cloud and cybersecurity): aplicación de un tercero que Axenor llevó a producción en Google Cloud, aseguró (mínimo privilegio, copias de seguridad, secretos administrados) y operó durante su campaña: 329 registros y 191 diagnósticos completos. / A third-party app Axenor took to production on Google Cloud, secured and ran for its campaign: 329 sign-ups and 191 completed assessments. https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores
+- Faro (software a la medida con IA / custom software with AI): plataforma diseñada, construida y operada por Axenor para un programa de aceleración empresarial de 85 empresas: diagnóstico de 147 preguntas, 9 lienzos estratégicos, asesor de IA con 6 modos, mentorías y consola del programa. Cliente confidencial. / Platform designed, built and run by Axenor for an 85-company business acceleration program. Confidential client. https://web.axenorcorporations.com/casos/faro · https://web.axenorcorporations.com/en/cases/faro
+- Autodiagnóstico para emprendedores (cloud y ciberseguridad / cloud and cybersecurity): aplicación de un tercero que Axenor llevó a producción en Google Cloud, aseguró (mínimo privilegio, copias de seguridad, secretos administrados) y operó durante su campaña: 329 registros y 191 diagnósticos completos. / A third-party app Axenor took to production on Google Cloud, secured and ran for its campaign: 329 sign-ups and 191 completed assessments. https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores · https://web.axenorcorporations.com/en/cases/entrepreneur-self-assessment
 
 ## Cómo trabajamos / How we work
 Modelo Forward Deployed: nos embebemos en el contexto, el stack y los datos del cliente y somos dueños del problema hasta un resultado medible. Cuatro fases: Onboarding, Discovery, Delivery y Medición, cada una con un cierre verificable. / Forward Deployed model: we embed in the client's context, stack and data and own the problem until a measurable result. Four phases: Onboarding, Discovery, Delivery and Measurement, each with a verifiable close.
 
 ## Páginas / Pages
-- Inicio / Home: https://web.axenorcorporations.com/
-- Servicios / Services: https://web.axenorcorporations.com/servicios
-- Casos / Case studies: https://web.axenorcorporations.com/casos
-- Cómo trabajamos / How we work: https://web.axenorcorporations.com/como-trabajamos
-- Nosotros / About: https://web.axenorcorporations.com/nosotros
-- Glosario / Glossary: https://web.axenorcorporations.com/glosario
-- Contacto / Contact: https://web.axenorcorporations.com/contacto
-- Aplicar / Apply: https://web.axenorcorporations.com/aplicar
+- Inicio / Home: https://web.axenorcorporations.com/ · https://web.axenorcorporations.com/en
+- Servicios / Services: https://web.axenorcorporations.com/servicios · https://web.axenorcorporations.com/en/services
+- Casos / Case studies: https://web.axenorcorporations.com/casos · https://web.axenorcorporations.com/en/cases
+- Cómo trabajamos / How we work: https://web.axenorcorporations.com/como-trabajamos · https://web.axenorcorporations.com/en/how-we-work
+- Nosotros / About: https://web.axenorcorporations.com/nosotros · https://web.axenorcorporations.com/en/about
+- Glosario / Glossary: https://web.axenorcorporations.com/glosario · https://web.axenorcorporations.com/en/glossary
+- Contacto / Contact: https://web.axenorcorporations.com/contacto · https://web.axenorcorporations.com/en/contact
+- Aplicar / Apply: https://web.axenorcorporations.com/aplicar · https://web.axenorcorporations.com/en/apply
 
 ## Contacto / Contact
 - Email: contact@axenorcorporations.com

@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSeo } from '../../hooks/useSeo';
+import { languageFromPath } from '../../lib/routes';
 import { routeNamespace, routeSeo } from '../../lib/seo';
 
 /**
@@ -10,8 +11,8 @@ import { routeNamespace, routeSeo } from '../../lib/seo';
  * render; remontar lo evita de raíz.
  */
 function RouteSeoInner({ pathname }: { pathname: string }) {
-  const { t, i18n } = useTranslation(routeNamespace(pathname));
-  useSeo(routeSeo(pathname, t, i18n.resolvedLanguage));
+  const { t } = useTranslation(routeNamespace(pathname));
+  useSeo(routeSeo(pathname, t, languageFromPath(pathname)));
   return null;
 }
 

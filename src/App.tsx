@@ -1,6 +1,8 @@
-import { lazy } from 'react';
+import { lazy, type ComponentType } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/layout/Layout';
+import { LANGUAGES } from './i18n/config';
+import { PAGES, type PageId } from './lib/routes';
 
 // Cada página es un chunk independiente (code-splitting por ruta).
 const Home = lazy(() => import('./pages/Home'));
@@ -17,24 +19,34 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
-// Toda ruta indexable debe figurar también en ROUTES (src/lib/seo.ts): de ahí
-// salen su <head> y su HTML prerenderizado en el build.
+// Cada página existe en los dos idiomas (src/lib/routes.ts): /servicios y
+// /en/services montan el mismo componente; el idioma lo toma i18n de la URL.
+const PAGE_COMPONENTS: Record<PageId, ComponentType> = {
+  home: Home,
+  services: Services,
+  cases: Cases,
+  caseFaro: CaseFaro,
+  caseHosting: CaseHosting,
+  how: HowWeWork,
+  about: About,
+  contact: Contact,
+  apply: Apply,
+  glossary: Glossary,
+  privacy: PrivacyPolicy,
+  terms: TermsAndConditions,
+};
+
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="servicios" element={<Services />} />
-        <Route path="casos" element={<Cases />} />
-        <Route path="casos/faro" element={<CaseFaro />} />
-        <Route path="casos/autodiagnostico-emprendedores" element={<CaseHosting />} />
-        <Route path="como-trabajamos" element={<HowWeWork />} />
-        <Route path="nosotros" element={<About />} />
-        <Route path="contacto" element={<Contact />} />
-        <Route path="aplicar" element={<Apply />} />
-        <Route path="glosario" element={<Glossary />} />
-        <Route path="legal/privacidad" element={<PrivacyPolicy />} />
-        <Route path="legal/terminos" element={<TermsAndConditions />} />
+        {PAGES.flatMap((page) => {
+          const Page = PAGE_COMPONENTS[page.id];
+          return LANGUAGES.map((lng) => (
+            <Route key={page.paths[lng]} path={page.paths[lng]} element={<Page />} />
+          ));
+        })}
+        {/* /en/... desconocido también cae aquí: NotFound sale en inglés. */}
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

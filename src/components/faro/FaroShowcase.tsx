@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 import ScreenStage from './ScreenStage';
 import { FARO_METRICS } from '../../data/faro';

@@ -3,18 +3,17 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import { initI18n } from './i18n';
-import { preferredLanguage } from './i18n/preference';
-import { DEFAULT_LANGUAGE } from './i18n/config';
+import { languageFromPath } from './lib/routes';
 import Root from './Root';
 
 const container = document.getElementById('root')!;
 
-// En producción cada ruta llega prerenderizada (scripts/prerender.mjs) en el
-// idioma por defecto: se hidrata en ese idioma para que el marcado coincida y
-// el preferido del visitante se aplica al terminar (PreferredLanguage, en
-// Layout). En dev el contenedor llega vacío y se renderiza directo.
+// El idioma lo decide la URL (/en/... = inglés), igual que en el prerender:
+// así el primer render coincide con el HTML generado en build. En producción
+// cada ruta llega prerenderizada (scripts/prerender.mjs) y se hidrata; en dev
+// el contenedor llega vacío y se renderiza directo.
+initI18n(languageFromPath(window.location.pathname));
 const prerendered = container.hasChildNodes();
-initI18n(prerendered ? DEFAULT_LANGUAGE : preferredLanguage());
 
 const app = (
   <StrictMode>

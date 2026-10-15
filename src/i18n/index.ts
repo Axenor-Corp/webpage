@@ -4,9 +4,8 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 import { baseOptions, type Language } from './config';
 
 /**
- * Arranca i18next en `lng`. Sobre HTML prerenderizado debe ser el idioma con
- * que se generó (DEFAULT_LANGUAGE) para que la hidratación coincida; el
- * preferido se aplica después (PreferredLanguage, en Layout).
+ * Arranca i18next en `lng`, el idioma de la URL. Los cambios posteriores los
+ * hace LanguageSync (en Layout) al navegar entre idiomas.
  */
 export function initI18n(lng: Language): void {
   // Carga diferida: cada idioma se importa como chunk independiente solo cuando

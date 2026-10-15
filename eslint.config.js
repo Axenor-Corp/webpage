@@ -19,6 +19,20 @@ export default tseslint.config(
     rules: {
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
+      // Enlaces internos: usar components/ui/LocalizedLink, que mantiene el
+      // idioma de la página (/en/...).
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'react-router-dom',
+              importNames: ['Link', 'NavLink'],
+              message: 'Usa Link/NavLink de components/ui/LocalizedLink.',
+            },
+          ],
+        },
+      ],
     },
   },
 );

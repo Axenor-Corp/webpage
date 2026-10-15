@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink } from './LocalizedLink';
 import { useTranslation } from 'react-i18next';
 import { APPLY_ROUTE, NAV_ROUTES } from '../../data/company';
 import LanguageSwitcher from './LanguageSwitcher';

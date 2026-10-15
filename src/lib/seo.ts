@@ -3,10 +3,14 @@
  * - RouteSeo (cliente): reescribe el <head> al navegar.
  * - scripts/prerender.mjs (build): escribe el <head> de cada HTML prerenderizado.
  */
+import type { Language } from '../i18n/config';
+import { findPage, type PageId } from './routes';
 
 export const SITE = 'https://web.axenorcorporations.com';
 
 const BRAND = 'Axenor Corporation S.A.S';
+
+const OG_LOCALES: Record<Language, string> = { es: 'es_CO', en: 'en_US' };
 
 export interface SeoInput {
   /** Título completo de la pestaña (ya con sufijo de marca si aplica). */
@@ -14,74 +18,74 @@ export interface SeoInput {
   description: string;
   /** Ruta canónica, empezando por '/'. */
   path: string;
-  /** og:locale, p. ej. 'es_CO' | 'en_US'. */
-  ogLocale: string;
+  lang: Language;
+  /** URL de la misma página en cada idioma (hreflang). Ausente en el 404 y en las páginas solo en español. */
+  alternates?: Record<Language, string>;
   /** 404 y similares: no indexar. */
   noindex?: boolean;
 }
 
 /**
- * Ruta -> namespace i18n. `key` es el prefijo cuando un namespace agrupa varios
- * documentos (p. ej. legal: privacidad/terminos). `bare` omite el sufijo de
- * marca en el título (la home ya lo lleva en su propio título).
+ * Página -> namespace i18n. `key` es el prefijo cuando un namespace agrupa
+ * varios documentos (p. ej. legal: privacidad/terminos). `bare` omite el
+ * sufijo de marca en el título (la home ya lo lleva en su propio título).
  */
-interface RouteMeta {
+interface PageMeta {
   ns: string;
   key?: string;
   bare?: boolean;
 }
 
-/**
- * Rutas indexables. También es la lista de páginas que el build prerenderiza:
- * una ruta nueva en App.tsx debe agregarse aquí, o en producción caerá en
- * 404.html.
- */
-export const ROUTES: Record<string, RouteMeta> = {
-  '/': { ns: 'home', bare: true },
-  '/servicios': { ns: 'services' },
-  '/como-trabajamos': { ns: 'how' },
-  '/nosotros': { ns: 'about' },
-  '/contacto': { ns: 'contact' },
-  '/aplicar': { ns: 'apply' },
-  '/glosario': { ns: 'glossary' },
-  '/legal/privacidad': { ns: 'legal', key: 'privacidad' },
-  '/legal/terminos': { ns: 'legal', key: 'terminos' },
-  '/casos': { ns: 'cases' },
-  '/casos/faro': { ns: 'faro', key: 'case' },
-  '/casos/autodiagnostico-emprendedores': { ns: 'hosting' },
+const META: Record<PageId, PageMeta> = {
+  home: { ns: 'home', bare: true },
+  services: { ns: 'services' },
+  how: { ns: 'how' },
+  about: { ns: 'about' },
+  contact: { ns: 'contact' },
+  apply: { ns: 'apply' },
+  glossary: { ns: 'glossary' },
+  privacy: { ns: 'legal', key: 'privacidad' },
+  terms: { ns: 'legal', key: 'terminos' },
+  cases: { ns: 'cases' },
+  caseFaro: { ns: 'faro', key: 'case' },
+  caseHosting: { ns: 'hosting' },
 };
+
+export function ogLocale(lng: Language): string {
+  return OG_LOCALES[lng];
+}
 
 /** Namespace i18n con los textos SEO de la ruta (404: 'common'). */
 export function routeNamespace(pathname: string): string {
-  return ROUTES[pathname]?.ns ?? 'common';
+  const page = findPage(pathname);
+  return page ? META[page.id].ns : 'common';
 }
 
-/** `t` ya ligado al namespace de `routeNamespace(pathname)`. */
-export function routeSeo(
-  pathname: string,
-  t: (key: string) => string,
-  language: string | undefined,
-): SeoInput {
-  const matched = ROUTES[pathname];
-  const ogLocale = language === 'en' ? 'en_US' : 'es_CO';
+/** `t` ya ligado al namespace de `routeNamespace(pathname)` y al idioma `lang`. */
+export function routeSeo(pathname: string, t: (key: string) => string, lang: Language): SeoInput {
+  const page = findPage(pathname);
 
-  if (!matched) {
+  if (!page) {
     // Ruta desconocida (404): título genérico y noindex.
     return {
       title: `${t('notFound.title')} · ${BRAND}`,
       description: t('notFound.text'),
       path: pathname,
-      ogLocale,
+      lang,
       noindex: true,
     };
   }
 
-  const prefix = matched.key ? `${matched.key}.` : '';
+  const meta = META[page.id];
+  const prefix = meta.key ? `${meta.key}.` : '';
   const rawTitle = t(`${prefix}meta.title`);
+  // Contenido solo en español: una sola versión indexable, sin hreflang.
+  const spanishOnly = 'spanishOnly' in page && page.spanishOnly;
   return {
-    title: matched.bare ? rawTitle : `${rawTitle} · ${BRAND}`,
+    title: meta.bare ? rawTitle : `${rawTitle} · ${BRAND}`,
     description: t(`${prefix}meta.description`),
-    path: pathname,
-    ogLocale,
+    path: spanishOnly ? page.paths.es : page.paths[lang],
+    lang,
+    alternates: spanishOnly ? undefined : page.paths,
   };
 }

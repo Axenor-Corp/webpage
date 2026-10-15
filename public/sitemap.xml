@@ -1,63 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://web.axenorcorporations.com/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/servicios</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/servicios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/servicios" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/casos</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/casos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/cases" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/casos" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/casos/faro</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/casos/faro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/cases/faro" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/casos/faro" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/cases/entrepreneur-self-assessment" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/como-trabajamos</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/como-trabajamos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/how-we-work" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/como-trabajamos" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/nosotros</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/nosotros" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/nosotros" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/glosario</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/glosario" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/glossary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/glosario" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/contacto</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/contacto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/contacto" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/aplicar</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/aplicar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/apply" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/aplicar" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/services</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/servicios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/servicios" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/cases</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/casos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/cases" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/casos" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/cases/faro</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/casos/faro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/cases/faro" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/casos/faro" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/cases/entrepreneur-self-assessment</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/cases/entrepreneur-self-assessment" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/how-we-work</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/como-trabajamos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/how-we-work" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/como-trabajamos" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/about</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/nosotros" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/nosotros" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/glossary</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/glosario" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/glossary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/glosario" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/contact</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/contacto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/contacto" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/apply</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/aplicar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/apply" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/aplicar" />
   </url>
 </urlset>

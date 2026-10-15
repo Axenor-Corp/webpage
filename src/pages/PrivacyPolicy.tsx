@@ -1,8 +1,9 @@
 import PageHeader from '../components/ui/PageHeader';
 
 export default function PrivacyPolicy() {
+  // Documento legal solo en español: lang="es" también dentro de /en/legal/*.
   return (
-    <>
+    <div lang="es">
       <PageHeader title="Política de Privacidad Internacional" />
 
       <section className="relative bg-white pb-24">
@@ -100,6 +101,6 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

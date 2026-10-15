@@ -10,7 +10,7 @@ import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 import { useAdvancedTracking } from '../../hooks/useAdvancedTracking';
 import PrivacyCenter from '../privacy/PrivacyCenter';
-import PreferredLanguage from './PreferredLanguage';
+import LanguageSync from './LanguageSync';
 import { useIsClient } from '../../hooks/useIsClient';
 
 // three.js + R3F se cargan como chunk independiente: la UI pinta de inmediato
@@ -43,12 +43,12 @@ export default function Layout() {
           {t('skipToContent')}
         </a>
         <ScrollManager />
+        <LanguageSync />
         <Navbar />
         <main id="main-content" tabIndex={-1} className="flex-1">
           <Suspense fallback={<div className="min-h-screen" />}>
             <RouteSeo />
             <Outlet />
-            <PreferredLanguage />
           </Suspense>
         </main>
         <Footer />

@@ -1,6 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import PageHeader from '../components/ui/PageHeader';
 import CTABanner from '../components/ui/CTABanner';
+import { useLanguage } from '../hooks/useLanguage';
+import { localizePath } from '../lib/routes';
+import { SITE } from '../lib/seo';
 
 interface GlossaryTerm {
   slug: string;
@@ -11,12 +14,11 @@ interface GlossaryTerm {
 }
 
 
-const SITE = 'https://web.axenorcorporations.com';
-
 export default function Glossary() {
   const { t } = useTranslation('glossary');
   const categories = t('categories', { returnObjects: true }) as string[];
   const terms = t('terms', { returnObjects: true }) as GlossaryTerm[];
+  const pageUrl = SITE + localizePath('/glosario', useLanguage());
 
   // JSON-LD DefinedTermSet: cada definición como entidad citable para buscadores
   // y motores de IA (consultas "qué es X / what is X").
@@ -24,10 +26,10 @@ export default function Glossary() {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
     name: t('meta.title'),
-    url: `${SITE}/glosario`,
+    url: pageUrl,
     hasDefinedTerm: terms.map((term) => ({
       '@type': 'DefinedTerm',
-      '@id': `${SITE}/glosario#${term.slug}`,
+      '@id': `${pageUrl}#${term.slug}`,
       name: term.term,
       description: term.short,
     })),

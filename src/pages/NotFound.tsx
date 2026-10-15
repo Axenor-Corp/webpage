@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../components/ui/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 
 export default function NotFound() {

@@ -32,9 +32,10 @@ This doc describes the SEO/GEO layer ported onto the new design. Phase 2
   template and rewrites the per-route tags.
 - **Per-route metadata (JS crawlers + browser):** a tiny `useSeo` hook
   (no dependency — React 19 + imperative head updates) rewrites `<title>`,
-  `meta[name=description]`, `link[rel=canonical]`, and the `og:`/`twitter:` tags in
-  place on navigation. Centralised in `RouteSeo` (rendered in `Layout`), driven by a
-  `path → namespace` map. Glossary injects a `DefinedTermSet` JSON-LD.
+  `meta[name=description]`, `link[rel=canonical]`, the `hreflang` alternates and the
+  `og:`/`twitter:` tags in place on navigation. Centralised in `RouteSeo` (rendered
+  in `Layout`), driven by `src/lib/seo.ts`. Glossary injects a `DefinedTermSet`
+  JSON-LD.
 - **Explicit signals (static files in `public/`):** `robots.txt` (welcomes AI
   crawlers, blocks `/api/`), `sitemap.xml`, `llms.txt` + `llms-full.txt` (GEO brief,
   bilingual), `manifest.webmanifest`, `og.png`, `apple-touch-icon.png`.
@@ -46,29 +47,31 @@ This doc describes the SEO/GEO layer ported onto the new design. Phase 2
 1. `vite build --ssr src/entry-server.tsx --outDir dist-ssr`: the same app tree
    (`src/Root.tsx`) behind a `StaticRouter`, with the locales bundled so i18n
    never suspends.
-2. `node scripts/prerender.mjs`: for each route in `ROUTES` (`src/lib/seo.ts`)
-   renders the app with `react-dom/static` `prerender` (waits for the lazy
-   routes) and writes `dist/<route>.html` from `dist/index.html`, with its own
-   `<title>`, description, canonical, robots, `og:*` and `twitter:*` and the
-   markup inside `#root`. It also writes `dist/404.html` (noindex), fails if a
-   sitemap URL has no route, and deletes `dist-ssr/`.
+2. `node scripts/prerender.mjs`: for each page in each language
+   (`PAGES` in `src/lib/routes.ts`) renders the app with `react-dom/static`
+   `prerender` (waits for the lazy routes) and writes `dist/<url>.html` from
+   `dist/index.html`, with its own `lang`, `<title>`, description, canonical,
+   `hreflang`, robots, `og:*` and `twitter:*` and the markup inside `#root`. It
+   also writes `dist/404.html` and `dist/en/404.html` (noindex), fails if a
+   sitemap URL has no page, and deletes `dist-ssr/`.
 
-Cloudflare Pages serves `/servicios` from `servicios.html`, `/casos/faro` from
-`casos/faro.html`, and `404.html` (status 404) for anything else, so
-`public/_redirects` no longer has an SPA fallback. `/api/*` (Pages Functions)
-resolves before static assets.
+Cloudflare Pages serves `/servicios` from `servicios.html`, `/en/services` from
+`en/services.html`, `/en` from `en.html`, and the nearest `404.html` (status
+404) for anything else (`en/404.html` under `/en/`), so `public/_redirects` no
+longer has an SPA fallback. `/api/*` (Pages Functions) resolves before static
+assets.
 
 On the client, `src/main.tsx` hydrates (`hydrateRoot`) when `#root` has
 prerendered markup and falls back to `createRoot` in dev. Rules that keep
 hydration clean:
 
-- The HTML is generated in Spanish (`DEFAULT_LANGUAGE`). i18n starts in that
-  language and the visitor's preferred one (saved choice, else browser) is
-  applied right after hydration by `PreferredLanguage` (in `Layout`).
+- The URL decides the language (`/en/...` is English), on the server and on
+  the client: i18n starts in the URL's language, so the first render matches the
+  generated HTML. `LanguageSync` (in `Layout`) follows later navigation.
 - Browser-only pieces render after hydration: the 3D scene (`useIsClient`), the
   cookie banner (already gated on mount).
-- A new indexable route goes in both `App.tsx` and `ROUTES`; otherwise it is
-  served as `404.html` in production.
+- A new page goes in `PAGES` (both URLs) and `PAGE_COMPONENTS` in `App.tsx`;
+  the router, the links, the prerender and the SEO all read from there.
 
 ## Content routes (ported from production)
 
@@ -91,20 +94,29 @@ hydration clean:
   **src/components/layout/Layout.tsx** (RouteSeo).
 - **CSP** lives in `public/_headers` (Cloudflare), not `vercel.json`.
 
-## Bilingual SEO note
+## Bilingual URLs
 
-Production had distinct `/es/` + `/en/` indexable URLs with `hreflang`. The new
-design uses a single URL set with client-side language detection, so only the
-Spanish version is indexable (it is the prerendered one).
+Spanish keeps the URLs it always had; English lives under `/en` with
+translated slugs (`/en/services`, `/en/how-we-work`, `/en/cases/faro`, ...).
+The table is `PAGES` in `src/lib/routes.ts`.
 
-Next step (not implemented): `/en/...` routes. With the prerender in place it
-needs an `en` prefix in the router, locale-aware links across the components,
-a language switcher that navigates between equivalent URLs instead of only
-changing i18n, rendering each `/en/...` route with the `en` resources, and
-`hreflang` es / en / x-default in each page and in `sitemap.xml`.
+- Each page declares `hreflang` es, en and x-default (= Spanish) and a
+  self-referencing canonical; `sitemap.xml` lists both versions with
+  `xhtml:link` alternates.
+- Internal links are written with the Spanish path and go through
+  `components/ui/LocalizedLink` (`Link` / `NavLink`), which maps them to the
+  current page's language. ESLint blocks importing `Link` / `NavLink` straight
+  from `react-router-dom`.
+- The language switcher links to the same page in the other language. There is
+  no automatic redirect by browser language or `Accept-Language`: every URL,
+  for crawlers and people alike, serves the language it names.
+- The legal documents (`/legal/*`) exist only in Spanish. `/en/legal/*` keeps
+  the English navigation, but its canonical is the Spanish URL and it declares
+  no `hreflang` (`spanishOnly` in `PAGES`). Once an English translation reviewed
+  by counsel exists, render it and drop the flag.
 
 ## Out of scope / handed to the user
 
 - Cloudflare Pages env vars/secrets (Resend) — see README §7 and §10.
 - Point the domain (`axenorcorporations.com` / `web.`) to the Cloudflare Pages project.
-- `/en/...` indexable routes with `hreflang` (see Bilingual SEO note).
+- English translation of the legal documents (see Bilingual URLs).

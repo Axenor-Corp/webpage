@@ -3,7 +3,7 @@
 > Firma de soluciones tecnológicas integrales por un equipo de ingeniería con sede en Bogotá, Colombia, con el modelo Forward Deployed. / A firm for integral technology solutions by an engineering team based in Bogotá, Colombia, using the Forward Deployed model.
 
 Axenor Corporation S.A.S es una empresa colombiana con sede en Bogotá / is a Colombian company based in Bogotá. No afiliada a otras entidades de nombre similar / Not affiliated with other entities of a similar name.
-Sitio / Site: https://web.axenorcorporations.com
+Sitio / Site: https://web.axenorcorporations.com (español) · https://web.axenorcorporations.com/en (English)
 Contacto / Contact: contact@axenorcorporations.com · +57 321 874 6238 · https://www.linkedin.com/company/axenorcorporations/
 Bogotá, Colombia · horario del Este / U.S. Eastern Time (ET).
 
@@ -112,11 +112,11 @@ Stack: Web, Mobile, APIs, Integrations, QA.
 ## Case studies
 ### Faro: a custom platform for an acceleration program
 Platform designed, built and run by Axenor around the methodology of a business acceleration program (confidential client), in production with 85 companies. Three workspaces (company, mentor and program team): 147-question X-Ray diagnostic across 7 areas with a baseline, phase journey, a bootcamp with 9 auto-saving strategy canvases, an AI advisor that answers from each company's documents (6 modes), mentoring with approved minutes, scheduling, surveys and exports. Isolation between companies enforced in the database with 121 row-level security policies. Stack: Next.js, React 19, TypeScript, PostgreSQL with pgvector, Google Cloud Run, Vertex AI (Gemini), PWA and iOS.
-URL: https://web.axenorcorporations.com/casos/faro
+URL: https://web.axenorcorporations.com/en/cases/faro
 
 ### Self-assessment for entrepreneurs: hosting and cybersecurity
 Axenor did not build this app: it took it to production, secured it and ran it. It was a founder test built by a third party on a prototyping platform, with a QR code already printed. Migration to Google Cloud (Cloud Run and Cloud SQL with PostgreSQL 17), a permanent QR redirect without breaking links, a custom domain with managed TLS, a least-privilege database role, automatic backups and deletion protection, secrets in Secret Manager, a budget with alerts and tuned capacity (from 50 to 8 connections, 160 concurrent sessions). Result: 329 sign-ups and 191 completed assessments, about 28 USD a month to run, and a shutdown with a complete verified backup.
-URL: https://web.axenorcorporations.com/casos/autodiagnostico-emprendedores
+URL: https://web.axenorcorporations.com/en/cases/entrepreneur-self-assessment
 
 ## How we work
 We embed in your context (your stack, your data, your constraints) and own the problem until it produces a measurable result. Principles: context before code; end-to-end ownership; seniority, not supervised hands.

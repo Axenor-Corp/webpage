@@ -1,8 +1,9 @@
 import PageHeader from '../components/ui/PageHeader';
 
 export default function TermsAndConditions() {
+  // Documento legal solo en español: lang="es" también dentro de /en/legal/*.
   return (
-    <>
+    <div lang="es">
       <PageHeader title="Términos y Condiciones Generales de Uso" />
 
       <section className="relative bg-white pb-24">
@@ -84,6 +85,6 @@ export default function TermsAndConditions() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

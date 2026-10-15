@@ -1,5 +1,6 @@
-# Sin regla SPA ("/* /index.html 200"): el build prerenderiza cada ruta
-# (scripts/prerender.mjs) y Cloudflare Pages sirve /servicios desde
-# servicios.html, /casos/faro desde casos/faro.html, etc. Una URL desconocida
-# recibe 404.html con estado 404 (React la hidrata como la página 404).
-# Las Pages Functions (/api/*) se resuelven antes que los archivos estáticos.
+# Sin regla SPA ("/* /index.html 200"): el build prerenderiza cada página en
+# los dos idiomas (scripts/prerender.mjs) y Cloudflare Pages las sirve sin
+# extensión: /servicios desde servicios.html, /en/services desde
+# en/services.html, /en desde en.html. Una URL desconocida recibe el 404.html
+# más cercano con estado 404 (en/404.html bajo /en/), que React hidrata como la
+# página 404. Las Pages Functions (/api/*) se resuelven antes que los estáticos.
