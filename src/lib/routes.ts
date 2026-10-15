@@ -23,15 +23,11 @@ export const PAGES = [
   { id: 'contact', paths: { es: '/contacto', en: '/en/contact' } },
   { id: 'apply', paths: { es: '/aplicar', en: '/en/apply' } },
   { id: 'glossary', paths: { es: '/glosario', en: '/en/glossary' } },
-  // Documentos legales: solo existen en español (falta una traducción revisada).
-  // /en/legal/* conserva la navegación en inglés, pero su canonical es la
-  // versión en español y no declara hreflang (ver routeSeo).
-  { id: 'privacy', paths: { es: '/legal/privacidad', en: '/en/legal/privacy' }, spanishOnly: true },
-  { id: 'terms', paths: { es: '/legal/terminos', en: '/en/legal/terms' }, spanishOnly: true },
+  { id: 'privacy', paths: { es: '/legal/privacidad', en: '/en/legal/privacy' } },
+  { id: 'terms', paths: { es: '/legal/terminos', en: '/en/legal/terms' } },
 ] as const satisfies readonly {
   id: string;
   paths: Record<Language, string>;
-  spanishOnly?: boolean;
 }[];
 
 export type Page = (typeof PAGES)[number];

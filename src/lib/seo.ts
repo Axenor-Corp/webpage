@@ -79,13 +79,11 @@ export function routeSeo(pathname: string, t: (key: string) => string, lang: Lan
   const meta = META[page.id];
   const prefix = meta.key ? `${meta.key}.` : '';
   const rawTitle = t(`${prefix}meta.title`);
-  // Contenido solo en español: una sola versión indexable, sin hreflang.
-  const spanishOnly = 'spanishOnly' in page && page.spanishOnly;
   return {
     title: meta.bare ? rawTitle : `${rawTitle} · ${BRAND}`,
     description: t(`${prefix}meta.description`),
-    path: spanishOnly ? page.paths.es : page.paths[lang],
+    path: page.paths[lang],
     lang,
-    alternates: spanishOnly ? undefined : page.paths,
+    alternates: page.paths,
   };
 }

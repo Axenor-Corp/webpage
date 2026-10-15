@@ -1,9 +1,13 @@
 import PageHeader from '../components/ui/PageHeader';
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function TermsAndConditions() {
-  // Documento legal solo en español: lang="es" también dentro de /en/legal/*.
+  return useLanguage() === 'en' ? <TermsAndConditionsEn /> : <TermsAndConditionsEs />;
+}
+
+function TermsAndConditionsEs() {
   return (
-    <div lang="es">
+    <div>
       <PageHeader title="Términos y Condiciones Generales de Uso" />
 
       <section className="relative bg-white pb-24">
@@ -80,6 +84,97 @@ export default function TermsAndConditions() {
               <ul className="list-disc pl-5 space-y-4">
                 <li><strong>Contacto Legal:</strong> Para notificaciones legales y comerciales relacionadas con el presente contrato, dirija sus comunicaciones a <strong>contact@axenorcorporations.com</strong>.</li>
                 <li><strong>Modificaciones:</strong> Axenor se reserva el derecho de modificar estos Términos en cualquier momento para adaptarse a nuevas regulaciones o cambios en el portafolio de productos. Se considerará que usted ha aceptado tácitamente las modificaciones si continúa utilizando la plataforma tras su publicación en el sitio web de la empresa: https://axenorcorporations.com.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function TermsAndConditionsEn() {
+  return (
+    <div>
+      <PageHeader title="General Terms and Conditions of Use" />
+
+      <section className="relative bg-white pb-24">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className="text-sm text-carbon-soft/50">Effective date: June 25, 2026</p>
+          <p className="mt-2 text-sm text-carbon-soft/50">
+            This English version is provided for convenience. In the event of any discrepancy, the Spanish version shall prevail.
+          </p>
+
+          <div className="mt-10 space-y-12 text-carbon-soft/80">
+            <div>
+              <p className="leading-relaxed font-medium">
+                By installing, downloading, accessing or using any mobile platform, web application, Artificial Intelligence (AI) system or service provided by <strong>Axenor Corporations S.A.S.</strong> ("Axenor", "We", the "Service"), you (the "Client" or "User") agree to be legally bound by these Terms and Conditions. This agreement is corporate and commercial in nature, since our systems are designed primarily for the B2B environment (companies, SMEs and businesses). If you do not agree with these terms, you must immediately refrain from using our Services.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">1. Service Description and Architecture</h2>
+              <p className="leading-relaxed">
+                Axenor offers a portfolio of software, operational tools and Artificial Intelligence models. Our Services operate through hybrid synchronization: information is processed locally on your device, but it is also stored, processed and synchronized with cloud databases (such as Supabase) and with servers owned by us and physically hosted in Bogotá D.C., Colombia.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">2. Intellectual Property</h2>
+              <ul className="list-disc pl-5 space-y-4">
+                <li><strong>Axenor Ownership:</strong> Axenor Corporations S.A.S. exclusively retains all rights, title and interest, including source code, software architectures, interfaces, trademarks and locally developed AI algorithms.</li>
+                <li><strong>Client Inputs and License:</strong> You retain ownership of the data and documents you enter into the platform. However, by using the Service, you grant Axenor a worldwide, non-exclusive, royalty-free license to process such data in order to keep the software operational, perform synchronizations and train our Artificial Intelligence algorithms, unless you actively exercise your right to opt out through our official channels.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">3. Use of Artificial Intelligence (Local and Third-Party)</h2>
+              <p className="leading-relaxed mb-4">
+                Our Services implement Artificial Intelligence capabilities powered by local proprietary models and integrations with leading external infrastructure providers, specifically <strong>Amazon Web Services (AWS) and OpenAI</strong>. The platform may also interact with the native AI of your device's operating system.
+              </p>
+              <ul className="list-disc pl-5 space-y-4">
+                <li><strong>Probabilistic Results:</strong> AI models generate outputs based on statistical probabilities. Axenor does not guarantee the precision, accuracy, impartiality or legal suitability of the answers, recommendations or texts generated by the AI.</li>
+                <li><strong>Mandatory Human Verification:</strong> The User acknowledges and agrees that they are solely responsible for independently validating and verifying any business, operational or legal decision made on the basis of the results provided by Axenor's AI Services.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">4. Disclaimer of Warranties and Limitation of Liability</h2>
+              <p className="leading-relaxed mb-4">
+                <strong>"As Is" Availability:</strong> The software and the Services are provided "AS IS" and "AS AVAILABLE". Axenor expressly disclaims any implied warranty of merchantability or fitness for a particular purpose. We do not guarantee that the Services will be free from interruptions, errors, latency or cloud synchronization failures.
+              </p>
+              <p className="leading-relaxed">
+                <strong>Indirect Damages:</strong> In no event shall Axenor Corporations S.A.S., its directors, employees or suppliers be legally liable for indirect or incidental damages, lost profits, loss of data or business interruption arising from the use of, or the inability to use, the applications.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">5. Accounts and Usage Restrictions</h2>
+              <p className="leading-relaxed mb-4">
+                To use the Service, you must be over 18 years of age and have full legal capacity to enter into binding contracts. The following is strictly prohibited:
+              </p>
+              <ul className="list-disc pl-5 space-y-2 mb-4">
+                <li>Reverse engineering, decompiling or deep scanning Axenor's network architecture or AI models.</li>
+                <li>Using the platform to distribute malicious code, carry out unlawful activities or infringe the rights of third parties.</li>
+                <li>Using <em>web scrapers</em> or massive automated extraction without proper written authorization.</li>
+              </ul>
+              <p className="leading-relaxed">
+                We reserve the unilateral right to immediately suspend, terminate or block any account that violates these provisions, without prior notice.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">6. Governing Law and Jurisdiction</h2>
+              <p className="leading-relaxed">
+                The validity, interpretation and enforcement of this agreement shall be governed by the laws of the <strong>Republic of Colombia</strong>. Any controversy, dispute or claim arising in connection with these Terms, the use of the software or data privacy that cannot be resolved by mutual agreement shall be submitted to the exclusive jurisdiction of the <strong>Courts of the Republic of Colombia in the city of Bogotá D.C.</strong> You irrevocably waive any objection regarding the jurisdiction of such courts.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">7. Final Provisions</h2>
+              <ul className="list-disc pl-5 space-y-4">
+                <li><strong>Legal Contact:</strong> For legal and commercial notices related to this agreement, address your communications to <strong>contact@axenorcorporations.com</strong>.</li>
+                <li><strong>Amendments:</strong> Axenor reserves the right to amend these Terms at any time to adapt to new regulations or changes in the product portfolio. You will be deemed to have tacitly accepted the amendments if you continue to use the platform after they are published on the company website: https://axenorcorporations.com.</li>
               </ul>
             </div>
           </div>

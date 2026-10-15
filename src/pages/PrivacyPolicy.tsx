@@ -1,9 +1,13 @@
 import PageHeader from '../components/ui/PageHeader';
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function PrivacyPolicy() {
-  // Documento legal solo en español: lang="es" también dentro de /en/legal/*.
+  return useLanguage() === 'en' ? <PrivacyPolicyEn /> : <PrivacyPolicyEs />;
+}
+
+function PrivacyPolicyEs() {
   return (
-    <div lang="es">
+    <div>
       <PageHeader title="Política de Privacidad Internacional" />
 
       <section className="relative bg-white pb-24">
@@ -96,6 +100,113 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-bold text-carbon mb-4">8. Contacto</h2>
               <p className="leading-relaxed">
                 Para ejercer cualquiera de sus derechos, presentar una queja sobre el manejo de sus datos o realizar solicitudes a través de plataformas DROP, debe comunicarse directamente con nuestro equipo de cumplimiento de privacidad mediante el correo electrónico oficial: <strong>contact@axenorcorporations.com</strong>. Atenderemos su solicitud dentro de los plazos estipulados por la ley correspondiente a su país de residencia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function PrivacyPolicyEn() {
+  return (
+    <div>
+      <PageHeader title="International Privacy Policy" />
+
+      <section className="relative bg-white pb-24">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className="text-sm text-carbon-soft/50">Effective date: June 25, 2026</p>
+          <p className="mt-2 text-sm text-carbon-soft/50">
+            This English version is provided for convenience. In the event of any discrepancy, the Spanish version shall prevail.
+          </p>
+
+          <div className="mt-10 space-y-12 text-carbon-soft/80">
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">1. Introduction and Data Controller</h2>
+              <p className="leading-relaxed">
+                This Privacy Policy describes the legal framework under which <strong>Axenor Corporations S.A.S.</strong> ("Axenor", "We", "Our"), incorporated under the laws of the Republic of Colombia with its principal place of business at CALLE 181 C 13 91, Bogotá D.C., Colombia, collects, processes and protects your personal information. Axenor acts as the data controller for our mobile applications, web platforms and Artificial Intelligence services (hereinafter, the "Service" or the "Services").
+              </p>
+              <p className="mt-4 leading-relaxed">
+                Our Services are aimed primarily at companies, SMEs and businesses (B2B). Accordingly, we do not knowingly collect information from individuals under 18 years of age.
+              </p>
+              <p className="mt-4 leading-relaxed">
+                This policy is designed to comply with <strong>Law 1581 of 2012 (Colombia)</strong>, the <strong>General Data Protection Regulation (GDPR, Europe)</strong> and the <strong>California Consumer Privacy Act (CCPA / CPRA)</strong>.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">2. Information We Collect</h2>
+              <p className="leading-relaxed mb-4">When you interact with our Services, we collect the following data:</p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Account and Profile Data:</strong> Name, email address, company billing information and credentials.</li>
+                <li><strong>Usage and Telemetry Data:</strong> IP addresses, in-app interactions and performance data.</li>
+                <li><strong>Local and Hybrid Data:</strong> Some information is processed on your devices and later synchronized with our cloud infrastructure (e.g., Supabase databases) and our physical servers located in Bogotá.</li>
+                <li><strong>Artificial Intelligence Data:</strong> We collect the <em>inputs</em>, contexts and commands you provide to our AI models, as well as the metadata generated when you interact with your operating system's native AI.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">3. Use of Information, Sub-processors and Legal Basis</h2>
+              <p className="leading-relaxed mb-4">
+                We process your information on the basis of the performance of our corporate contract, our legitimate interest and, where applicable, your explicit consent. The purposes include:
+              </p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Platform Operation:</strong> Providing the functionality of our applications.</li>
+                <li><strong>Infrastructure and External Processing:</strong> To scale and maintain our applications, we share strictly necessary data with third-party infrastructure and language model sub-processors, specifically <strong>Amazon Web Services (AWS) and OpenAI</strong>.</li>
+                <li><strong>Proprietary AI Training:</strong> We use anonymized data to train and improve our own AI models hosted on our local servers in Bogotá.</li>
+                <li><strong>Automated Decision-Making Technology (ADMT):</strong> We use ADMT to optimize business workflows and predict platform behavior.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">4. Advertising and "Sale/Sharing" of Data (CCPA)</h2>
+              <p className="leading-relaxed mb-4">
+                For our marketing efforts, we integrate pixels and tracking technologies, specifically <strong>Google Ads and Meta Pixel</strong>. Under the strict definition of the California Consumer Privacy Act (CCPA), the use of these tools for targeted advertising (<em>behavioral advertising</em>) constitutes "sharing" of information.
+              </p>
+              <p className="leading-relaxed">
+                You have the inalienable right to opt out of this tracking through the preferences center on our official website https://axenorcorporations.com or by enabling the <em>Global Privacy Control</em> (GPC) signal in your browser, which our infrastructure will honor automatically.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">5. Data Retention and Deletion (Soft-Delete)</h2>
+              <p className="leading-relaxed mb-4">
+                We retain personal information and operating system records for the <strong>maximum period permitted by applicable laws</strong> on the retention of accounting, tax and commercial records (generally 10 years in jurisdictions such as Colombia).
+              </p>
+              <p className="leading-relaxed mb-4">
+                When a user exercises their right to account deletion (Right to Be Forgotten), Axenor carries out a <strong>blocked retention or "Soft-Delete"</strong> procedure. This means that:
+              </p>
+              <ol className="list-decimal pl-5 space-y-2">
+                <li>Your profile and data disappear from the live environment (frontend), and all processing for marketing or AI training stops.</li>
+                <li>The data is encrypted and kept in our database in an inactive, restricted-access state, solely and exclusively to comply with requests from legal authorities, tax audits and the defense of legal claims. Once the mandatory legal retention period ends, the data is permanently purged.</li>
+              </ol>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">6. International Data Transfers</h2>
+              <p className="leading-relaxed">
+                Because we use sub-processors such as AWS and OpenAI, and operate distributed databases through Supabase, your information is processed across borders. For residents of the European Economic Area (EEA), all transfers to Colombia and the United States are protected by the Standard Contractual Clauses (SCCs) approved by the European Commission.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">7. Your Legal Rights</h2>
+              <p className="leading-relaxed mb-4">
+                Regardless of whether you are protected by Law 1581 (Colombia), the GDPR or the CCPA, Axenor guarantees you the following fundamental rights:
+              </p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Access and Portability:</strong> Request a copy of the information we hold about you.</li>
+                <li><strong>Rectification:</strong> Update or correct inaccurate data.</li>
+                <li><strong>Erasure:</strong> Request the deletion of your account, subject to the <em>Soft-Delete</em> policy for legal compliance described in Section 5.</li>
+                <li><strong>Objection and Restriction:</strong> Object to the processing of your data for direct marketing purposes or for use in ADMT models.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-carbon mb-4">8. Contact</h2>
+              <p className="leading-relaxed">
+                To exercise any of your rights, file a complaint about the handling of your data or submit requests through DROP platforms, you must contact our privacy compliance team directly at the official email address: <strong>contact@axenorcorporations.com</strong>. We will respond to your request within the time limits set by the law applicable in your country of residence.
               </p>
             </div>
           </div>

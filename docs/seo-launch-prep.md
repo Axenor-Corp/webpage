@@ -110,13 +110,12 @@ The table is `PAGES` in `src/lib/routes.ts`.
 - The language switcher links to the same page in the other language. There is
   no automatic redirect by browser language or `Accept-Language`: every URL,
   for crawlers and people alike, serves the language it names.
-- The legal documents (`/legal/*`) exist only in Spanish. `/en/legal/*` keeps
-  the English navigation, but its canonical is the Spanish URL and it declares
-  no `hreflang` (`spanishOnly` in `PAGES`). Once an English translation reviewed
-  by counsel exists, render it and drop the flag.
+- The legal documents (`/legal/*`) have an English convenience translation at
+  `/en/legal/*` with its own canonical and `hreflang`; the English text states
+  that the Spanish version prevails. Have counsel review it.
 
 ## Out of scope / handed to the user
 
 - Cloudflare Pages env vars/secrets (Resend) — see README §7 and §10.
 - Point the domain (`axenorcorporations.com` / `web.`) to the Cloudflare Pages project.
-- English translation of the legal documents (see Bilingual URLs).
+- Counsel review of the English translation of the legal documents.
