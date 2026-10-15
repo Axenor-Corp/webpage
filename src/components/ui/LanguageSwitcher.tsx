@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-
-const LANGUAGES = ['es', 'en'] as const;
+import { rememberLanguage } from '../../i18n/preference';
+import { LANGUAGES } from '../../i18n/config';
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -14,7 +14,10 @@ export default function LanguageSwitcher() {
           <button
             type="button"
             lang={lng}
-            onClick={() => i18n.changeLanguage(lng)}
+            onClick={() => {
+              rememberLanguage(lng);
+              void i18n.changeLanguage(lng);
+            }}
             aria-pressed={current === lng}
             aria-label={lng === 'es' ? 'Español' : 'English'}
             className={`text-sm uppercase tracking-wider transition-colors hover:text-accent ${

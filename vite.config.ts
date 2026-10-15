@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // host 0.0.0.0: el dev server corre dentro de un contenedor (Podman) y debe
 // ser accesible desde el navegador de la máquina host.
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react(), tailwindcss()],
   server: {
     host: '0.0.0.0',
@@ -23,5 +23,7 @@ export default defineConfig({
     // Sin polyfill de modulePreload => Vite no inyecta script inline; permite
     // una CSP estricta con `script-src 'self'` (sin 'unsafe-inline' ni nonces).
     modulePreload: { polyfill: false },
+    // El build SSR (entrada de prerender, dist-ssr/) es temporal: no necesita public/.
+    copyPublicDir: !isSsrBuild,
   },
-});
+}));

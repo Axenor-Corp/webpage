@@ -1,34 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useSeo, type SeoInput } from '../../hooks/useSeo';
-
-/**
- * Mapa ruta -> namespace i18n. `key` es el prefijo cuando un namespace agrupa
- * varios documentos (p. ej. legal: privacidad/terminos). `bare` omite el sufijo
- * de marca en el título (la home ya lo lleva en su propio título).
- */
-interface RouteMeta {
-  ns: string;
-  key?: string;
-  bare?: boolean;
-}
-
-const BRAND = 'Axenor Corporation S.A.S';
-
-const ROUTES: Record<string, RouteMeta> = {
-  '/': { ns: 'home', bare: true },
-  '/servicios': { ns: 'services' },
-  '/como-trabajamos': { ns: 'how' },
-  '/nosotros': { ns: 'about' },
-  '/contacto': { ns: 'contact' },
-  '/aplicar': { ns: 'apply' },
-  '/glosario': { ns: 'glossary' },
-  '/legal/privacidad': { ns: 'legal', key: 'privacidad' },
-  '/legal/terminos': { ns: 'legal', key: 'terminos' },
-  '/casos': { ns: 'cases' },
-  '/casos/faro': { ns: 'faro', key: 'case' },
-  '/casos/autodiagnostico-emprendedores': { ns: 'hosting' },
-};
+import { useSeo } from '../../hooks/useSeo';
+import { routeNamespace, routeSeo } from '../../lib/seo';
 
 /**
  * Se remonta en cada navegación (key={pathname}) para que useTranslation enlace
@@ -37,34 +10,8 @@ const ROUTES: Record<string, RouteMeta> = {
  * render; remontar lo evita de raíz.
  */
 function RouteSeoInner({ pathname }: { pathname: string }) {
-  const matched = ROUTES[pathname];
-  const ns = matched?.ns ?? 'common';
-  const { t, i18n } = useTranslation(ns);
-
-  const ogLocale = i18n.resolvedLanguage === 'en' ? 'en_US' : 'es_CO';
-
-  let input: SeoInput;
-  if (!matched) {
-    // Ruta desconocida (404): título genérico y noindex.
-    input = {
-      title: `${t('notFound.title')} · ${BRAND}`,
-      description: t('notFound.text'),
-      path: pathname,
-      ogLocale,
-      noindex: true,
-    };
-  } else {
-    const prefix = matched.key ? `${matched.key}.` : '';
-    const rawTitle = t(`${prefix}meta.title`);
-    input = {
-      title: matched.bare ? rawTitle : `${rawTitle} · ${BRAND}`,
-      description: t(`${prefix}meta.description`),
-      path: pathname,
-      ogLocale,
-    };
-  }
-
-  useSeo(input);
+  const { t, i18n } = useTranslation(routeNamespace(pathname));
+  useSeo(routeSeo(pathname, t, i18n.resolvedLanguage));
   return null;
 }
 

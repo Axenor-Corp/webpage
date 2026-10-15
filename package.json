@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && tsc -p functions/tsconfig.json --noEmit && vite build",
+    "build": "tsc --noEmit && tsc -p functions/tsconfig.json --noEmit && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "audit:prod": "npm audit --omit=dev --audit-level=high"
@@ -14,7 +14,6 @@
     "@react-three/drei": "^10.0.0",
     "@react-three/fiber": "^9.0.0",
     "i18next": "^25.0.0",
-    "i18next-browser-languagedetector": "^8.0.0",
     "i18next-resources-to-backend": "^1.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

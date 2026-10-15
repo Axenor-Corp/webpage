@@ -72,7 +72,9 @@ export default function Footer() {
 
       <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 px-6 pt-6">
         <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-          <p className="text-sm text-white/50">
+          {/* el año sale del build en el HTML prerenderizado: puede diferir del
+              del navegador (cambio de año) sin que sea un error de hidratación */}
+          <p className="text-sm text-white/50" suppressHydrationWarning>
             © {year} Axenor Corporation S.A.S · {t('footer.rights')}
           </p>
           <div className="flex flex-col gap-2 md:items-end">

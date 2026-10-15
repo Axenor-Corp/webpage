@@ -1,27 +1,12 @@
 import { useEffect } from 'react';
+import { SITE, type SeoInput } from '../lib/seo';
 
 /**
- * SEO por ruta sin dependencias: reescribe en su lugar las etiquetas que ya
- * vienen estáticas en index.html (title, description, canonical, robots y los
- * tags og/twitter dinámicos) al navegar. Pensado para una SPA pura: los
- * crawlers que ejecutan JS (Googlebot) y la pestaña del navegador ven el meta
- * correcto de cada ruta; los que no ejecutan JS conservan el baseline de
- * index.html. La fidelidad por-ruta total exigiría prerender (fase 2).
+ * SEO por ruta sin dependencias: reescribe en su lugar las etiquetas del <head>
+ * (title, description, canonical, robots y los tags og/twitter dinámicos) al
+ * navegar en el cliente. La carga inicial ya llega con el <head> correcto: el
+ * build prerenderiza cada ruta con los mismos datos (scripts/prerender.mjs).
  */
-
-const SITE = 'https://web.axenorcorporations.com';
-
-export interface SeoInput {
-  /** Título completo de la pestaña (ya con sufijo de marca si aplica). */
-  title: string;
-  description: string;
-  /** Ruta canónica, empezando por '/'. */
-  path: string;
-  /** og:locale, p. ej. 'es_CO' | 'en_US'. */
-  ogLocale: string;
-  /** 404 y similares: no indexar. */
-  noindex?: boolean;
-}
 
 function upsertMeta(selector: string, attr: 'name' | 'property', key: string, content: string) {
   if (typeof document === 'undefined') return;

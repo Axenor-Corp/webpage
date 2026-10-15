@@ -10,9 +10,12 @@ import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 import { useAdvancedTracking } from '../../hooks/useAdvancedTracking';
 import PrivacyCenter from '../privacy/PrivacyCenter';
+import PreferredLanguage from './PreferredLanguage';
+import { useIsClient } from '../../hooks/useIsClient';
 
 // three.js + R3F se cargan como chunk independiente: la UI pinta de inmediato
-// y la escena aparece cuando termina de descargarse.
+// y la escena aparece cuando termina de descargarse. Solo en el navegador: el
+// prerender no la incluye (WebGL/window) y se monta tras hidratar.
 const Scene = lazy(() => import('../canvas/Scene'));
 
 export default function Layout() {
@@ -20,13 +23,16 @@ export default function Layout() {
   usePrefersReducedMotion();
   useAdvancedTracking();
   const { t } = useTranslation();
+  const isClient = useIsClient();
 
   return (
     <>
       {/* Capa Canvas 3D: fondo fijo compartido por todas las páginas */}
-      <Suspense fallback={null}>
-        <Scene />
-      </Suspense>
+      {isClient && (
+        <Suspense fallback={null}>
+          <Scene />
+        </Suspense>
+      )}
 
       {/* Capa UI */}
       <div className="relative z-10 flex min-h-screen flex-col">
@@ -42,6 +48,7 @@ export default function Layout() {
           <Suspense fallback={<div className="min-h-screen" />}>
             <RouteSeo />
             <Outlet />
+            <PreferredLanguage />
           </Suspense>
         </main>
         <Footer />

@@ -17,6 +17,8 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+// Toda ruta indexable debe figurar también en ROUTES (src/lib/seo.ts): de ahí
+// salen su <head> y su HTML prerenderizado en el build.
 export default function App() {
   return (
     <Routes>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 /**
@@ -8,10 +8,16 @@ import { useLocation } from 'react-router-dom';
  */
 export default function ScrollManager() {
   const { pathname, hash } = useLocation();
+  const initial = useRef(true);
 
   useEffect(() => {
+    const isInitial = initial.current;
+    initial.current = false;
+
     if (!hash) {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      // En la carga inicial no se fuerza el scroll: el HTML prerenderizado ya
+      // se ve antes de hidratar y el visitante pudo haberse desplazado.
+      if (!isInitial) window.scrollTo({ top: 0, behavior: 'instant' });
       return;
     }
 
