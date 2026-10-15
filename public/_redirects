@@ -4,3 +4,24 @@
 # en/services.html, /en desde en.html. Una URL desconocida recibe el 404.html
 # más cercano con estado 404 (en/404.html bajo /en/), que React hidrata como la
 # página 404. Las Pages Functions (/api/*) se resuelven antes que los estáticos.
+
+# URLs del sitio anterior (Astro, hasta oct-2026): el español vivía bajo /es/ y
+# Google las tiene indexadas. 301 directo a la URL nueva, sin barra final.
+/es                        /                      301
+/es/                       /                      301
+/es/servicios/             /servicios             301
+/es/servicios              /servicios             301
+/es/como-trabajamos/       /como-trabajamos       301
+/es/como-trabajamos        /como-trabajamos       301
+/es/nosotros/              /nosotros              301
+/es/nosotros               /nosotros              301
+/es/aplicar/               /aplicar               301
+/es/aplicar                /aplicar               301
+/es/glosario/              /glosario              301
+/es/glosario               /glosario              301
+/es/legal/privacidad/      /legal/privacidad      301
+/es/legal/privacidad       /legal/privacidad      301
+/es/legal/terminos/        /legal/terminos        301
+/es/legal/terminos         /legal/terminos        301
+/es/*                      /:splat                301
+/sitemap-index.xml         /sitemap.xml           301
