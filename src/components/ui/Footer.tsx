@@ -43,6 +43,11 @@ export default function Footer() {
               </li>
             ))}
             <li>
+              <Link to="/insights" className="text-sm text-white/70 transition-colors hover:text-accent">
+                {t('footer.insights')}
+              </Link>
+            </li>
+            <li>
               <Link to="/glosario" className="text-sm text-white/70 transition-colors hover:text-accent">
                 {t('footer.glossary')}
               </Link>

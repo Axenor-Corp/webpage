@@ -4,7 +4,7 @@
  * - scripts/prerender.mjs (build): escribe el <head> de cada HTML prerenderizado.
  */
 import type { Language } from '../i18n/config';
-import { findPage, type PageId } from './routes';
+import { findPage, type Page, type PageId } from './routes';
 
 export const SITE = 'https://web.axenorcorporations.com';
 
@@ -23,6 +23,8 @@ export interface SeoInput {
   alternates?: Record<Language, string>;
   /** 404 y similares: no indexar. */
   noindex?: boolean;
+  /** Artículo de /insights: og:type article y su fecha de publicación (ISO). */
+  article?: { published: string; modified: string };
 }
 
 /**
@@ -36,7 +38,7 @@ interface PageMeta {
   bare?: boolean;
 }
 
-const META: Record<PageId, PageMeta> = {
+const META: Record<Exclude<PageId, 'article'>, PageMeta> = {
   home: { ns: 'home', bare: true },
   services: { ns: 'services' },
   how: { ns: 'how' },
@@ -49,7 +51,13 @@ const META: Record<PageId, PageMeta> = {
   cases: { ns: 'cases' },
   caseFaro: { ns: 'faro', key: 'case' },
   caseHosting: { ns: 'hosting' },
+  insights: { ns: 'insights' },
 };
+
+/** Los artículos comparten namespace: sus textos SEO van en insights.json, bajo articles.<id>. */
+function pageMeta(page: Page): PageMeta {
+  return page.id === 'article' ? { ns: 'insights', key: `articles.${page.article.id}` } : META[page.id];
+}
 
 export function ogLocale(lng: Language): string {
   return OG_LOCALES[lng];
@@ -58,7 +66,7 @@ export function ogLocale(lng: Language): string {
 /** Namespace i18n con los textos SEO de la ruta (404: 'common'). */
 export function routeNamespace(pathname: string): string {
   const page = findPage(pathname);
-  return page ? META[page.id].ns : 'common';
+  return page ? pageMeta(page).ns : 'common';
 }
 
 /** `t` ya ligado al namespace de `routeNamespace(pathname)` y al idioma `lang`. */
@@ -76,7 +84,7 @@ export function routeSeo(pathname: string, t: (key: string) => string, lang: Lan
     };
   }
 
-  const meta = META[page.id];
+  const meta = pageMeta(page);
   const prefix = meta.key ? `${meta.key}.` : '';
   const rawTitle = t(`${prefix}meta.title`);
   return {
@@ -85,5 +93,8 @@ export function routeSeo(pathname: string, t: (key: string) => string, lang: Lan
     path: page.paths[lang],
     lang,
     alternates: page.paths,
+    ...(page.id === 'article' && {
+      article: { published: page.article.published, modified: page.article.modified },
+    }),
   };
 }

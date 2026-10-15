@@ -8,9 +8,14 @@ import { SITE, ogLocale, type SeoInput } from '../lib/seo';
  * build prerenderiza cada ruta con los mismos datos (scripts/prerender.mjs).
  */
 
-function upsertMeta(selector: string, attr: 'name' | 'property', key: string, content: string) {
+/** `content` null quita la etiqueta (p. ej. las fechas de artículo al salir de uno). */
+function upsertMeta(selector: string, attr: 'name' | 'property', key: string, content: string | null) {
   if (typeof document === 'undefined') return;
   let el = document.head.querySelector<HTMLMetaElement>(selector);
+  if (content === null) {
+    el?.remove();
+    return;
+  }
   if (!el) {
     el = document.createElement('meta');
     el.setAttribute(attr, key);
@@ -33,9 +38,11 @@ function setLink(selector: string, attrs: Record<string, string> | null) {
   for (const [name, value] of Object.entries(attrs)) el.setAttribute(name, value);
 }
 
-export function useSeo({ title, description, path, lang, alternates, noindex = false }: SeoInput): void {
+export function useSeo({ title, description, path, lang, alternates, noindex = false, article }: SeoInput): void {
   const esPath = alternates?.es;
   const enPath = alternates?.en;
+  const published = article?.published ?? null;
+  const modified = article?.modified ?? null;
 
   useEffect(() => {
     if (typeof document === 'undefined') return;
@@ -66,5 +73,8 @@ export function useSeo({ title, description, path, lang, alternates, noindex = f
     upsertMeta('meta[property="og:locale:alternate"]', 'property', 'og:locale:alternate', ogLocale(other));
     upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
     upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description);
-  }, [title, description, path, lang, esPath, enPath, noindex]);
+    upsertMeta('meta[property="og:type"]', 'property', 'og:type', published ? 'article' : 'website');
+    upsertMeta('meta[property="article:published_time"]', 'property', 'article:published_time', published);
+    upsertMeta('meta[property="article:modified_time"]', 'property', 'article:modified_time', modified);
+  }, [title, description, path, lang, esPath, enPath, noindex, published, modified]);
 }

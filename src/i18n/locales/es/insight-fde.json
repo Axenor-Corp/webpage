@@ -1,0 +1,125 @@
+{
+  "lead": "Forward Deployed Engineering (FDE) es un modelo de trabajo en el que ingenieros con experiencia se integran dentro de la operación de un cliente y responden por un resultado de negocio medible, no por horas facturadas. Aquí explicamos qué es, en qué se diferencia del aumento de personal y de la consultoría tradicional, cuándo conviene y, con la misma franqueza, cuándo no.",
+  "sections": [
+    {
+      "id": "que-es",
+      "title": "Qué es Forward Deployed Engineering",
+      "blocks": [
+        "Un **Forward Deployed Engineer** (FDE) es un ingeniero que trabaja desde dentro del negocio del cliente: en su contexto, con sus datos y bajo sus restricciones reales. No recibe un requerimiento cerrado para resolverlo a distancia. Se sienta donde está el problema, entiende cómo opera la empresa y asume ese problema de principio a fin, desde el diagnóstico hasta que el resultado se puede medir en producción.",
+        "El término viene de Palantir, que lo usó para nombrar a los ingenieros que enviaba a trabajar junto a sus clientes en problemas que ningún producto estándar resolvía. La idea se extendió porque ataca una falla conocida de los proyectos de tecnología: la distancia entre quien entiende el negocio y quien construye la solución. Hoy también la aplican empresas de inteligencia artificial como OpenAI y Anthropic, que tienen equipos de ingenieros desplegados junto a sus clientes por la misma razón.",
+        "Como modelo de trabajo, Forward Deployed Engineering descansa en tres principios:",
+        {
+          "list": [
+            "**Contexto antes que código.** Primero se entienden el negocio, los datos y las restricciones reales (técnicas, regulatorias y humanas). El código viene después.",
+            "**Propiedad end-to-end.** Un solo dueño del problema, del descubrimiento a la medición. La responsabilidad no se reparte entre proveedores, áreas y documentos de traspaso.",
+            "**Experiencia, no manos supervisadas.** Profesionales que toman decisiones técnicas y de producto en el mismo asiento, sin capas intermedias que traduzcan lo que el negocio necesita."
+          ]
+        },
+        "La consecuencia práctica es que cambia la unidad de medida. A un equipo FDE no se le evalúa por las horas que factura ni por los documentos que produce, sino por una métrica de negocio acordada antes de empezar: el tiempo de un proceso, el costo de una operación, la adopción de una herramienta o la exposición a un riesgo."
+      ]
+    },
+    {
+      "id": "diferencias",
+      "title": "En qué se diferencia del aumento de personal y de la consultoría tradicional",
+      "blocks": [
+        "Forward Deployed Engineering suele confundirse con dos modelos más conocidos. Los tres pueden ser una buena decisión; la diferencia está en quién es dueño del problema y en qué se considera terminado.",
+        "**[Aumento de personal](/glosario#staff-augmentation) (staff augmentation).** El proveedor aporta personas que trabajan bajo tu dirección. Es útil cuando ya tienes liderazgo técnico, una arquitectura definida y te falta capacidad. Pero el problema, el riesgo y la coordinación siguen siendo tuyos: si el resultado no llega, el proveedor igual cumplió con lo que vendió, que eran horas.",
+        "**Consultoría tradicional.** La firma diagnostica y recomienda. Su entregable típico es un documento: un análisis, una hoja de ruta, una arquitectura objetivo. Puede tener mucho valor, pero la implementación queda en manos de tu equipo o de otro proveedor, y entre la recomendación y la producción se pierde contexto en cada traspaso.",
+        "**Forward Deployed Engineering.** El mismo equipo que entiende el problema lo resuelve, lo pone en producción y responde por el número acordado. No hay traspaso entre quien diseña y quien construye, y lo que recibes no es un informe ni un paquete de horas: es un sistema funcionando y medido.",
+        {
+          "table": {
+            "caption": "Tres modelos de trabajo, comparados",
+            "head": ["Criterio", "Aumento de personal", "Consultoría tradicional", "Forward Deployed"],
+            "rows": [
+              ["Dueño del problema", "Tu empresa", "La firma lo diagnostica, tú lo ejecutas", "El equipo FDE, de punta a punta"],
+              ["Qué recibes", "Horas de trabajo", "Diagnóstico y recomendaciones", "Un sistema en producción"],
+              ["Cómo se mide", "Horas y tareas cumplidas", "Calidad del documento", "Una métrica de negocio acordada"],
+              ["Dónde trabaja", "En tu equipo, bajo tu dirección", "Desde fuera, por fases", "Dentro de tu operación, con autonomía"],
+              ["Quién coordina", "Tú", "Tú, entre la firma y quien implemente", "El equipo FDE"],
+              ["Conviene cuando", "Tienes dirección técnica y te falta capacidad", "Necesitas una decisión estratégica antes de ejecutar", "El problema es crítico y no tiene solución enlatada"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "cuando-conviene",
+      "title": "Cuándo conviene",
+      "blocks": [
+        "El modelo rinde más cuando el problema importa al negocio y la solución depende de conocerlo por dentro. Estas son las señales más claras:",
+        {
+          "list": [
+            "**No existe un producto que lo resuelva.** Si una herramienta del mercado encaja, cómprala. FDE tiene sentido cuando la operación es tan específica que una plantilla obligaría al negocio a doblarse a su forma.",
+            "**El contexto está repartido.** Datos en varios sistemas, procesos que solo conocen ciertas personas, reglas regulatorias o sistemas heredados que condicionan cualquier solución. Eso no cabe en un documento de requerimientos; se entiende estando ahí.",
+            "**La iniciativa está atascada entre el piloto y la producción.** Es el caso típico de la inteligencia artificial: la prueba de concepto funciona en un entorno controlado, pero nadie la lleva a operar de forma fiable y medible. Ese salto de [piloto a producción](/glosario#piloto-a-produccion) es justo donde un equipo desplegado aporta más.",
+            "**Nadie tiene tiempo para coordinar.** Tu equipo está ocupado operando el negocio y no puede dirigir día a día a un grupo de contratistas. Necesitas a alguien que asuma el problema completo.",
+            "**Necesitas ver valor antes del cierre.** Con hitos cortos y visibilidad continua, el valor llega mientras el proyecto avanza y puedes corregir el rumbo cuando todavía es barato hacerlo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cuando-no-conviene",
+      "title": "Cuándo no conviene",
+      "blocks": [
+        "Forward Deployed Engineering no es la respuesta a todo, y decirlo a tiempo también es parte del modelo. Hay escenarios en los que otra opción es mejor:",
+        {
+          "list": [
+            "**El problema es estándar y el mercado ya lo resolvió.** Una herramienta SaaS bien implementada cuesta menos y llega antes.",
+            "**Ya tienes la dirección técnica y solo te faltan manos.** Si tu arquitectura está definida y tu equipo sabe exactamente qué construir, el aumento de personal es más eficiente.",
+            "**No es posible dar acceso.** El modelo depende de llegar a los sistemas, los datos y las personas que importan desde la primera semana. Sin ese acceso, pierde su ventaja.",
+            "**No hay una métrica que acordar.** Si el objetivo no se puede expresar como algo medible, ningún equipo puede responder por él. Conviene resolver eso primero.",
+            "**La decisión se toma por tarifa horaria.** En una comparación de costo por hora, este modelo pierde. Su argumento es otro: el costo de no llegar nunca a producción."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "como-lo-hacemos",
+      "title": "Cómo lo aplicamos en Axenor",
+      "blocks": [
+        "En Axenor trabajamos con este modelo en las seis capacidades que ofrecemos: [inteligencia artificial, ciberseguridad, infraestructura, cloud, servicios críticos y software a la medida](/servicios). Cada compromiso pasa por cuatro fases, y cada una cierra sobre algo verificable:",
+        {
+          "list": [
+            "**Onboarding.** Nos integramos a tu equipo y a tu stack. Desde la primera semana tenemos acceso a los sistemas, las herramientas y las personas que importan.",
+            "**Discovery.** Inmersión en el contexto y en los datos reales. Identificamos dónde está el valor y qué restricciones condicionan la solución.",
+            "**Delivery.** Construimos bajo restricciones reales, iterando en producción y no en un laboratorio, con hitos visibles en cada paso.",
+            "**Medición.** Cerramos sobre la métrica de negocio acordada de antemano, monitoreada en vivo. Un resultado cuantificado, no un entregable."
+          ]
+        },
+        "Alrededor de esas fases hay cuatro compromisos pensados para quien no puede equivocarse al contratar: visibilidad continua del progreso real (no un reporte mensual), hitos cortos que funcionan como puntos de decisión, entregables que se comprueban contra un criterio acordado y valor antes del cierre del proyecto. El detalle está en [cómo trabajamos](/como-trabajamos).",
+        "Un ejemplo concreto es [Faro](/casos/faro), la plataforma que diseñamos, construimos y operamos para un programa de aceleración empresarial. No partimos de un producto: nos sentamos con el equipo del programa a entender su metodología, sus instrumentos y quién hace qué en cada fase; convertimos eso en flujos, permisos y pantallas; entregamos por módulos, con la seguridad de los datos resuelta desde la base, y seguimos a cargo de su operación. Hoy funciona en producción con 85 empresas.",
+        "Dos aspectos prácticos. El equipo está en Bogotá, en un horario compatible con el de la costa este de Estados Unidos, así que trabajamos en tiempo real con clientes en Colombia y en EE. UU. Y no publicamos precios: cada compromiso se dimensiona contra el problema, el contexto y el resultado que hay que mover, no contra una tarifa de catálogo."
+      ]
+    }
+  ],
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Un Forward Deployed Engineer es un consultor?",
+        "a": "No en el sentido tradicional. Un consultor diagnostica y recomienda; un FDE además construye, pone en producción y responde por el resultado. Hay análisis, pero al servicio de un sistema funcionando, no de un informe."
+      },
+      {
+        "q": "¿En qué se diferencia de contratar desarrolladores por horas?",
+        "a": "En quién es dueño del problema. Con el aumento de personal tú diriges, coordinas y asumes el riesgo, y el proveedor responde por las horas. En el modelo FDE el equipo asume el problema completo y responde por una métrica de negocio acordada."
+      },
+      {
+        "q": "¿Reemplaza a mi equipo interno?",
+        "a": "No, trabaja junto a él. El equipo FDE asume un problema concreto de punta a punta y tu equipo conserva su rol, con visibilidad continua de lo que se construye y de cómo se mide."
+      },
+      {
+        "q": "¿Sirve solo para proyectos de inteligencia artificial?",
+        "a": "No. Es frecuente en IA porque ahí la brecha entre piloto y producción es más visible, pero aplica a cualquier problema crítico sin solución enlatada: software a la medida, ciberseguridad, infraestructura, cloud o servicios críticos."
+      },
+      {
+        "q": "¿Cómo se mide el resultado?",
+        "a": "Con una métrica de negocio que se acuerda antes de empezar y se monitorea en vivo. Cada fase cierra sobre algo comprobable contra un criterio acordado, no contra una opinión."
+      },
+      {
+        "q": "¿Cómo empezamos?",
+        "a": "Cuéntanos el problema en [Aplicar](/aplicar). Revisamos cada aplicación personalmente y respondemos en un máximo de 3 días hábiles."
+      }
+    ]
+  }
+}

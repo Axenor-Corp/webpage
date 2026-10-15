@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Insights: ingeniería, IA y operación tecnológica",
+    "description": "Análisis de Axenor sobre cómo llevar la tecnología a producción: modelos de trabajo, inteligencia artificial, ciberseguridad y cloud, escritos por el equipo que los construye y los opera."
+  },
+  "header": {
+    "title": "Insights",
+    "subtitle": "Lo que aprendemos en producción, por escrito.",
+    "intro": "Análisis sobre modelos de trabajo, inteligencia artificial, ciberseguridad y cloud, escritos por el equipo que construye y opera estos sistemas. Cada texto responde una pregunta concreta, sin relleno."
+  },
+  "labels": {
+    "read": "Leer el artículo",
+    "by": "Por",
+    "readingTime": "{{count}} min de lectura",
+    "toc": "En este artículo",
+    "breadcrumb": "Ruta de navegación",
+    "back": "Todos los artículos"
+  },
+  "articles": {
+    "fde": {
+      "title": "Forward Deployed Engineering: qué es y cuándo conviene",
+      "tag": "Modelo de trabajo",
+      "excerpt": "Ingenieros con experiencia dentro de tu operación, dueños de un problema hasta que produce un resultado medible. Qué es el modelo, en qué se diferencia de las alternativas y cuándo no es la respuesta.",
+      "meta": {
+        "title": "Forward Deployed Engineering: qué es y cuándo conviene",
+        "description": "Qué es Forward Deployed Engineering (FDE), en qué se diferencia del aumento de personal y de la consultoría tradicional, y cuándo conviene (y cuándo no) a tu empresa."
+      }
+    }
+  }
+}

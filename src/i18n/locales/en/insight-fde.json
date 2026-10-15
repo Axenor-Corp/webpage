@@ -1,0 +1,125 @@
+{
+  "lead": "Forward Deployed Engineering (FDE) is an engagement model in which senior engineers embed inside a client's operation and answer for a measurable business outcome instead of billable hours. Here is what it is, how it differs from staff augmentation and traditional consulting, when it is worth it and, just as plainly, when it isn't.",
+  "sections": [
+    {
+      "id": "what-is-fde",
+      "title": "What Forward Deployed Engineering is",
+      "blocks": [
+        "A **Forward Deployed Engineer** (FDE) works from inside the client's business: in its context, with its data and under its real constraints. Instead of taking a spec and building against it from a distance, an FDE sits where the problem lives, learns how the company actually runs and owns that problem end to end, from discovery until the result can be measured in production.",
+        "Palantir coined the term for the engineers it sent to work alongside customers on problems no off-the-shelf product could solve. The idea spread because it targets a familiar failure in technology projects: the gap between the people who understand the business and the people who build the solution. Today AI companies such as OpenAI and Anthropic run their own forward deployed teams for the same reason.",
+        "As an operating model, Forward Deployed Engineering rests on three principles:",
+        {
+          "list": [
+            "**Context before code.** Understand the business, the data and the real constraints (technical, regulatory and human) first. Code comes after.",
+            "**End-to-end ownership.** One owner of the problem, from discovery to measurement. Accountability doesn't get split across vendors, departments and handoff documents.",
+            "**Seniority, not supervised hands.** People who make technical and product calls in the same seat, with no layers in between translating what the business needs."
+          ]
+        },
+        "The practical consequence is a different unit of measure. An FDE team isn't judged by hours billed or documents produced, but by a business metric agreed on before work starts: cycle time on a process, cost per transaction, adoption of a tool or exposure to a given risk."
+      ]
+    },
+    {
+      "id": "fde-vs-staff-augmentation-vs-consulting",
+      "title": "FDE vs. staff augmentation vs. traditional consulting",
+      "blocks": [
+        "Forward Deployed Engineering often gets lumped in with two better-known models. All three can be the right call; the difference is who owns the problem and what counts as done.",
+        "**[Staff augmentation](/glosario#staff-augmentation).** The vendor supplies people who work under your direction. It fits when you already have strong technical leadership and a settled architecture and simply need more capacity. But the problem, the risk and the coordination stay with you. If the outcome never shows up, the vendor still delivered what it sold: hours.",
+        "**Traditional consulting.** The firm assesses and recommends. The typical deliverable is a document: an analysis, a roadmap, a target architecture. That can be valuable, but implementation falls to your team or to yet another vendor, and context leaks at every handoff between the recommendation and production.",
+        "**Forward Deployed Engineering.** The team that understands the problem also solves it, ships it and answers for the agreed number. There is no handoff between design and build, and what you get is neither a slide deck nor a block of hours: it is a working system, measured.",
+        {
+          "table": {
+            "caption": "Three engagement models, side by side",
+            "head": ["Criterion", "Staff augmentation", "Traditional consulting", "Forward Deployed"],
+            "rows": [
+              ["Who owns the problem", "You", "The firm diagnoses it, you execute", "The FDE team, end to end"],
+              ["What you get", "Billable hours", "Assessment and recommendations", "A system running in production"],
+              ["How success is measured", "Hours and tickets closed", "Quality of the deliverable", "An agreed business metric"],
+              ["Where the team works", "Inside your team, under your direction", "Outside, in phases", "Inside your operation, with autonomy"],
+              ["Who coordinates", "You", "You, between the firm and the implementer", "The FDE team"],
+              ["Best when", "You have technical leadership and need capacity", "You need a strategic decision before executing", "The problem is critical and has no off-the-shelf fix"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "when-it-makes-sense",
+      "title": "When it makes sense",
+      "blocks": [
+        "The model pays off when the problem matters to the business and solving it depends on understanding it from the inside. The clearest signals:",
+        {
+          "list": [
+            "**No product solves it.** If an off-the-shelf tool fits, buy it. FDE makes sense when your operation is specific enough that a template would force the business to bend around it.",
+            "**The context is scattered.** Data across several systems, processes only certain people know, regulatory rules or legacy systems that constrain any solution. That doesn't fit in a requirements doc; you learn it by being there.",
+            "**The initiative is stuck between pilot and production.** AI is the textbook case: the proof of concept works in a controlled setting, but no one takes it the rest of the way to something reliable and measurable. That jump from [pilot to production](/glosario#piloto-a-produccion) is exactly where an embedded team adds the most.",
+            "**No one has the bandwidth to manage contractors.** Your people are busy running the business and can't direct outside developers day to day. You need someone to own the whole problem.",
+            "**You need to see value before the project ends.** With short milestones and continuous visibility, value shows up while the work is underway, and you can change course while it is still cheap to do so."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "when-it-does-not",
+      "title": "When it doesn't",
+      "blocks": [
+        "Forward Deployed Engineering isn't the answer to everything, and saying so early is part of the model. Other options win when:",
+        {
+          "list": [
+            "**The problem is standard and the market has solved it.** A well-implemented SaaS tool costs less and gets there faster.",
+            "**You already have technical direction and only need hands.** If your architecture is settled and your team knows exactly what to build, staff augmentation is more efficient.",
+            "**Access isn't possible.** The model depends on reaching the systems, data and people that matter from week one. Without that access, it loses its edge.",
+            "**There's no metric to agree on.** If the goal can't be expressed as something measurable, no team can be accountable for it. Fix that first.",
+            "**The decision comes down to hourly rate.** On a cost-per-hour spreadsheet, this model loses. Its case rests on something else: the cost of never reaching production."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "how-axenor-does-it",
+      "title": "How we run it at Axenor",
+      "blocks": [
+        "At Axenor we use this model across our six capabilities: [AI, cybersecurity, infrastructure, cloud, critical services and custom software](/servicios). Every engagement runs in four phases, each closing on something verifiable:",
+        {
+          "list": [
+            "**Onboarding.** We embed in your team and your stack, with access to the systems, tools and people that matter from week one.",
+            "**Discovery.** We immerse ourselves in the real context and data, find where the value is and map the constraints that shape the solution.",
+            "**Delivery.** We build under real constraints, iterating in production rather than in a lab, with visible milestones at every step.",
+            "**Measurement.** We close on the business metric agreed upfront, monitored live. A quantified result, not a deliverable."
+          ]
+        },
+        "Around those phases sit four commitments for the buyer who cannot afford to get it wrong: continuous visibility into real progress (not a monthly status report), short milestones that work as decision points, deliverables you can check against an agreed criterion, and value before the project closes. The details are in [how we work](/como-trabajamos).",
+        "A concrete example is [Faro](/casos/faro), the platform we designed, built and run for a business acceleration program. We didn't start from a product. We sat down with the program team to understand their methodology, their instruments and who does what in each phase; turned that into flows, permissions and screens; shipped module by module with data security solved at the foundation; and we still run it. It is in production today with 85 companies.",
+        "For U.S. companies, two practical notes. Our team is based in Bogotá and works U.S. business hours in a time zone aligned with the East Coast (the same as Eastern Standard Time, one hour behind during daylight saving), so collaboration happens in real time instead of across the 10 to 12 hour gap of traditional offshore. And we don't publish rates: every engagement is scoped against your problem, your context and the result that has to move, not against a rate card."
+      ]
+    }
+  ],
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "Is a Forward Deployed Engineer just a consultant?",
+        "a": "Not in the traditional sense. A consultant assesses and recommends; an FDE also builds, ships to production and answers for the outcome. There is analysis, but it serves a working system, not a report."
+      },
+      {
+        "q": "How is this different from hiring contract developers?",
+        "a": "Ownership. With staff augmentation you direct the work, coordinate it and carry the risk, and the vendor answers for hours. In the FDE model the team takes on the whole problem and answers for an agreed business metric."
+      },
+      {
+        "q": "Does it replace my in-house team?",
+        "a": "No, it works alongside it. The FDE team owns one specific problem end to end while your team keeps its role, with continuous visibility into what is being built and how it is measured."
+      },
+      {
+        "q": "Is it only for AI projects?",
+        "a": "No. It is common in AI because the gap between pilot and production is most visible there, but it applies to any critical problem without an off-the-shelf fix: custom software, cybersecurity, infrastructure, cloud or critical services."
+      },
+      {
+        "q": "How is the outcome measured?",
+        "a": "With a business metric agreed before work starts and monitored live. Each phase closes on something verifiable against an agreed criterion, not on someone's opinion."
+      },
+      {
+        "q": "Can a team in Colombia work with a U.S. company?",
+        "a": "Yes. We work U.S. business hours from Bogotá, in English or Spanish. Tell us about the problem through [Apply](/aplicar): we review every application personally and respond within 3 business days."
+      }
+    ]
+  }
+}

@@ -1,12 +1,15 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from '../components/ui/LocalizedLink';
 import PageHeader from '../components/ui/PageHeader';
 import SectionHeading from '../components/ui/SectionHeading';
 import CTABanner from '../components/ui/CTABanner';
 import { useReveal } from '../hooks/useReveal';
+import { ARTICLES, articlePath } from '../lib/routes';
 
 const PILLAR_KEYS = ['context', 'ownership', 'seniority'] as const;
 const PHASE_KEYS = ['onboarding', 'discovery', 'delivery', 'measurement'] as const;
 const RISK_KEYS = ['visibility', 'milestones', 'deliverables', 'timeToValue'] as const;
+const FDE_ARTICLE = ARTICLES.find((article) => article.id === 'fde')!;
 
 export default function HowWeWork() {
   const { t } = useTranslation('how');
@@ -47,6 +50,15 @@ export default function HowWeWork() {
               </article>
             ))}
           </div>
+          <p className="mx-auto mt-12 max-w-2xl text-center leading-relaxed text-carbon-soft/75">
+            {t('pillars.reading')}{' '}
+            <Link
+              to={articlePath(FDE_ARTICLE, 'es')}
+              className="font-semibold text-accent-text underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent"
+            >
+              {t('pillars.readingLink')}
+            </Link>
+          </p>
         </div>
       </section>
 

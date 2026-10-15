@@ -10,6 +10,8 @@
   },
   "pillars": {
     "title": "El modelo",
+    "reading": "¿Quieres el modelo explicado a fondo, frente a sus alternativas?",
+    "readingLink": "Forward Deployed Engineering: qué es y cuándo conviene",
     "items": {
       "context": {
         "title": "Contexto antes que código",

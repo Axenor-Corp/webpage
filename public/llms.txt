@@ -23,6 +23,9 @@ Sitio oficial / Official site: https://web.axenorcorporations.com (español) · 
 ## Cómo trabajamos / How we work
 Modelo Forward Deployed: nos embebemos en el contexto, el stack y los datos del cliente y somos dueños del problema hasta un resultado medible. Cuatro fases: Onboarding, Discovery, Delivery y Medición, cada una con un cierre verificable. / Forward Deployed model: we embed in the client's context, stack and data and own the problem until a measurable result. Four phases: Onboarding, Discovery, Delivery and Measurement, each with a verifiable close.
 
+## Insights
+- Forward Deployed Engineering: qué es y cuándo conviene / What it is and when it makes sense. Qué es el modelo FDE, en qué se diferencia del aumento de personal y de la consultoría tradicional, y cuándo conviene y cuándo no. / What the FDE model is, how it compares with staff augmentation and traditional consulting, and when it is (and isn't) the right fit. https://web.axenorcorporations.com/insights/que-es-forward-deployed-engineering · https://web.axenorcorporations.com/en/insights/what-is-forward-deployed-engineering
+
 ## Páginas / Pages
 - Inicio / Home: https://web.axenorcorporations.com/ · https://web.axenorcorporations.com/en
 - Servicios / Services: https://web.axenorcorporations.com/servicios · https://web.axenorcorporations.com/en/services
@@ -30,6 +33,7 @@ Modelo Forward Deployed: nos embebemos en el contexto, el stack y los datos del 
 - Cómo trabajamos / How we work: https://web.axenorcorporations.com/como-trabajamos · https://web.axenorcorporations.com/en/how-we-work
 - Nosotros / About: https://web.axenorcorporations.com/nosotros · https://web.axenorcorporations.com/en/about
 - Glosario / Glossary: https://web.axenorcorporations.com/glosario · https://web.axenorcorporations.com/en/glossary
+- Insights: https://web.axenorcorporations.com/insights · https://web.axenorcorporations.com/en/insights
 - Contacto / Contact: https://web.axenorcorporations.com/contacto · https://web.axenorcorporations.com/en/contact
 - Aplicar / Apply: https://web.axenorcorporations.com/aplicar · https://web.axenorcorporations.com/en/apply
 

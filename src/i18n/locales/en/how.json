@@ -10,6 +10,8 @@
   },
   "pillars": {
     "title": "The model",
+    "reading": "Want the model explained in depth, alongside its alternatives?",
+    "readingLink": "Forward Deployed Engineering: what it is and when it makes sense",
     "items": {
       "context": {
         "title": "Context before code",

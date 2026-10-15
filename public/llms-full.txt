@@ -57,6 +57,15 @@ Visión: consolidarnos en los próximos 5 años como líderes en innovación tec
 Principios: dueños del resultado; la prueba antes que el claim; profundidad sobre volumen; transparencia técnica.
 Equipo: Nicolas Ardila Barrera (CEO), Tomas Alberto Rodriguez Peña (Director de Tecnología y Seguridad), Martin Gonzales (Asesor y Director Jurídico).
 
+## Insights
+Índice: https://web.axenorcorporations.com/insights
+
+### Forward Deployed Engineering: qué es y cuándo conviene
+Forward Deployed Engineering (FDE) es un modelo de trabajo en el que ingenieros con experiencia se integran dentro de la operación del cliente y responden por un resultado de negocio medible, no por horas facturadas. El término viene de Palantir, que lo usó para los ingenieros que enviaba a trabajar junto a sus clientes. Principios: contexto antes que código; propiedad end-to-end; experiencia, no manos supervisadas.
+Diferencias: en el aumento de personal (staff augmentation) el cliente dirige, coordina y asume el riesgo, y el proveedor responde por horas; en la consultoría tradicional la firma diagnostica y recomienda, y la implementación queda en otras manos; en el modelo FDE el mismo equipo entiende el problema, lo pone en producción y responde por una métrica de negocio acordada.
+Conviene cuando ningún producto resuelve el problema, el contexto está repartido entre sistemas y personas, la iniciativa está atascada entre piloto y producción, nadie tiene tiempo para coordinar contratistas o se necesita ver valor antes del cierre. No conviene cuando el problema es estándar y el mercado ya lo resolvió, cuando ya hay dirección técnica y solo falta capacidad, cuando no es posible dar acceso a sistemas, datos y personas, cuando no hay una métrica que acordar o cuando la decisión se toma por tarifa horaria.
+URL: https://web.axenorcorporations.com/insights/que-es-forward-deployed-engineering
+
 ## Glosario
 - Forward Deployed Engineer (FDE): Ingeniero de élite que se embebe dentro del negocio del cliente y es dueño de un problema de principio a fin, en lugar de escribir código a distancia.
 - Aumento de personal (staff augmentation): Modelo en el que un proveedor aporta «manos» que trabajan bajo tu dirección; tú sigues siendo dueño del problema y del riesgo.
@@ -128,6 +137,15 @@ Mission: to develop high-quality technology solutions through software services,
 Vision: to consolidate within the next 5 years as leaders in technology innovation, recognized for excellence in software, infrastructure and integral services.
 Principles: owners of the result; proof before the claim; depth over volume; technical transparency.
 Team: Nicolas Ardila Barrera (CEO), Tomas Alberto Rodriguez Peña (Director of Technology and Security), Martin Gonzales (Legal Counsel and Director).
+
+## Insights
+Index: https://web.axenorcorporations.com/en/insights
+
+### Forward Deployed Engineering: What It Is and When It Makes Sense
+Forward Deployed Engineering (FDE) is an engagement model in which senior engineers embed inside the client's operation and answer for a measurable business outcome instead of billable hours. Palantir coined the term for the engineers it sent to work alongside customers. Principles: context before code; end-to-end ownership; seniority, not supervised hands.
+How it differs: with staff augmentation the client directs, coordinates and carries the risk while the vendor answers for hours; with traditional consulting the firm assesses and recommends and implementation falls to someone else; in the FDE model the same team understands the problem, ships it to production and answers for an agreed business metric.
+It makes sense when no product solves the problem, the context is scattered across systems and people, the initiative is stuck between pilot and production, no one has bandwidth to manage contractors, or value is needed before the project ends. It doesn't when the problem is standard and already solved by the market, when technical direction exists and only capacity is missing, when access to systems, data and people isn't possible, when there is no metric to agree on, or when the decision comes down to hourly rate.
+URL: https://web.axenorcorporations.com/en/insights/what-is-forward-deployed-engineering
 
 ## Glossary
 - Forward Deployed Engineer (FDE): An elite engineer who embeds inside the client's business and owns a problem end to end, rather than writing code at a distance.

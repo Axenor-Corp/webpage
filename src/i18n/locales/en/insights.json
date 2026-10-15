@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Insights: engineering, AI and technology operations",
+    "description": "Axenor's analysis on getting technology into production: engagement models, AI, cybersecurity and cloud, written by the team that builds and runs these systems."
+  },
+  "header": {
+    "title": "Insights",
+    "subtitle": "What we learn in production, written down.",
+    "intro": "Analysis on engagement models, AI, cybersecurity and cloud, written by the team that builds and runs these systems. Each piece answers one concrete question, with no filler."
+  },
+  "labels": {
+    "read": "Read the article",
+    "by": "By",
+    "readingTime": "{{count}} min read",
+    "toc": "In this article",
+    "breadcrumb": "Breadcrumb",
+    "back": "All articles"
+  },
+  "articles": {
+    "fde": {
+      "title": "Forward Deployed Engineering: What It Is and When It Makes Sense",
+      "tag": "Engagement model",
+      "excerpt": "Senior engineers embedded in your operation, owning a problem until it produces a measurable result. What the model is, how it compares with the alternatives and when it isn't the answer.",
+      "meta": {
+        "title": "Forward Deployed Engineering: What It Is and When It Makes Sense",
+        "description": "What Forward Deployed Engineering (FDE) is, how it compares with staff augmentation and traditional consulting, and when it is (and isn't) the right fit for your company."
+      }
+    }
+  }
+}

@@ -70,6 +70,19 @@ function buildPage({ html, seo, lang }) {
   page = setMeta(page, 'property', 'og:locale:alternate', ogLocale(lang === 'es' ? 'en' : 'es'));
   page = setMeta(page, 'name', 'twitter:title', seo.title);
   page = setMeta(page, 'name', 'twitter:description', seo.description);
+  page = setMeta(page, 'property', 'og:type', seo.article ? 'article' : 'website');
+  if (seo.article) {
+    // Artículo de /insights: fechas Open Graph junto a og:type.
+    const { published, modified } = seo.article;
+    page = replaceOne(
+      page,
+      /<meta\s+property="og:type"\s+content="article"\s*\/?>/,
+      (tag) =>
+        `${tag}\n    <meta property="article:published_time" content="${escapeAttr(published)}" />` +
+        `\n    <meta property="article:modified_time" content="${escapeAttr(modified)}" />`,
+      'og:type',
+    );
+  }
 
   if (seo.noindex) {
     // 404: sin URL canónica que declarar.

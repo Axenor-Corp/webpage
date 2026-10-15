@@ -17,6 +17,8 @@ const Apply = lazy(() => import('./pages/Apply'));
 const Glossary = lazy(() => import('./pages/Glossary'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
+const Insights = lazy(() => import('./pages/Insights'));
+const InsightArticle = lazy(() => import('./pages/InsightArticle'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Cada página existe en los dos idiomas (src/lib/routes.ts): /servicios y
@@ -34,6 +36,9 @@ const PAGE_COMPONENTS: Record<PageId, ComponentType> = {
   glossary: Glossary,
   privacy: PrivacyPolicy,
   terms: TermsAndConditions,
+  insights: Insights,
+  // Todos los artículos montan el mismo componente; el artículo sale de la URL.
+  article: InsightArticle,
 };
 
 export default function App() {

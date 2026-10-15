@@ -74,6 +74,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/glosario" />
   </url>
   <url>
+    <loc>https://web.axenorcorporations.com/insights</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/insights" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/insights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/insights" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/insights/que-es-forward-deployed-engineering</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/insights/que-es-forward-deployed-engineering" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/insights/what-is-forward-deployed-engineering" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/insights/que-es-forward-deployed-engineering" />
+  </url>
+  <url>
     <loc>https://web.axenorcorporations.com/contacto</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>yearly</changefreq>
@@ -162,6 +180,24 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/glosario" />
     <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/glossary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/glosario" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/insights</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/insights" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/insights" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/insights" />
+  </url>
+  <url>
+    <loc>https://web.axenorcorporations.com/en/insights/what-is-forward-deployed-engineering</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://web.axenorcorporations.com/insights/que-es-forward-deployed-engineering" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://web.axenorcorporations.com/en/insights/what-is-forward-deployed-engineering" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web.axenorcorporations.com/insights/que-es-forward-deployed-engineering" />
   </url>
   <url>
     <loc>https://web.axenorcorporations.com/en/contact</loc>
