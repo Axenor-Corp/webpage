@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 import { BrandMark } from './Logo';
+import { isChunkLoadError, reloadForNewDeploy } from '../../lib/chunkReload';
 
 interface Props {
   children: ReactNode;
@@ -23,6 +24,8 @@ export default class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
+    // Chunk de un deploy anterior: se recarga sola en vez de mostrar el error.
+    if (isChunkLoadError(error) && reloadForNewDeploy()) return;
     console.error('ErrorBoundary', error, info.componentStack);
   }
 
