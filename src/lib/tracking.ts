@@ -1,7 +1,7 @@
 // Carga de analítica/marketing (GA4, GTM, Meta Pixel, Google Ads).
 // Los scripts se inyectan desde este módulo bundleado (script 'self'); el sistema
-// es INERTE si no hay IDs configurados. loadTrackers() se llama SOLO tras el
-// consentimiento del visitante (ver components/analytics/Analytics.tsx).
+// es INERTE si no hay IDs configurados. applyConsent() carga cada tracker SOLO
+// con el permiso que le corresponde (ver components/analytics/Analytics.tsx).
 // Los IDs son públicos por diseño (van al bundle, como toda analítica web).
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -33,7 +33,19 @@ export const hasTracking = Boolean(
   TRACKING.GA_ID || TRACKING.GTM_ID || TRACKING.META_PIXEL_ID || TRACKING.GOOGLE_ADS_ID,
 );
 
-let loaded = false;
+export interface TrackingScopes {
+  analytics: boolean;
+  ads: boolean;
+}
+
+// Qué permitió el visitante AHORA (puede retirarlo desde el Centro de privacidad).
+const granted: TrackingScopes = { analytics: false, ads: false };
+let gtagReady = false;
+let gaConfigured = false;
+let adsConfigured = false;
+let gtmLoaded = false;
+let metaLoaded = false;
+let vitalsReported = false;
 
 function injectScript(src: string): void {
   const s = document.createElement('script');
@@ -42,89 +54,120 @@ function injectScript(src: string): void {
   document.head.appendChild(s);
 }
 
-/** Carga los trackers configurados (idempotente). Llamar SOLO con consentimiento. */
-export function loadTrackers(): void {
-  if (loaded || !hasTracking) return;
-  loaded = true;
+function ensureGtag(): void {
+  if (gtagReady) return;
+  gtagReady = true;
   window.dataLayer = window.dataLayer || [];
-
-  // GA4 + Google Ads comparten gtag.js
-  if (TRACKING.GA_ID || TRACKING.GOOGLE_ADS_ID) {
-    injectScript(
-      `https://www.googletagmanager.com/gtag/js?id=${TRACKING.GA_ID || TRACKING.GOOGLE_ADS_ID}`,
-    );
-    const gtag: AnyFn = (...args) => {
-      window.dataLayer.push(args);
-    };
-    window.gtag = gtag;
-    gtag('js', new Date());
-    // SPA: desactivamos el page_view automático y lo enviamos por ruta (trackPageView).
-    if (TRACKING.GA_ID) gtag('config', TRACKING.GA_ID, { send_page_view: false });
-    if (TRACKING.GOOGLE_ADS_ID) gtag('config', TRACKING.GOOGLE_ADS_ID);
-  }
-
-  // Google Tag Manager
-  if (TRACKING.GTM_ID) {
-    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-    injectScript(`https://www.googletagmanager.com/gtm.js?id=${TRACKING.GTM_ID}`);
-  }
-
-  // Meta Pixel (bootstrap oficial de fbevents)
-  if (TRACKING.META_PIXEL_ID) {
-    const n: any = function (...args: any[]) {
-      if (n.callMethod) n.callMethod(...args);
-      else n.queue.push(args);
-    };
-    if (!window._fbq) window._fbq = n;
-    n.push = n;
-    n.loaded = true;
-    n.version = '2.0';
-    n.queue = [];
-    window.fbq = n;
-    injectScript('https://connect.facebook.net/en_US/fbevents.js');
-    window.fbq('init', TRACKING.META_PIXEL_ID);
-    window.fbq('track', 'PageView');
-  }
-
-  // Reportar Web Vitals a GA4/GTM
-  reportWebVitals();
+  // gtag.js solo procesa objetos `arguments`; si se empuja un array (rest params)
+  // descarta el comando y GA4 nunca envía hits. Por eso no es una arrow function.
+  window.gtag = function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments);
+  };
+  window.gtag('js', new Date());
+  injectScript(
+    `https://www.googletagmanager.com/gtag/js?id=${TRACKING.GA_ID || TRACKING.GOOGLE_ADS_ID}`,
+  );
 }
+
+/**
+ * Aplica el consentimiento del visitante (idempotente). Analítica: GA4 y GTM.
+ * Publicidad: Google Ads y Meta Pixel. Llamar en cada cambio de consentimiento:
+ * carga lo nuevo que se permitió y, si se retiró un permiso, lo apaga.
+ */
+export function applyConsent(scopes: TrackingScopes): void {
+  if (!hasTracking) return;
+  granted.analytics = scopes.analytics;
+  granted.ads = scopes.ads;
+
+  if (gtagReady && window.gtag) {
+    window.gtag('consent', 'update', {
+      analytics_storage: scopes.analytics ? 'granted' : 'denied',
+      ad_storage: scopes.ads ? 'granted' : 'denied',
+      ad_user_data: scopes.ads ? 'granted' : 'denied',
+      ad_personalization: scopes.ads ? 'granted' : 'denied',
+    });
+  }
+  if (metaLoaded && window.fbq) window.fbq('consent', scopes.ads ? 'grant' : 'revoke');
+
+  if (scopes.analytics) {
+    if (TRACKING.GA_ID && !gaConfigured) {
+      ensureGtag();
+      gaConfigured = true;
+      // SPA: desactivamos el page_view automático y lo enviamos por ruta (trackPageView).
+      window.gtag?.('config', TRACKING.GA_ID, { send_page_view: false });
+    }
+    if (TRACKING.GTM_ID && !gtmLoaded) {
+      gtmLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+      injectScript(`https://www.googletagmanager.com/gtm.js?id=${TRACKING.GTM_ID}`);
+    }
+    if (!vitalsReported) {
+      vitalsReported = true;
+      reportWebVitals();
+    }
+  }
+
+  if (scopes.ads) {
+    if (TRACKING.GOOGLE_ADS_ID && !adsConfigured) {
+      ensureGtag();
+      adsConfigured = true;
+      window.gtag?.('config', TRACKING.GOOGLE_ADS_ID);
+    }
+    // Meta Pixel (bootstrap oficial de fbevents). El PageView lo envía trackPageView.
+    if (TRACKING.META_PIXEL_ID && !metaLoaded) {
+      metaLoaded = true;
+      const n: any = function (...args: any[]) {
+        if (n.callMethod) n.callMethod(...args);
+        else n.queue.push(args);
+      };
+      if (!window._fbq) window._fbq = n;
+      n.push = n;
+      n.loaded = true;
+      n.version = '2.0';
+      n.queue = [];
+      window.fbq = n;
+      injectScript('https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', TRACKING.META_PIXEL_ID);
+    }
+  }
+}
+
+const canGoogle = () => Boolean(window.gtag) && (granted.analytics || granted.ads);
+const canMeta = () => metaLoaded && granted.ads && Boolean(window.fbq);
 
 /** Envía page_view en cada cambio de ruta del SPA. */
 export function trackPageView(path: string): void {
-  if (!loaded) return;
-  if (TRACKING.GA_ID && window.gtag) {
+  if (granted.analytics && gaConfigured && window.gtag) {
     window.gtag('event', 'page_view', {
+      send_to: TRACKING.GA_ID,
       page_path: path,
       page_location: window.location.href,
       page_title: document.title,
     });
   }
-  window.dataLayer?.push({ event: 'page_view', page_path: path });
-  if (TRACKING.META_PIXEL_ID && window.fbq) window.fbq('track', 'PageView');
+  if (granted.analytics && gtmLoaded) window.dataLayer?.push({ event: 'page_view', page_path: path });
+  if (canMeta()) window.fbq('track', 'PageView');
 }
 
 /** Evento personalizado (CTAs, clics, etc.). */
 export function trackEvent(name: string, params: Record<string, unknown> = {}): void {
-  if (!loaded) return;
-  if (window.gtag) window.gtag('event', name, params);
-  window.dataLayer?.push({ event: name, ...params });
-  if (window.fbq) window.fbq('trackCustom', name, params);
+  if (canGoogle()) window.gtag?.('event', name, params);
+  if (granted.analytics && gtmLoaded) window.dataLayer?.push({ event: name, ...params });
+  if (canMeta()) window.fbq('trackCustom', name, params);
 }
 
 /** Conversión de lead: envío del formulario "Aplicar". */
 export function trackLead(): void {
-  if (!loaded) return;
-  if (window.gtag) {
-    window.gtag('event', 'generate_lead');
-    if (TRACKING.GOOGLE_ADS_ID && TRACKING.GOOGLE_ADS_LABEL) {
-      window.gtag('event', 'conversion', {
-        send_to: `${TRACKING.GOOGLE_ADS_ID}/${TRACKING.GOOGLE_ADS_LABEL}`,
-      });
-    }
+  if (canGoogle()) window.gtag?.('event', 'generate_lead');
+  if (granted.ads && adsConfigured && TRACKING.GOOGLE_ADS_LABEL) {
+    window.gtag?.('event', 'conversion', {
+      send_to: `${TRACKING.GOOGLE_ADS_ID}/${TRACKING.GOOGLE_ADS_LABEL}`,
+    });
   }
-  window.dataLayer?.push({ event: 'generate_lead' });
-  if (window.fbq) window.fbq('track', 'Lead');
+  if (granted.analytics && gtmLoaded) window.dataLayer?.push({ event: 'generate_lead' });
+  if (canMeta()) window.fbq('track', 'Lead');
 }
 
 /** Navegación: Tiempo en pantalla */
@@ -169,10 +212,11 @@ export function track3DInteraction(action: string): void {
 
 /** Web Vitals: Envío a los datalayers */
 function sendToAnalytics(metric: Metric) {
+  if (!granted.analytics) return;
   const { name, delta, id, value } = metric;
-  
+
   // Enviarlo a GA4 directamente si gtag está activo
-  if (window.gtag) {
+  if (gaConfigured && window.gtag) {
     window.gtag('event', name, {
       event_category: 'Web Vitals',
       // Google Analytics requires integer values for metrics
@@ -183,7 +227,7 @@ function sendToAnalytics(metric: Metric) {
   }
 
   // GTM fallback
-  window.dataLayer?.push({
+  if (gtmLoaded) window.dataLayer?.push({
     event: 'web_vitals',
     web_vitals_name: name,
     web_vitals_value: value,

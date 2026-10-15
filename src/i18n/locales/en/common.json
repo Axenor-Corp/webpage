@@ -26,7 +26,8 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "legalLabel": "Legal links",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "privacyChoices": "Do Not Sell or Share My Personal Information"
   },
   "notFound": {
     "title": "Page not found",
@@ -34,10 +35,36 @@
     "back": "Back to home"
   },
   "cookies": {
-    "title": "Cookie usage",
-    "text": "We use analytics cookies (Google and Meta) to understand site usage and improve your experience. They only activate if you accept.",
-    "accept": "Accept",
-    "reject": "Reject",
-    "policy": "Privacy policy"
+    "label": "Privacy consent",
+    "text": "We use analytics and advertising cookies to understand how the site is used and to measure our campaigns. With your permission, we also use anonymized data to improve our AI models. These cookies only activate if you accept them.",
+    "policy": "Privacy policy",
+    "preferences": "Preferences",
+    "rejectAll": "Reject all",
+    "acceptAll": "Accept all",
+    "prefsTitle": "Privacy preferences",
+    "back": "Back",
+    "analytics": "Analytics",
+    "analyticsDesc": "Lets us measure how the site is used.",
+    "ads": "Advertising",
+    "adsDesc": "Personalized ads based on your browsing.",
+    "aiTraining": "AI training",
+    "aiTrainingDesc": "Use of anonymized data for our AI models.",
+    "save": "Save preferences"
+  },
+  "privacyCenter": {
+    "title": "Privacy center",
+    "close": "Close",
+    "analytics": "Analytics",
+    "analyticsDesc": "Anonymous measurement of how the site is used (Google Analytics).",
+    "doNotSell": "Do not sell or share my personal information",
+    "doNotSellDesc": "Turns off personalized advertising and data sharing for advertising.",
+    "aiTraining": "AI training and automated decisions",
+    "aiTrainingDesc": "Allows anonymized data to be used to train our AI models.",
+    "deleteTitle": "Delete my data",
+    "deleteDesc": "Deletes the preferences and data this site stored in your browser.",
+    "deleteButton": "Delete my data",
+    "deleteConfirm": "Confirm",
+    "deleting": "Deleting...",
+    "cancel": "Cancel"
   }
 }

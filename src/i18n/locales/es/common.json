@@ -26,7 +26,8 @@
     "privacy": "Privacidad",
     "terms": "Términos",
     "legalLabel": "Enlaces legales",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "privacyChoices": "No vender ni compartir mi información personal"
   },
   "notFound": {
     "title": "Página no encontrada",
@@ -34,10 +35,36 @@
     "back": "Volver al inicio"
   },
   "cookies": {
-    "title": "Uso de cookies",
-    "text": "Usamos cookies de analítica (Google y Meta) para entender el uso del sitio y mejorar tu experiencia. Solo se activan si las aceptas.",
-    "accept": "Aceptar",
-    "reject": "Rechazar",
-    "policy": "Política de privacidad"
+    "label": "Consentimiento de privacidad",
+    "text": "Usamos cookies de analítica y publicidad para entender cómo se usa el sitio y medir nuestras campañas. Con tu permiso, también usamos datos anonimizados para mejorar nuestros modelos de IA. Estas cookies solo se activan si las aceptas.",
+    "policy": "Política de privacidad",
+    "preferences": "Preferencias",
+    "rejectAll": "Rechazar todo",
+    "acceptAll": "Aceptar todo",
+    "prefsTitle": "Preferencias de privacidad",
+    "back": "Volver",
+    "analytics": "Analítica",
+    "analyticsDesc": "Nos permite medir cómo se usa el sitio.",
+    "ads": "Publicidad",
+    "adsDesc": "Anuncios personalizados según tu navegación.",
+    "aiTraining": "Entrenamiento de IA",
+    "aiTrainingDesc": "Uso de datos anonimizados para nuestros modelos de IA.",
+    "save": "Guardar preferencias"
+  },
+  "privacyCenter": {
+    "title": "Centro de privacidad",
+    "close": "Cerrar",
+    "analytics": "Analítica",
+    "analyticsDesc": "Medición anónima de cómo se usa el sitio (Google Analytics).",
+    "doNotSell": "No vender ni compartir mi información personal",
+    "doNotSellDesc": "Desactiva la publicidad personalizada y el intercambio de datos con fines publicitarios.",
+    "aiTraining": "Entrenamiento de IA y decisiones automatizadas",
+    "aiTrainingDesc": "Permite usar datos anonimizados para entrenar nuestros modelos de IA.",
+    "deleteTitle": "Borrar mis datos",
+    "deleteDesc": "Borra las preferencias y los datos que este sitio guardó en tu navegador.",
+    "deleteButton": "Borrar mis datos",
+    "deleteConfirm": "Confirmar",
+    "deleting": "Borrando...",
+    "cancel": "Cancelar"
   }
 }

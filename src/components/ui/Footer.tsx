@@ -86,11 +86,12 @@ export default function Footer() {
                 {t('footer.terms')}
               </Link>
             </nav>
-            <button 
+            <button
+              type="button"
               onClick={openPrivacyCenter}
               className="text-left text-xs text-white/40 hover:text-white/80 transition-colors underline decoration-white/20 underline-offset-4"
             >
-              Do Not Sell or Share My Personal Information
+              {t('footer.privacyChoices')}
             </button>
           </div>
         </div>

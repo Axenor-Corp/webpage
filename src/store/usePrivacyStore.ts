@@ -64,10 +64,6 @@ export const usePrivacyStore = create<PrivacyState>()((set, get) => ({
       // Ignore localStorage errors
     }
     set({ consent });
-    
-    // MOCK: Save preferences to Supabase
-    // e.g., await supabase.from('user_preferences').upsert({ consent_ads: consent.ads, ai_training_consent: consent.aiTraining })
-    console.log("MOCK: Saved preferences to Supabase `user_preferences`:", consent);
   },
   
   updateConsent: (partial) => {
@@ -90,15 +86,11 @@ export const usePrivacyStore = create<PrivacyState>()((set, get) => ({
     // Al dispararse ejecuta un webhook o función serverless que haga lo siguiente:
     // - Elimine (o anonimice criptográficamente) la fila en Supabase.
     // - Envíe una petición a los APIs de herramientas de terceros (ej. Segment, Mixpanel) para purgar su tracking.
-    console.log("MOCK: Calling DELETE /api/users/me -> Supabase deletion, Third-party purge");
-    
     return new Promise((resolve) => {
       setTimeout(() => {
         // Devuelva un estado al cliente frontend indicándole que borre todo el almacenamiento local
         localStorage.clear();
         sessionStorage.clear();
-        console.log("MOCK: Local storage cleared to guarantee OS AI models don't keep residual data.");
-        
         // Reset state
         set({ consent: null, isPrivacyCenterOpen: false });
         resolve();
