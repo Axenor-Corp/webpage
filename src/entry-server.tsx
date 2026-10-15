@@ -33,7 +33,6 @@ void i18n.use(initReactI18next).init({
   ns: Object.keys(resources[DEFAULT_LANGUAGE]),
   resources,
   initAsync: false,
-  showSupportNotice: false,
 });
 
 export { SITE, ogLocale };
