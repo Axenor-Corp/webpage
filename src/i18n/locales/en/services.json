@@ -6,7 +6,7 @@
   "header": {
     "title": "Services",
     "subtitle": "Six capabilities. One single standard: results in production.",
-    "intro": "We organize by capability, not by industry. Specificity comes from the work the real problem, its constraints and its data not from a sector template."
+    "intro": "We organize by capability, not by industry. Specificity comes from the work: the real problem, its constraints and its data, not from a sector template."
   },
   "labels": {
     "capabilities": "Capabilities",
@@ -42,7 +42,7 @@
     "infrastructure": {
       "name": "Infrastructure",
       "tagline": "Design, implementation and management of high-availability technology infrastructure, on-premise and hybrid.",
-      "desc": "Business operations rest on infrastructure. We design it for real constraints scale, budget and team and manage it so availability is the norm, not the exception.",
+      "desc": "Business operations rest on infrastructure. We design it for real constraints (scale, budget and team) and manage it so availability is the norm, not the exception.",
       "bullets": [
         "Design and implementation of enterprise networking, compute and storage",
         "Virtualization and consolidation of on-premise and hybrid platforms",
@@ -94,6 +94,6 @@
   },
   "pricing": {
     "title": "How we start",
-    "text": "We don't publish prices. Every engagement is sized against your problem, your context and the outcome that needs to move not against a catalog rate."
+    "text": "We don't publish prices. Every engagement is sized against your problem, your context and the outcome that needs to move, not against a catalog rate."
   }
 }

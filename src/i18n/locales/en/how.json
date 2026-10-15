@@ -6,7 +6,7 @@
   "header": {
     "title": "How we work",
     "subtitle": "Integrated inside your business.",
-    "intro": "We don't hand you a team and walk away. We embed in your context your stack, your data, your constraints and own the problem until it produces a measurable result."
+    "intro": "We don't hand you a team and walk away. We embed in your context (your stack, your data, your constraints) and own the problem until it produces a measurable result."
   },
   "pillars": {
     "title": "The model",
@@ -37,7 +37,7 @@
       "discovery": {
         "num": "02",
         "title": "Discovery",
-        "text": "Immersion in the real context and data. We identify where the value is and which constraints technical, regulatory, human shape the solution."
+        "text": "Immersion in the real context and data. We identify where the value is and which constraints (technical, regulatory, human) shape the solution."
       },
       "delivery": {
         "num": "03",

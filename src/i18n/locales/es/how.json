@@ -6,7 +6,7 @@
   "header": {
     "title": "Cómo trabajamos",
     "subtitle": "Integrados dentro de tu negocio.",
-    "intro": "No te entregamos un equipo y nos vamos. Nos embebemos en tu contexto tu stack, tus datos, tus restricciones y somos dueños del problema hasta que produce un resultado medible."
+    "intro": "No te entregamos un equipo y nos vamos. Nos embebemos en tu contexto (tu stack, tus datos, tus restricciones) y somos dueños del problema hasta que produce un resultado medible."
   },
   "pillars": {
     "title": "El modelo",
@@ -37,7 +37,7 @@
       "discovery": {
         "num": "02",
         "title": "Discovery",
-        "text": "Inmersión en el contexto y los datos reales. Identificamos dónde está el valor y qué restricciones técnicas, regulatorias, humanascondicionan la solución."
+        "text": "Inmersión en el contexto y los datos reales. Identificamos dónde está el valor y qué restricciones (técnicas, regulatorias, humanas) condicionan la solución."
       },
       "delivery": {
         "num": "03",

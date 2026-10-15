@@ -6,7 +6,7 @@
   "header": {
     "title": "Servicios",
     "subtitle": "Seis capacidades. Una sola exigencia: resultados en producción.",
-    "intro": "Nos organizamos por capacidad, no por industria. La especificidad la da el trabajo el problema real, sus restricciones y sus datos no una plantilla por sector."
+    "intro": "Nos organizamos por capacidad, no por industria. La especificidad la da el trabajo: el problema real, sus restricciones y sus datos, no una plantilla por sector."
   },
   "labels": {
     "capabilities": "Capacidades",
@@ -42,7 +42,7 @@
     "infrastructure": {
       "name": "Infraestructura",
       "tagline": "Diseño, implementación y administración de infraestructura tecnológica de alta disponibilidad, on-premise e híbrida.",
-      "desc": "La operación del negocio descansa sobre la infraestructura. La diseñamos para las restricciones reales escala, presupuesto y equipo y la administramos para que la disponibilidad sea la norma, no la excepción.",
+      "desc": "La operación del negocio descansa sobre la infraestructura. La diseñamos para las restricciones reales (escala, presupuesto y equipo) y la administramos para que la disponibilidad sea la norma, no la excepción.",
       "bullets": [
         "Diseño e implementación de redes, cómputo y almacenamiento empresarial",
         "Virtualización y consolidación de plataformas on-premise e híbridas",
@@ -94,6 +94,6 @@
   },
   "pricing": {
     "title": "Cómo empezamos",
-    "text": "No publicamos precios. Cada compromiso se dimensiona contra tu problema, tu contexto y el resultado que hay que mover no contra una tarifa de catálogo."
+    "text": "No publicamos precios. Cada compromiso se dimensiona contra tu problema, tu contexto y el resultado que hay que mover, no contra una tarifa de catálogo."
   }
 }
