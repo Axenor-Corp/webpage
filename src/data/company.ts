@@ -17,9 +17,9 @@ export const APPLY_ROUTE = { path: '/aplicar', key: 'aplicar' } as const;
 
 export const CONTACT = {
   email: 'contact@axenorcorporations.com',
-  phoneDisplay: '+57 321 874 6238',
-  phoneHref: 'tel:+573218746238',
-  whatsappHref: 'https://wa.me/573218746238',
+  phoneDisplay: '+57 314 814 8026',
+  phoneHref: 'tel:+573148148026',
+  whatsappHref: 'https://wa.me/573148148026',
 } as const;
 
 export const COMPANY_LINKEDIN =
